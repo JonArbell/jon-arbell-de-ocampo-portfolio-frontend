@@ -20,9 +20,9 @@ Check out my live portfolio at: [Your Portfolio URL](#)
 
 If you'd like to connect or collaborate, feel free to reach out:
 
-- **Email:** [your-email@example.com](mailto:deocampo.arbelldonor@gmail.com)
-- **LinkedIn:** [Your LinkedIn URL](https://www.linkedin.com/in/jon-arbell-donor-de-ocampo-134083284/)
-- **GitHub:** [My GitHub Profile](https://github.com/JonArbell)
+- **Email:** [deocampo.arbelldonor@gmail.com](mailto:deocampo.arbelldonor@gmail.com)
+- **LinkedIn:** [Jon Arbell De Ocampo | LinkedIn](https://www.linkedin.com/in/jon-arbell-donor-de-ocampo-134083284/)
+- **GitHub:** [Jon Arbell De Ocampo | GitHub](https://github.com/JonArbell)
 
 ---
 
