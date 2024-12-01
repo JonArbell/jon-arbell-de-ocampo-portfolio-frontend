@@ -5,8 +5,7 @@ import { HeaderComponent } from '../header/header.component';
   selector: 'app-hero-section',
   standalone: true,
   imports: [HeaderComponent],
-  templateUrl: './hero-section.component.html',
-  styleUrl: './hero-section.component.css'
+  templateUrl: './hero-section.component.html'
 })
 export class HeroSectionComponent {
 

@@ -6,12 +6,14 @@
         <h1 class="text-orange-700">Arbell</h1>
     </div>
 
-    <ul class="text-white flex pr-4 justify-evenly w-full">
+    <ul class="text-white pl-[40%] flex justify-around w-full">
 
         @for(element of header; track element){
 
             @if(element !== 'Contact Me'){
-                <li class="flex items-center">{{element}}</li>
+                <li class="flex items-center hover:underline cursor-pointer">
+                    <a>{{element}}</a>
+                </li>
             }
             @else{
                 <button class="p-4 rounded-lg bg-white text-black hover:bg-gray-300">
