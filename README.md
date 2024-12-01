@@ -1,27 +1,29 @@
-# MyResume
+# Portfolio - Jon Arbell De Ocampo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Welcome to my portfolio repository! 🎉
 
-## Development server
+This repository contains the source code and assets for my personal portfolio website. The website showcases my skills, projects, and hobbies in a creative and professional way.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Projects Section:** Highlighting my key projects and achievements.
+- **About Me:** Learn more about my background and expertise.
+- **Hobbies:** Explore my passion for photography and photo manipulation.
+- **Downloadable Resume:** Easily access my latest resume.
+- **Contact:** Reach out to me through email or LinkedIn.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Visit My Portfolio
 
-## Build
+Check out my live portfolio at: [Your Portfolio URL](#)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Contact Me
 
-## Running unit tests
+If you'd like to connect or collaborate, feel free to reach out:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Email:** [your-email@example.com](mailto:deocampo.arbelldonor@gmail.com)
+- **LinkedIn:** [Your LinkedIn URL](https://www.linkedin.com/in/jon-arbell-donor-de-ocampo-134083284/)
+- **GitHub:** [My GitHub Profile](https://github.com/JonArbell)
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Thank you for visiting my portfolio repository! 😊
