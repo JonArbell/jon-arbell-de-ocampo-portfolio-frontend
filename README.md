@@ -6,10 +6,9 @@ This repository contains the source code and assets for my personal portfolio we
 
 ## Features
 
-- **Projects Section:** Highlighting my key projects and achievements.
 - **About Me:** Learn more about my background and expertise.
+- **Projects Section:** Highlighting my key projects and achievements.
 - **Hobbies:** Explore my passion for photography and photo manipulation.
-- **Downloadable Resume:** Easily access my latest resume.
 - **Contact:** Reach out to me through email or LinkedIn.
 
 ## Visit My Portfolio

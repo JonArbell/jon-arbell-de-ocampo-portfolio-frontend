@@ -25,11 +25,16 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+                {
+                  "glob": "**/*",
+                  "input": "src/assets/",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "**/*",
+                  "input": "public"
+                }
+              ],
             "styles": [
               "src/styles.css"
             ],
@@ -82,12 +87,17 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+             "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "src/assets/",
+                  "output": "/assets/"
+                },
+                {
+                  "glob": "**/*",
+                  "input": "public"
+                }
+              ],
             "styles": [
               "src/styles.css"
             ],
