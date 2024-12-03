@@ -2,10 +2,10 @@
 
     <img class="w-full shadow-md rounded-lg" [src]="displayProject?.getPngPath()">
 
-    <div class="p-2 ">
-        <h3 class="text-xl font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
-        <p class="text-zinc-900 mb-2">{{displayProject?.getDescription()}}</p>
+    <div class="p-2">
+        <h3 class="2xl:text-xl xs:text-lg font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
+        <p class="text-zinc-900 mb-2 xs:text-xs 2xl:text-base">{{displayProject?.getDescription()}}</p>
     </div>
 
-    <a class="text-gray-300 p-2 bg-orange-900 rounded-lg" target="_blank" [href]="displayProject?.getLink()">Test here</a>
+    <a class="text-gray-200 p-2 bg-orange-900 rounded-lg xs:text-sm 2xl:text-base" target="_blank" [href]="displayProject?.getLink()">View Project &#8594;</a>
 </div>

@@ -1,18 +1,18 @@
-<section class="p-10 h-[80vh] bg-[#2C2C2C]">
+<section class="2xl:p-10 sm:pt-5 xs:p-2 h-[80vh] bg-[#2C2C2C]">
 
-    <h2 class="text-center font-bold text-5xl text-[#bebebe] mb-4 tracking-wider">My Projects</h2>
+    <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 2xl:text-5xl text-[#bebebe] 2xl:mb-4 tracking-wider">My Projects</h2>
 
-    <section class="flex items-center justify-center gap-28 h-[90%]">
+    <section class="flex items-center justify-center xs:gap-3 md:gap-10 lg:gap-16 2xl:gap-28 h-[90%]">
 
-        <button (click)="previousCard()" class="hover:underline font-bold text-3xl text-[#bebebe]"><<</button>
+        <button (click)="previousCard()" class="hover:underline font-bold 2xl:text-3xl text-[#bebebe]"><<</button>
     
-        <section class="flex items-center justify-center w-[30%]">
+        <section class="flex items-center justify-center md:w-[70%] xl:w-[47%] lg:w-[57%] 2xl:w-[30%] ">
     
             <app-card [displayProject]="getCurrentCard()"></app-card>
     
         </section>
     
-        <button (click)="nextCard()" class="hover:underline font-bold text-3xl text-[#bebebe]">>></button>
+        <button (click)="nextCard()" class="hover:underline font-bold 2xl:text-3xl text-[#bebebe]">>></button>
     
     </section>
 </section>
