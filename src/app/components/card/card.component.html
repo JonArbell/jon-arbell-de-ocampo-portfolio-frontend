@@ -1,6 +1,6 @@
 <div class="bg-gray-100 text-white shadow-lg rounded-lg overflow-hidden h-[60vh] p-2">
 
-    <img class="w-full shadow-md rounded-lg" [src]="displayProject?.getPngPath()">
+    <img loading="lazy" class="w-full shadow-md rounded-lg" [src]="displayProject?.getPngPath()">
 
     <div class="p-2">
         <h3 class="2xl:text-xl xs:text-lg font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
