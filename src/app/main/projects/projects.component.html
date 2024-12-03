@@ -1,1 +1,18 @@
-<p>projects works!</p>
+<section class="p-10 h-[80vh] bg-[#2C2C2C]">
+
+    <h2 class="text-center font-bold text-5xl text-[#bebebe] mb-4 tracking-wider">My Projects</h2>
+
+    <section class="flex items-center justify-center gap-28 h-[90%]">
+
+        <button (click)="previousCard()" class="hover:underline font-bold text-3xl text-[#bebebe]"><<</button>
+    
+        <section class="flex items-center justify-center w-[30%]">
+    
+            <app-card [displayProject]="getCurrentCard()"></app-card>
+    
+        </section>
+    
+        <button (click)="nextCard()" class="hover:underline font-bold text-3xl text-[#bebebe]">>></button>
+    
+    </section>
+</section>

@@ -1,0 +1,11 @@
+<div class="bg-gray-100 text-white shadow-lg rounded-lg overflow-hidden h-[60vh] p-2">
+
+    <img class="w-full shadow-md rounded-lg" [src]="displayProject?.getPngPath()">
+
+    <div class="p-2 ">
+        <h3 class="text-xl font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
+        <p class="text-zinc-900 mb-2">{{displayProject?.getDescription()}}</p>
+    </div>
+
+    <a class="text-gray-300 p-2 bg-orange-900 rounded-lg" target="_blank" [href]="displayProject?.getLink()">Test here</a>
+</div>
