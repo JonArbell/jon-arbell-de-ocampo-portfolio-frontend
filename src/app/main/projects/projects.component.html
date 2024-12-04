@@ -4,15 +4,15 @@
 
     <section class="flex items-center justify-center xs:gap-3 md:gap-10 lg:gap-16 2xl:gap-28 h-[90%]">
 
-        <button (click)="previousCard()" class="hover:underline font-bold 2xl:text-3xl text-[#bebebe]"><<</button>
+        <button (click)="previousCard()" class="hover:scale-150 transition-transform duration-300 ease-in-out font-bold 2xl:text-3xl text-[#bebebe]"><<</button>
     
         <section class="flex items-center justify-center md:w-[70%] xl:w-[47%] lg:w-[57%] 2xl:w-[30%] ">
     
-            <app-card [displayProject]="getCurrentCard()"></app-card>
+            <app-card class="shadow-2xl" [displayProject]="getCurrentCard()"></app-card>
     
         </section>
     
-        <button (click)="nextCard()" class="hover:underline font-bold 2xl:text-3xl text-[#bebebe]">>></button>
+        <button (click)="nextCard()" class="hover:scale-150 transition-transform duration-300 ease-in-out font-bold 2xl:text-3xl text-[#bebebe]">>></button>
     
     </section>
 </section>

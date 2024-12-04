@@ -1,11 +1,18 @@
-<div class="bg-gray-300 text-white shadow-lg rounded-lg overflow-hidden h-[60vh] p-2">
+<div [ngClass]="displayProject?.hobbiesSection ? 'h-[33vh]' : 'h-[60vh]'" class="bg-gray-300 text-white shadow-lg rounded-lg overflow-hidden p-2 flex flex-col items-center">
 
-    <img loading="lazy" class="w-full shadow-md rounded-lg" [src]="displayProject?.getPngPath()">
+    <img [ngClass]="displayProject?.hobbiesSection ? 'h-[70%]' : ''" loading="lazy" class="shadow-md rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="displayProject?.getPngPath()">
 
-    <div class="p-2">
-        <h3 class="2xl:text-xl xs:text-lg font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
+    <div [ngClass]="displayProject?.hobbiesSection ? 'h-[30%]' : ''" class="p-2">
+
+        <h3 *ngIf="hasGetTitleMethod()" class="2xl:text-xl xs:text-lg font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
+
         <p class="text-zinc-900 mb-2 xs:text-xs 2xl:text-base">{{displayProject?.getDescription()}}</p>
+
+        <!-- <p class="text-zinc-900 mb-2 xs:text-xs 2xl:text-base" *ngIf="hasGetDeviceMethod() && displayProject?.getDevice() !== ''">{{displayProject?.getDevice()}}<br>•Shot by J.Arbell<br></p>
+
+        <p class="text-zinc-900 xs:text-xs 2xl:text-base" *ngIf="hasGetLocationMethod() && displayProject?.getLocation() !== ''">{{displayProject?.getLocation()}}</p> -->
+
     </div>
 
-    <a class="text-gray-200 p-2 bg-orange-900 rounded-lg xs:text-sm 2xl:text-base" target="_blank" [href]="displayProject?.getLink()">View Project &#8594;</a>
+    <a *ngIf="hasGetLinkMethod()" class="text-gray-200 p-2 bg-orange-900 rounded-lg xs:text-sm 2xl:text-base" target="_blank" [href]="displayProject?.getLink()">View Project &#8594;</a>
 </div>
