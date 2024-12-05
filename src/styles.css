@@ -4,6 +4,24 @@
     font-family: 'Poppins', sans-serif;
 }
 
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 5s steps(85) infinite;
+}
+  
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,6 +1,8 @@
 <div [ngClass]="displayProject?.hobbiesSection ? 'h-[33vh]' : 'h-[60vh]'" class="bg-gray-300 text-white shadow-lg rounded-lg overflow-hidden p-2 flex flex-col items-center">
 
-    <img [ngClass]="displayProject?.hobbiesSection ? 'h-[70%]' : ''" loading="lazy" class="shadow-md rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="displayProject?.getPngPath()">
+    <img [ngClass]="{
+        'h-[50%]' : 'displayProject?.hobbiesSection'
+    }" loading="lazy" class="shadow-md rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="displayProject?.getPngPath()">
 
     <div [ngClass]="displayProject?.hobbiesSection ? 'h-[30%]' : ''" class="p-2">
 

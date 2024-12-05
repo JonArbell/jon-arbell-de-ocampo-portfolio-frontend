@@ -1,5 +1,5 @@
 
-<section class="h-[80vh] bg-gradient-to-br from-orange-950 via-gray-800  to-teal-700 flex flex-col items-center justify-center p-4">
+<section class="h-[80vh] bg-gradient-to-br from-orange-950 via-gray-800  to-teal-900 flex flex-col items-center justify-center p-4">
 
     <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 2xl:text-5xl text-[#bebebe] 2xl:mb-4 tracking-wider">My Hobbies</h2>
 
@@ -10,6 +10,8 @@
             @for(hobby of list; track $index){
 
                 <li [ngClass]="$index === 3 ? 'col-span-2' : ''" class="flex items-center justify-center md:w-[70%] xl:w-[47%] lg:w-[57%] h-full 2xl:w-full">
+
+                    <app-card [ngClass]="$index < 2 ? 'w-[70%]' : 'w-full'" class="" [displayProject]="hobby"></app-card>
                     
                     <div [ngClass]="$index < 2 ? 'w-[70%]' : 'w-full'" class="h-full flex items-center justify-center">
                         <img [ngClass]="$index === 4 ? 'w-[33%]' : ''" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" class="shadow-2xl h-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out" [src]="hobby?.getPngPath()">
