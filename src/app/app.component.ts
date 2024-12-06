@@ -4,11 +4,13 @@ import { HeroSectionComponent } from "./main/hero-section/hero-section.component
 import { AboutMeComponent } from './main/about-me/about-me.component';
 import { ProjectsComponent } from './main/projects/projects.component';
 import { HobbiesComponent } from './main/hobbies/hobbies.component';
+import { FooterComponent } from './main/footer/footer.component';
+import { SkillsComponent } from './main/skills/skills.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeroSectionComponent, AboutMeComponent,ProjectsComponent,HobbiesComponent],
+  imports: [RouterOutlet, HeroSectionComponent, AboutMeComponent,ProjectsComponent,SkillsComponent,HobbiesComponent,FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

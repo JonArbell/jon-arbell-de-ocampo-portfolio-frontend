@@ -1,20 +1,25 @@
-<div [ngClass]="displayProject?.hobbiesSection ? 'h-[33vh]' : 'h-[60vh]'" class="bg-gray-300 text-white shadow-lg rounded-lg overflow-hidden p-2 flex flex-col items-center">
-
+<div [ngClass]="{
+    'bg-gray-300 h-[60vh] shadow-lg p-2' : !displayProject?.hobbiesSection,
+    'h-[33vh]' : displayProject?.hobbiesSection
+}" class="text-white rounded-lg overflow-hidden flex flex-col items-center">
+    
     <img [ngClass]="{
-        'h-[50%]' : 'displayProject?.hobbiesSection'
-    }" loading="lazy" class="shadow-md rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="displayProject?.getPngPath()">
+        'h-full' : displayProject?.hobbiesSection,
+        'h-[50%]' : !displayProject?.hobbiesSection
+    }" loading="lazy" class="shadow-xl rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="displayProject?.getPngPath()">
 
-    <div [ngClass]="displayProject?.hobbiesSection ? 'h-[30%]' : ''" class="p-2">
+    <div *ngIf="!displayProject.hobbiesSection" [ngClass]="{
+        'h-[30%] w-full' : displayProject?.hobbiesSection,
+        'mt-3' : !displayProject?.hobbiesSection
+    }" class="p-2">
 
-        <h3 *ngIf="hasGetTitleMethod()" class="2xl:text-xl xs:text-lg font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
+        <h3 class="2xl:text-xl xs:text-lg font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
 
         <p class="text-zinc-900 mb-2 xs:text-xs 2xl:text-base">{{displayProject?.getDescription()}}</p>
 
-        <!-- <p class="text-zinc-900 mb-2 xs:text-xs 2xl:text-base" *ngIf="hasGetDeviceMethod() && displayProject?.getDevice() !== ''">{{displayProject?.getDevice()}}<br>•Shot by J.Arbell<br></p>
-
-        <p class="text-zinc-900 xs:text-xs 2xl:text-base" *ngIf="hasGetLocationMethod() && displayProject?.getLocation() !== ''">{{displayProject?.getLocation()}}</p> -->
 
     </div>
 
-    <a *ngIf="hasGetLinkMethod()" class="text-gray-200 p-2 bg-orange-900 rounded-lg xs:text-sm 2xl:text-base" target="_blank" [href]="displayProject?.getLink()">View Project &#8594;</a>
+    <a *ngIf="!displayProject.hobbiesSection" class="bg-teal-950 mt-auto mb-2 ml-2 text-gray-200 p-2 self-start rounded-lg xs:text-sm 2xl:text-base" target="_blank" [href]="displayProject?.getLink()">View Project &#8594;</a>
+
 </div>

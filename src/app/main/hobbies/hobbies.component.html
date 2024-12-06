@@ -1,37 +1,37 @@
 
-<section class="h-[80vh] bg-gradient-to-br from-orange-950 via-gray-800  to-teal-900 flex flex-col items-center justify-center p-4">
+<section class="h-[80vh] bg-gradient-to-br from-orange-950 via-gray-800 w-full to-teal-950 flex p-4">
 
-    <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 2xl:text-5xl text-[#bebebe] 2xl:mb-4 tracking-wider">My Hobbies</h2>
+    <div class="w-1/3 flex flex-col items-center justify-center h-[90%]">
+        <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl text-[#bebebe] 2xl:mb-4 tracking-wider">My Hobbies</h2>
 
-    <!-- <ul class="2xl:grid-cols-3 grid-cols-auto grid grid-rows-2 gap-4 p-4 h-[90%] w-full">
+        <p class="tracking-wide xs:text-xs 2xl:text-base 3xl:mb-7 text-[#bebebe]">I enjoy photography, capturing unique moments and perspectives through the lens, whether it's landscapes, portraits, or candid scenes. As a creative extension, I explore photomanipulation, transforming photos into imaginative visuals and experimenting with artistic effects. I've also ventured into videography, creating two short films that allowed me to blend storytelling with visual artistry. These hobbies offer a fun and creative escape while letting me try new techniques and ideas.</p>
 
+        <a  class="bg-orange-900 text-gray-200 p-2 self-center rounded-lg xs:text-sm 2xl:text-base" target="_blank" [href]="">View all &#8594;</a>
+    </div>
+
+    
+
+    <ul class="flex flex-wrap justify-center gap-4 p-4 h-[90%] w-2/3">
         @for(list of hobbies; track list){
 
             @for(hobby of list; track $index){
+                <li [ngClass]="{
+                    '2xl:basis-[calc(25%-1rem)]' : $index > 2,
+                    'sm:basis-1/2 2xl:basis-[calc(33.33%-1rem)]' : $index < 3
+                }" class="flex items-center justify-center">
 
-                <li [ngClass]="$index === 3 ? 'col-span-2' : ''" class="flex items-center justify-center md:w-[70%] xl:w-[47%] lg:w-[57%] h-full 2xl:w-full">
+                    <app-card class="w-full h-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out" [displayProject]="hobby"></app-card>
 
-                    <app-card [ngClass]="$index < 2 ? 'w-[70%]' : 'w-full'" class="" [displayProject]="hobby"></app-card>
-                    
-                    <div [ngClass]="$index < 2 ? 'w-[70%]' : 'w-full'" class="h-full flex items-center justify-center">
-                        <img [ngClass]="$index === 4 ? 'w-[33%]' : ''" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" class="shadow-2xl h-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out" [src]="hobby?.getPngPath()">
-                         
-                    </div>
-
-                    
                 </li>
-                
+    
             }
-
         }
 
-        
-          
-          
-          
-    </ul> -->
+    </ul>
 
-    <h1 class="text-red-900 font-bold xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl 3xl:text-8xl">UNDER CONSTRUCTION!!</h1>
+    
+    <!-- <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 2xl:text-5xl text-[#bebebe] 2xl:mb-4 tracking-wider">My Hobbies</h2> -->
+    <!-- <h1 class="text-red-900 font-bold xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl 3xl:text-8xl">UNDER CONSTRUCTION!!</h1> -->
     
 
 </section>
