@@ -1,25 +1,26 @@
 <div [ngClass]="{
-    'bg-gray-300 h-[60vh] shadow-lg p-2' : !displayProject?.hobbiesSection,
-    'h-[33vh]' : displayProject?.hobbiesSection
+    'bg-gray-300 shadow-2xl p-2' : !display?.hobbiesSection,
+    'h-[33vh]' : display?.hobbiesSection,
+    'h-[60vh]' : display?.projectSection
 }" class="text-white rounded-lg overflow-hidden flex flex-col items-center">
     
     <img [ngClass]="{
-        'h-full' : displayProject?.hobbiesSection,
-        'h-[50%]' : !displayProject?.hobbiesSection
-    }" loading="lazy" class="shadow-xl rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="displayProject?.getPngPath()">
+        'h-full' : display?.hobbiesSection,
+        'h-[50%]' : display?.projectSection
+    }" loading="lazy" class="shadow-xl rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="display?.getPngPath()">
 
-    <div *ngIf="!displayProject.hobbiesSection" [ngClass]="{
-        'h-[30%] w-full' : displayProject?.hobbiesSection,
-        'mt-3' : !displayProject?.hobbiesSection
+    <div *ngIf="!display.hobbiesSection" [ngClass]="{
+        'h-[30%] w-full' : display?.hobbiesSection,
+        'mt-2' : display?.projectSection
     }" class="p-2">
 
-        <h3 class="2xl:text-xl xs:text-lg font-semibold text-zinc-900 mb-2">{{displayProject?.getTitle()}}</h3>
+        <h3 class="2xl:text-xl xs:text-lg font-semibold text-zinc-900 mb-2">{{display?.getTitle()}}</h3>
 
-        <p class="text-zinc-900 mb-2 xs:text-xs 2xl:text-base">{{displayProject?.getDescription()}}</p>
+        <p class="text-zinc-900 mb-2 xs:text-xs 2xl:text-base">{{display?.getDescription()}}</p>
 
 
     </div>
 
-    <a *ngIf="!displayProject.hobbiesSection" class="bg-teal-950 mt-auto mb-2 ml-2 text-gray-200 p-2 self-start rounded-lg xs:text-sm 2xl:text-base" target="_blank" [href]="displayProject?.getLink()">View this project &#8594;</a>
+    <a *ngIf="!display.hobbiesSection" class="bg-teal-950 mt-auto mb-2 ml-2 text-gray-200 p-2 self-start rounded-lg xs:text-sm 2xl:text-base" target="_blank" [href]="display?.getLink()">View this project &#8594;</a>
 
 </div>

@@ -1,14 +1,18 @@
-<section class="2xl:p-10 sm:pt-5 xs:p-2 h-[80vh] bg-gradient-to-br from-zinc-900 via-gray-800  to-orange-950">
+<section class="2xl:p-10 sm:pt-5 xs:p-2 xs:h-screen 3xl:h-[80vh] bg-gradient-to-br from-zinc-900 via-gray-800 to-orange-950 flex flex-col items-center justify-center px-40">
 
-    <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 2xl:text-5xl text-[#bebebe] 2xl:mb-4 tracking-wider">My Projects</h2>
+    <section class="xs:mb-7 2xl:mb-4 text-[#bebebe] px-7">
+        <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl tracking-wider mb-2">My Projects</h2>
 
-    <section class="flex items-center justify-center xs:gap-3 md:gap-10 lg:gap-16 2xl:gap-28 h-[90%]">
+        <p class="text-center 3xl:text-xl xs:text-base tracking-wider">Projects created to enhance my skills and apply my knowledge in real-world scenarios.</p>
+    </section>
+
+    <section class="xs:flex items-center w-full 3xl:items-center justify-center xs:gap-3 md:gap-10 lg:gap-16 2xl:gap-28">
 
         <button (click)="previousCard()" class="hover:scale-150 transition-transform duration-300 ease-in-out font-bold 2xl:text-3xl text-[#bebebe]"><<</button>
     
-        <section class="flex items-center justify-center md:w-[70%] xl:w-[47%] lg:w-[57%] 2xl:w-[30%] ">
+        <section class="md:w-[70%] xl:w-[47%] lg:w-[57%] 2xl:w-[30%] ">
     
-            <app-card class="shadow-2xl" [displayProject]="getCurrentCard()"></app-card>
+            <app-card [display]="getCurrentCard()"></app-card>
     
         </section>
     

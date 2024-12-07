@@ -24,7 +24,7 @@ export class HobbiesComponent {
   ]
 
   hobbies : any[] = [this.photographs,this.photoManipulation];
-index: any;
+  
 
   
 }

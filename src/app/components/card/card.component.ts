@@ -9,22 +9,22 @@ import { Component, Input, } from '@angular/core';
 })
 export class CardComponent {
 
-  @Input() displayProject! : any ;
+  @Input() display! : any ;
 
   hasGetTitleMethod(): boolean {
-    return typeof this.displayProject?.getTitle === 'function';
+    return typeof this.display?.getTitle === 'function';
   }
 
   hasGetLinkMethod(): boolean {
-    return typeof this.displayProject?.getLink === 'function';
+    return typeof this.display?.getLink === 'function';
   }
 
   hasGetDeviceMethod():boolean{
-    return typeof this.displayProject?.getDevice === 'function';
+    return typeof this.display?.getDevice === 'function';
   }
 
   hasGetLocationMethod():boolean{
-    return typeof this.displayProject?.getLocation === 'function';
+    return typeof this.display?.getLocation === 'function';
   }
 
 }
