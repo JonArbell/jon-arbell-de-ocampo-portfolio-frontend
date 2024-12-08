@@ -1,4 +1,4 @@
-<section class="flex items-center justify-center h-[80vh] bg-gradient-to-br from-gray-800 via-orange-950 text-[#bebebe] to-gray-800 px-8 md:px-16 lg:px-40">
+<section class="flex items-center justify-center h-screen bg-gradient-to-br from-gray-800 via-orange-950 text-[#bebebe] to-gray-800 px-8 md:px-16 lg:px-40">
     <div class="w-full">
 
         <div class="xs:mb-5 xl:mb-7 3xl:mb-10">
@@ -9,10 +9,10 @@
         <ul class="grid xs:place-items-center 3xl:grid-cols-9 xs:grid-cols-3 w-full mb-10 xs:gap-4">
 
             @for(tech of stacks; track tech){
-                <li class=" 3xl:h-40 3xl:w-36 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 2xl:h-36 2xl:w-36 flex flex-col items-center justify-center p-4 rounded-xl bg-gray-300 shadow-2xl">
+                <li class="xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex flex-col items-center justify-center p-4 rounded-xl bg-gray-300 shadow-2xl">
                     <img class="mb-2 xs:h-7 xs:w-7 3xl:h-20 3xl:w-20 hover:scale-110 transition-transform duration-200" [src]="tech.getImagePath()" [alt]="tech.getTechName() +' icon'">
     
-                    <p class="text-center text-zinc-900 xs:text-xs 3xl:text-base">{{tech.getTechName()}}</p>
+                    <p class="text-center text-zinc-900 xs:text-xs 3xl:text-sm">{{tech.getTechName()}}</p>
                 </li>
             }
         </ul>

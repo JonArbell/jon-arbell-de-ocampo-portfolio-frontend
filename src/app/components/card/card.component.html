@@ -6,8 +6,8 @@
     
     <img [ngClass]="{
         'h-full' : display?.hobbiesSection,
-        'h-[50%]' : display?.projectSection
-    }" loading="lazy" class="shadow-xl rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="display?.getPngPath()">
+        'h-[40%]' : display?.projectSection
+    }" loading="lazy" class="shadow-xl xs:rounded-md 3xl:rounded-lg" sizes="(max-width: 600px) 150px, (max-width: 1200px) 300px, 600px" [src]="display?.getPngPath()">
 
     <div *ngIf="!display.hobbiesSection" [ngClass]="{
         'h-[30%] w-full' : display?.hobbiesSection,
