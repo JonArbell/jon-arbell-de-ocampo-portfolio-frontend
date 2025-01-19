@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CardComponent,RouterLink],
+  imports: [CardComponent],
   templateUrl: './projects.component.html'
 })
 

@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-
-  header : string[] = ['Home','About','Projects','Contact']
+  home : string = 'Home';
+  header : string[] = ['About','Projects','Skills','Hobbies','Contact']
 
 }

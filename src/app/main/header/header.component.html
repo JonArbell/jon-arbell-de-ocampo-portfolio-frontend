@@ -10,41 +10,33 @@
 
         @for(element of header; track element){
 
-            @if(element === 'Contact' || element === 'About'){
+            @if(element === 'Contact'){
 
-                @if(element === 'About'){
-                    <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                        <a routerLink="{{element.toLocaleLowerCase()}}">{{element}}</a>
-                    </li>
-                }@else {
-                    <button class="p-4 rounded-lg bg-white text-black hover:bg-gray-300">
-                        <li>
-                            <a routerLink="{{element.toLocaleLowerCase()}}-me">{{element}} Me</a>
-                        </li>
-                    </button>
-                }
-
-
-            }@else if (element === 'Home') {
-                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                    <a routerLink="">{{element}}</a>
+                <li >
+                    <a class="p-4 bg-white rounded-lg  text-black hover:bg-gray-300" routerLink="" fragment="{{element.toLocaleLowerCase()}}-me">{{element}} Me</a>
                 </li>
-            }@else{
+
+            }@else if(element === 'About'){
                 <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                    <a routerLink="{{element.toLocaleLowerCase()}}">{{element}}</a>
+                    <a routerLink="" fragment="{{element.toLocaleLowerCase()}}-me">{{element}}</a>
                 </li>
             }
-
-            <!-- @if(element !== 'Contact Me'){
+            <!-- @else if (element === 'Home') {
                 <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                    <a routerLink="hero">{{element}}</a>
+                    <a routerLink="" fragment="home">{{element}}</a>
+                </li>
+            } -->
+            @else if(element === 'Skills'){
+                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
+                    <a routerLink="" fragment="my-skills">{{element}}</a>
                 </li>
             }
             @else{
-                <button class="p-4 rounded-lg bg-white text-black hover:bg-gray-300">
-                    <li>{{element}}</li>
-                </button>
-            } -->
+                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
+                    <a routerLink="" fragment="{{element.toLocaleLowerCase()}}">{{element}}</a>
+                </li>
+            }
+
         }
 
     </ul>

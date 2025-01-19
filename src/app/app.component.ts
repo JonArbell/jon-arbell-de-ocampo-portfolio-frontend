@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { HeroSectionComponent } from "./main/hero-section/hero-section.component";
 import { AboutMeComponent } from './main/about-me/about-me.component';
 import { ProjectsComponent } from './main/projects/projects.component';
@@ -15,6 +15,24 @@ import { ContactMeComponent } from './main/contact-me/contact-me.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+
+
+export class AppComponent implements OnInit{
   title = 'Jon Arbell De Ocampo';
+  activatedRoute : ActivatedRoute = inject(ActivatedRoute);
+
+  ngOnInit(): void {
+    
+    this.activatedRoute.fragment.subscribe((data)=>{
+      if (data) {
+        this.jumpToSection(data);
+      }
+    });
+
+  }
+
+  jumpToSection(data : string) : void{
+    document.querySelector(`#${data}`)?.scrollIntoView({behavior : 'smooth'});
+  }
+
 }
