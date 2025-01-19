@@ -10,16 +10,41 @@
 
         @for(element of header; track element){
 
-            @if(element !== 'Contact Me'){
+            @if(element === 'Contact' || element === 'About'){
+
+                @if(element === 'About'){
+                    <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
+                        <a routerLink="{{element.toLocaleLowerCase()}}">{{element}}</a>
+                    </li>
+                }@else {
+                    <button class="p-4 rounded-lg bg-white text-black hover:bg-gray-300">
+                        <li>
+                            <a routerLink="{{element.toLocaleLowerCase()}}-me">{{element}} Me</a>
+                        </li>
+                    </button>
+                }
+
+
+            }@else if (element === 'Home') {
                 <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                    <a>{{element}}</a>
+                    <a routerLink="">{{element}}</a>
+                </li>
+            }@else{
+                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
+                    <a routerLink="{{element.toLocaleLowerCase()}}">{{element}}</a>
+                </li>
+            }
+
+            <!-- @if(element !== 'Contact Me'){
+                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
+                    <a routerLink="hero">{{element}}</a>
                 </li>
             }
             @else{
                 <button class="p-4 rounded-lg bg-white text-black hover:bg-gray-300">
                     <li>{{element}}</li>
                 </button>
-            }
+            } -->
         }
 
     </ul>

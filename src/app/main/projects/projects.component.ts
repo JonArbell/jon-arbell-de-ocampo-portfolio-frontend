@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent,RouterLink],
   templateUrl: './projects.component.html'
 })
 

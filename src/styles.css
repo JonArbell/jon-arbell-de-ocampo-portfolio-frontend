@@ -13,6 +13,11 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+  
+
 .typing-effect {
     display: inline-block;
     overflow: hidden;
