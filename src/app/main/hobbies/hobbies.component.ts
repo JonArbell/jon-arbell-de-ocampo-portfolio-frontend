@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { CardComponent } from '../../components/card/card.component';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-hobbies',
   standalone: true,
-  imports: [CardComponent, NgClass],
+  imports: [],
   templateUrl: './hobbies.component.html'
 })
 export class HobbiesComponent {
