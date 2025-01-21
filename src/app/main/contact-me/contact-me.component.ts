@@ -66,7 +66,12 @@ export class ContactMeComponent {
             const message = document.querySelector("#final-message");
             const test = 'Oops! Something went wrong while sending your message. Please check your internet connection or try again later.';
             if(message){
-              message.innerHTML = `${err.error}`;
+
+              if(err.key !== 'exception')
+                message.innerHTML = `${err.error}`;
+              else 
+                message.innerHTML = test;
+
               message.classList.add('text-orange-700');
             }
             setTimeout(()=>{
