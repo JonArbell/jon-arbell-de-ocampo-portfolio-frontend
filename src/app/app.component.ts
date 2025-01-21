@@ -11,7 +11,7 @@ import { ContactMeComponent } from './main/contact-me/contact-me.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeroSectionComponent, AboutMeComponent,ProjectsComponent,SkillsComponent,HobbiesComponent,FooterComponent, ContactMeComponent ],
+  imports: [HeroSectionComponent, AboutMeComponent,ProjectsComponent,SkillsComponent,HobbiesComponent,FooterComponent, ContactMeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

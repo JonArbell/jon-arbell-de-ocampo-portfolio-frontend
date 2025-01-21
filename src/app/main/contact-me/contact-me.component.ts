@@ -68,7 +68,7 @@ export class ContactMeComponent {
             if(message){
 
               if(err.key !== 'exception')
-                message.innerHTML = `${err.error}`;
+                message.innerHTML = `${err.json().error}`;
               else 
                 message.innerHTML = test;
 

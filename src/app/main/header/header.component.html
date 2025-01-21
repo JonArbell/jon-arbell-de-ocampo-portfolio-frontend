@@ -1,18 +1,22 @@
 
-<nav class="h-[10vh] flex items-center xl:justify-evenly">
+<nav class="h-[10vh] md:flex items-center ">
 
-    <div class="pl-4 text-white italic font-bold xs:text-base 2xl:text-2xl flex gap-2 xs:w-[35%] sm:w-[25%] justify-center">
-        <h1 class="">Jon</h1>
-        <h1 class="text-orange-700">Arbell</h1>
+    <div class="flex items-center h-full justify-between md:w-[15%]">
+        <div class="md:pl-4 text-white italic font-bold xs:text-base 2xl:text-2xl flex gap-2 xs:w-[35%] sm:w-[25%] md:w-full justify-center">
+            <h1 class="">Jon</h1>
+            <h1 class="text-orange-700">Arbell</h1>
+        </div>
+    
+        <i (click)="hamburgerClick()" class="fa fa-bars ml-auto text-white text-2xl mr-4 cursor-pointer xs:block md:hidden"></i>
     </div>
 
-    <ul class="xs:hidden  text-white xl:pl-[40%] sm:flex justify-around w-full">
+    <ul [ngClass]="isClicked ? 'xs:block' : 'xs:hidden'" class="text-white xl:pl-[40%] md:flex justify-around w-full">
 
         @for(element of header; track element){
 
             @if(element === 'Contact'){
 
-                <li >
+                <li>
                     <a class="p-4 bg-white rounded-lg  text-black hover:bg-gray-300" routerLink="" fragment="{{element.toLocaleLowerCase()}}-me">{{element}} Me</a>
                 </li>
 
@@ -21,11 +25,6 @@
                     <a routerLink="" fragment="{{element.toLocaleLowerCase()}}-me">{{element}} Me</a>
                 </li>
             }
-            <!-- @else if (element === 'Home') {
-                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                    <a routerLink="" fragment="home">{{element}}</a>
-                </li>
-            } -->
             @else if(element === 'My Skills'){
                 <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
                     <a routerLink="" fragment="my-skills">{{element}}</a>
@@ -39,8 +38,7 @@
 
         }
 
-    </ul>
 
-    <i class="fa fa-bars ml-auto text-white text-2xl mr-4 cursor-pointer xs:block sm:hidden"></i>
+    </ul>
 
 </nav>
