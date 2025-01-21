@@ -21,12 +21,15 @@ export class ContactMeComponent {
 
   http = inject(HttpClient);
 
+  hostedUrl : string = "https://jon-arbell-de-ocampo-portfolio-backend.onrender.com/api/email-inquiry";
+  localUrl : string = "http://localhost:8080/api/email-inquiry";
+
   onSubmit() : void {
 
     if(this.contactMeForm.valid){
       const contactMeValue = this.contactMeForm.value;
 
-      this.http.post('http://localhost:8080/api/email-inquiry',contactMeValue).subscribe({
+      this.http.post(this.hostedUrl,contactMeValue).subscribe({
         next : (result : any) =>{
           this.isSubmit = true;
 
