@@ -9,8 +9,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  home : string = 'Home';
-  header : string[] = ['About','Projects','My Skills','Hobbies','Contact']
 
   isClicked : boolean = false;
 

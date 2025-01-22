@@ -12,31 +12,25 @@
 
     <ul [ngClass]="isClicked ? 'xs:block' : 'xs:hidden'" class="text-white xl:pl-[40%] md:flex justify-around w-full">
 
-        @for(element of header; track element){
+        <li>
+            <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="" fragment="about-me">About Me</a>
+          </li>
 
-            @if(element === 'Contact'){
+          <li>
+            <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="" fragment="projects">Projects</a>
+          </li>
 
-                <li>
-                    <a class="p-4 bg-white rounded-lg  text-black hover:bg-gray-300" routerLink="" fragment="{{element.toLocaleLowerCase()}}-me">{{element}} Me</a>
-                </li>
+          <li>
+            <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="" fragment="my-skills">My Skills</a>
+          </li>
 
-            }@else if(element === 'About'){
-                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                    <a routerLink="" fragment="{{element.toLocaleLowerCase()}}-me">{{element}} Me</a>
-                </li>
-            }
-            @else if(element === 'My Skills'){
-                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                    <a routerLink="" fragment="my-skills">{{element}}</a>
-                </li>
-            }
-            @else{
-                <li class="flex items-center hover:underline cursor-pointer hover:text-orange-700">
-                    <a routerLink="" fragment="{{element.toLocaleLowerCase()}}">{{element}}</a>
-                </li>
-            }
+          <li>
+            <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="" fragment="hobbies">Hobbies</a>
+          </li>
 
-        }
+          <li>
+            <a class="p-4 bg-white rounded-lg  text-black hover:bg-gray-300" routerLink="" fragment="contact-me">Contact Me</a>
+          </li>
 
 
     </ul>
