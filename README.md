@@ -1,6 +1,6 @@
 # Portfolio - Jon Arbell De Ocampo
 
-Welcome to my portfolio repository! 🎉
+Welcome to my portfolio frontend repository! 🎉
 
 This repository contains the source code and assets for my personal portfolio website. The website showcases my skills, projects, and hobbies in a creative and professional way.
 
@@ -13,7 +13,7 @@ This repository contains the source code and assets for my personal portfolio we
 
 ## Visit My Portfolio
 
-Check out my live portfolio at: [Your Portfolio URL](#)
+Check out my live portfolio at: [Jon Arbell De Ocampo](https://deocampo-jon-arbell-d.netlify.app/)
 
 ## Contact Me
 
@@ -25,4 +25,4 @@ If you'd like to connect or collaborate, feel free to reach out:
 
 ---
 
-Thank you for visiting my portfolio repository! 😊
+Thank you for visiting my portfolio frontend repository! 😊
