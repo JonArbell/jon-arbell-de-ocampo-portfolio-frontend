@@ -1,8 +1,8 @@
 # Portfolio - Jon Arbell De Ocampo
 
-Welcome to my portfolio frontend repository! 🎉
+**Welcome to my portfolio frontend repository! 🎉**
 
-This repository contains the source code and assets for my personal portfolio website. The website showcases my skills, projects, and hobbies in a creative and professional way.
+This repository contains the source code and assets for the client-side application of my personal portfolio website. While my focus is on backend development, this site showcases how I integrate the frontend with backend technologies to display my skills, projects, and hobbies.
 
 ## Features
 
