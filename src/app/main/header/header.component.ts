@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,8 +8,10 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink,CommonModule],
   templateUrl: './header.component.html'
 })
-export class HeaderComponent {
+export class HeaderComponent{
 
+  @Input() isUriInHeroSection: boolean = false;
+  
   isClicked : boolean = false;
 
   hamburgerClick() : void{
@@ -17,4 +19,6 @@ export class HeaderComponent {
     this.isClicked = !this.isClicked;
 
   }
+
+  
 }

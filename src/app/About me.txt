@@ -1,0 +1,23 @@
+Overview
+A brief statement about who you are and what you do. It can combine your background, your passion for learning, and your current focus.
+
+Example:
+"I'm Lopit, a third-year Computer Science student with a strong foundation in backend development and a passion for learning new technologies. I am on a journey of continuous growth, improving my skills in web development, coding, and problem-solving."
+Core Values
+Here, you can highlight what drives you as a developer. Think of qualities that define your work ethic and approach to coding.
+
+Examples:
+Commitment to Learning: "I believe that every problem is an opportunity to learn. My journey in programming has taught me that consistency and dedication are the keys to growth."
+Creativity and Innovation: "I am passionate about combining my creative background with my technical skills to design solutions that are not only functional but also elegant."
+Collaboration: "I value teamwork and believe that great things happen when we share knowledge, challenge each other, and work together toward a common goal."
+Philosophy
+This section is where you can share your personal beliefs or mindset regarding your craft, your approach to development, and how you view challenges.
+
+Example:
+"I see programming as a never-ending learning process. Each new concept I learn is like unlocking a new level of understanding, and I embrace challenges as opportunities to evolve. I believe in writing clean, maintainable code that not only solves problems but is also easy for others to understand and build upon."
+Mission
+A statement about your goals and aspirations, both in the short-term and long-term.
+
+Examples:
+Short-term Mission: "My immediate goal is to deepen my expertise in full-stack development and to build impactful web applications using cutting-edge technologies like Spring Boot and Angular."
+Long-term Mission: "In the long run, I want to contribute to innovative software solutions that address real-world problems, whether through freelancing, working with a forward-thinking company, or even starting my own tech venture."

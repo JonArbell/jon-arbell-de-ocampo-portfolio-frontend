@@ -7,15 +7,16 @@
  * @imports HeaderComponent
  * @templateUrl ./hero-section.component.html
  */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
+import { TitleService } from '../../service/title.service';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [],
   templateUrl: './hero-section.component.html'
 })
-export class HeroSectionComponent {
+export class HeroSectionComponent{
 
 }

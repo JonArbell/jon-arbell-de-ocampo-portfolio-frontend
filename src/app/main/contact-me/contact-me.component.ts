@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { TitleService } from '../../service/title.service';
 
 @Component({
   selector: 'app-contact-me',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './contact-me.component.html'
 })
-export class ContactMeComponent {
+export class ContactMeComponent{
 
   contactMeForm : FormGroup = new FormGroup ({
     fullName : new FormControl("",[Validators.required,Validators.minLength(5)]),

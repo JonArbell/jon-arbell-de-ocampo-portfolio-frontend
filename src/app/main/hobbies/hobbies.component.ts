@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TitleService } from '../../service/title.service';
 
 @Component({
   selector: 'app-hobbies',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './hobbies.component.html'
 })
-export class HobbiesComponent {
+export class HobbiesComponent{
 
   photographs : PhotographModel[] = [
     new PhotographModel('📌Uptown Mall, BGC, Taguig City',`"If you spend too much time thinking about a thing, you'll never get it done. Make at least one definite move daily toward your goal."

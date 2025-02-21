@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
 import { RouterLink } from '@angular/router';
+import { TitleService } from '../../service/title.service';
 
 @Component({
   selector: 'app-projects',
