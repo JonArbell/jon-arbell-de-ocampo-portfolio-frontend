@@ -1,9 +1,10 @@
-<section id="footer" class="flex items-center justify-center xs:h-screen lg:h-[20vh] 2xl:px-40 xs:px-10 bg-zinc-900 ">
+<section [ngClass]="isUriInHeroSection ? 'hidden' : 'flex'"
+id="footer" class="items-center justify-center xs:h-[90vh] lg:h-[20vh] 2xl:px-40 xs:px-10 bg-zinc-900 ">
 
-  <section class="lg:flex items-center gap-5 text-gray-400 lg:w-full">
+  <section class="lg:flex items-center gap-5 text-gray-300 lg:w-full">
     <h3 class="text-xl 2xl:text-2xl 3xl:text-3xl font-black tracking-widest text-center">Keep Exploring</h3>
   
-    <hr class="h-px bg-gray-400 rotate-20 lg:rotate-90 lg:h-full lg:w-24 lg:mx-4 my-10 lg:my-0">
+    <hr class="h-px bg-gray-300 rotate-20 lg:rotate-90 lg:h-full lg:w-24 lg:mx-4 my-10 lg:my-0">
 
 
     <div class="lg:flex items-center justify-between w-full h-full">
