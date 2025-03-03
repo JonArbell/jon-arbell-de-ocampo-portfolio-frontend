@@ -12,6 +12,10 @@ export class HeaderComponent {
   
   isClicked : boolean = false;
 
+  setFalse() : void{
+    this.isClicked = false;
+  }
+
   hamburgerClick() : void{
 
     this.isClicked = !this.isClicked;

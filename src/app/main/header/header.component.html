@@ -1,6 +1,5 @@
 
-<nav [ngClass]="!isUriInHeroSection ? 'bg-zinc-800 shadow-xl' : ''"
-class="h-[10vh] md:flex items-center z-50 fixed w-full">
+<nav class="h-[7vh] xxs:bg-zinc-900 xxs:shadow-xl md:shadow-none md:bg-transparent md:flex items-center z-50 fixed w-full">
 
     <div class="flex items-center h-full justify-between md:w-[15%]">
         <div class="md:pl-4 xxs:w-[35%] sm:w-[25%] md:w-full">
@@ -10,31 +9,30 @@ class="h-[10vh] md:flex items-center z-50 fixed w-full">
             </a>
         </div>
     
-        <i (click)="hamburgerClick()" class="fa fa-bars ml-auto text-white text-2xl mr-4 cursor-pointer xxs:block md:hidden"></i>
+        <i (click)="hamburgerClick()" class="fa fa-bars ml-auto text-white text-2xl mr-4 cursor-pointer md:!hidden"></i>
     </div>
 
-    <ul [ngClass]="isClicked ? 'xxs:block' : 'xxs:hidden'" class="text-white xl:pl-[40%] md:flex justify-around w-full text-sm">
+    <ul [ngClass]="isClicked ? 'xxs:!flex h-[23vh] bg-zinc-900 px-10 flex-col gap-4' : 'xxs:hidden'" class="text-white xl:pl-[40%] xxs:hidden md:flex md:justify-around w-full text-sm ">
 
         <li>
-            <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>
-          </li>
+          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>
+        </li>
 
-          <li>
-            <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="projects">Projects</a>
-          </li>
+        <li>
+          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="projects">Projects</a>
+        </li>
 
-          <li>
-            <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="my-skills">My Skills</a>
-          </li>
+        <li>
+          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="my-skills">My Skills</a>
+        </li>
 
-          <li>
-            <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="hobbies">Hobbies</a>
-          </li>
+        <li>
+          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="hobbies">Hobbies</a>
+        </li>
 
-          <li>
-            <a class="p-4 bg-white rounded-lg  text-black hover:bg-gray-300" routerLink="contact-me">Contact Me</a>
-          </li>
-
+        <li>
+          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="contact-me">Contact Me</a>
+        </li>
 
     </ul>
 
