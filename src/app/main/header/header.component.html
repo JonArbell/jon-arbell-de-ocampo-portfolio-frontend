@@ -12,10 +12,14 @@ class="h-[7vh] xxs:bg-zinc-900 xxs:shadow-xl md:shadow-none md:bg-transparent md
             </a>
         </div>
     
-        <i (click)="hamburgerClick()" class="fa fa-bars ml-auto text-white text-2xl mr-4 cursor-pointer md:!hidden"></i>
+        <i (click)="hamburgerClick()" class="fa fa-bars ml-auto !text-2xl text-white mr-4 cursor-pointer md:!hidden"></i>
     </div>
 
-    <ul [ngClass]="isClicked ? 'xxs:!flex h-[27vh] bg-zinc-900 px-8 flex-col gap-7 justify-center' : 'xxs:hidden'" class="text-white xl:pl-[40%] xxs:hidden md:flex md:justify-around w-full md:text-sm xxs:text-xs">
+    <ul 
+    [ngClass]="isClicked ? 
+              'xxs:!flex h-[27vh] bg-zinc-900 px-8 flex-col gap-7 justify-center' : 
+              'xxs:hidden'" 
+    class="text-white xl:pl-[40%] xxs:hidden md:flex md:justify-around w-full md:text-sm xxs:text-xs">
 
         <li>
           <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>
