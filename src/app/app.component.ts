@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './main/header/header.component';
-import { FooterComponent } from "./main/footer/footer.component";
-import { filter, map } from 'rxjs';
+import { FooterComponent } from './main/footer/footer.component';
 import { Title } from '@angular/platform-browser';
+import { filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [HeaderComponent, RouterModule, FooterComponent, FooterComponent],
+  imports: [HeaderComponent, RouterModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-
 export class AppComponent implements OnInit{
+  
   title = 'Jon Arbell De Ocampo';
 
   isUriInHeroSection : boolean = false;

@@ -1,13 +1,12 @@
 import { Routes } from '@angular/router';
-import { HeroSectionComponent } from './main/hero-section/hero-section.component';
 import { AboutMeComponent } from './main/about-me/about-me.component';
 import { ContactMeComponent } from './main/contact-me/contact-me.component';
-import { ProjectsComponent } from './main/projects/projects.component';
-import { SkillsComponent } from './main/skills/skills.component';
+import { HeroSectionComponent } from './main/hero-section/hero-section.component';
 import { HobbiesComponent } from './main/hobbies/hobbies.component';
+import { MySkillsComponent } from './main/my-skills/my-skills.component';
+import { ProjectsComponent } from './main/projects/projects.component';
 
 export const routes: Routes = [
-
     {
         path : '' , 
         component : HeroSectionComponent,
@@ -30,7 +29,7 @@ export const routes: Routes = [
     },
     {
         path : 'my-skills' , 
-        component : SkillsComponent,
+        component : MySkillsComponent,
         data: { title: 'My Skills' }
     },
     {
@@ -38,6 +37,4 @@ export const routes: Routes = [
         component : HobbiesComponent,
         data: { title: 'My Hobbies' }
     }
-
 ];
-

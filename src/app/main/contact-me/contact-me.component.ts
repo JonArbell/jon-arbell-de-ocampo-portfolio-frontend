@@ -1,17 +1,14 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { TitleService } from '../../service/title.service';
+import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-me',
-  standalone: true,
   imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './contact-me.component.html'
 })
-export class ContactMeComponent{
-
+export class ContactMeComponent {
   contactMeForm : FormGroup = new FormGroup ({
     fullName : new FormControl("",[Validators.required,Validators.minLength(5)]),
     email : new FormControl("",[Validators.required,Validators.email]),
@@ -98,5 +95,4 @@ export class ContactMeComponent{
       this.contactMeForm.reset();
     }
   }
-
 }

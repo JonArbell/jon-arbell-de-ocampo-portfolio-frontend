@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
-  standalone: true,
+  standalone : true,
   imports: [CommonModule],
   templateUrl: './card.component.html'
 })
 export class CardComponent {
-
   @Input() display! : any ;
 
   hasGetTitleMethod(): boolean {
@@ -26,5 +25,4 @@ export class CardComponent {
   hasGetLocationMethod():boolean{
     return typeof this.display?.getLocation === 'function';
   }
-
 }

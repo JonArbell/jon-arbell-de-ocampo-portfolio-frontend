@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { TitleService } from '../../service/title.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about-me',
-  standalone: true,
   imports: [],
   templateUrl: './about-me.component.html'
 })

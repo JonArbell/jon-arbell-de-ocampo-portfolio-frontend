@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { TitleService } from '../../service/title.service';
 
 @Component({
-  selector: 'app-skills',
-  standalone: true,
+  selector: 'app-my-skills',
   imports: [],
-  templateUrl: './skills.component.html'
+  templateUrl: './my-skills.component.html'
 })
-export class SkillsComponent {
-
+export class MySkillsComponent {
   stacks : TechStacks[] = [
     new TechStacks('Java 23','assets/img/java.png'),
     new TechStacks('Spring Boot 3','assets/img/spring.png'),
@@ -20,7 +17,6 @@ export class SkillsComponent {
     new TechStacks('Tailwind CSS','assets/img/tailwind.png'),
     new TechStacks('GitHub','assets/img/github.png')
   ];
-
 }
 
 class TechStacks{

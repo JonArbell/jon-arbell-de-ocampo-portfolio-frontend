@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myResume": {
+    "my-portfolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-resume",
+            "outputPath": "dist/my-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,16 +25,11 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-                {
-                  "glob": "**/*",
-                  "input": "src/assets/",
-                  "output": "/assets/"
-                },
-                {
-                  "glob": "**/*",
-                  "input": "public"
-                }
-              ],
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
             "styles": [
               "src/styles.css"
             ],
@@ -50,8 +45,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -68,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "myResume:build:production"
+              "buildTarget": "my-portfolio:build:production"
             },
             "development": {
-              "buildTarget": "myResume:build:development"
+              "buildTarget": "my-portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,17 +82,12 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-             "assets": [
-                {
-                  "glob": "**/*",
-                  "input": "src/assets/",
-                  "output": "/assets/"
-                },
-                {
-                  "glob": "**/*",
-                  "input": "public"
-                }
-              ],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
             "styles": [
               "src/styles.css"
             ],
@@ -108,6 +98,6 @@
     }
   },
   "cli": {
-    "analytics": "c7ddf3b4-f5fc-4ca8-bcde-d18e8b16087d"
+    "analytics": "cd66528a-b4c4-4618-b324-d38abef99034"
   }
 }

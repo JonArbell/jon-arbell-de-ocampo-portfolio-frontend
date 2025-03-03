@@ -1,17 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
-import { RouterLink } from '@angular/router';
-import { TitleService } from '../../service/title.service';
 
 @Component({
   selector: 'app-projects',
-  standalone: true,
   imports: [CardComponent],
   templateUrl: './projects.component.html'
 })
-
 export class ProjectsComponent {
-
   projects : ProjectModel[] = [
     new ProjectModel('PEA TO-DO LIST APPLICATION','assets/img/pea.png','This is a to-do list app developed using Spring Boot, Spring Security, Vanilla JS, and Tailwind CSS. It showcases my learning in backend development.','https://pea-todo-list-application.onrender.com/'),
     new ProjectModel('Tic-tac-toe','assets/img/tictactoe.png','This is a simple Tic Tac Toe game developed using HTML, CSS, and JavaScript. The primary goal of this project is to enhance my JavaScript DOM manipulation skills.','https://jonarbell.github.io/Tic-tac-toe/'),
@@ -33,8 +28,6 @@ export class ProjectsComponent {
     if (this.currentIndex === 0) this.currentIndex = this.projects.length - 1;
      else this.currentIndex--;
   }
-  
-
 }
 
 class ProjectModel{
