@@ -3,17 +3,17 @@
 class="h-[10vh] md:flex items-center z-50 fixed w-full">
 
     <div class="flex items-center h-full justify-between md:w-[15%]">
-        <div class="md:pl-4 xs:w-[35%] sm:w-[25%] md:w-full">
-            <a routerLink="/" class="text-white italic font-extrabold xs:text-base 2xl:text-2xl flex gap-2 justify-center">
+        <div class="md:pl-4 xxs:w-[35%] sm:w-[25%] md:w-full">
+            <a routerLink="/" class="text-white italic font-extrabold xxs:text-base 2xl:text-2xl flex gap-2 justify-center">
               <h1>Jon</h1>
               <h1 class="text-orange-700">Arbell</h1>
             </a>
         </div>
     
-        <i (click)="hamburgerClick()" class="fa fa-bars ml-auto text-white text-2xl mr-4 cursor-pointer xs:block md:hidden"></i>
+        <i (click)="hamburgerClick()" class="fa fa-bars ml-auto text-white text-2xl mr-4 cursor-pointer xxs:block md:hidden"></i>
     </div>
 
-    <ul [ngClass]="isClicked ? 'xs:block' : 'xs:hidden'" class="text-white xl:pl-[40%] md:flex justify-around w-full text-sm">
+    <ul [ngClass]="isClicked ? 'xxs:block' : 'xxs:hidden'" class="text-white xl:pl-[40%] md:flex justify-around w-full text-sm">
 
         <li>
             <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>

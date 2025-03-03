@@ -1,7 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-
-*{
+@import "tailwindcss";
+/* *{
     font-family: 'Poppins', sans-serif;
+} */
+
+@theme {
+    --default-font-family: 'Montserrat', sans-serif;
+    --breakpoint-3xl: 108rem; /* 1728px */
+    --breakpoint-4xl: 120rem; /* 1920px */
+    --breakpoint-xs: 480px;
+    --breakpoint-xxs: 360px;
+    --text-14xl: 13rem;
+    --text-14xl--line-height: 1.2;
+    --text-13xl: 12rem;
+    --text-13xl--line-height: 1.2;
+    --text-12xl: 11rem;
+    --text-12xl--line-height: 1.2;
+    --text-11xl: 10rem;
+    --text-11xl--line-height: 1.2;
+    --text-10xl: 9rem;
+    --text-10xl--line-height: 1.2;
+    --text-xs: 0.70rem;
+    --text-xs--line-height: 1.2;
+    --text-xxs: 0.50rem;
+    --text-xxs--line-height: 1.2;
 }
 
 @keyframes typing {
@@ -23,10 +45,5 @@ html {
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    animation: typing 3s steps(70) infinite;
+    animation: typing 3s steps(70);
 }
-  
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
