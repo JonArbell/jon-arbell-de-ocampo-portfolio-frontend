@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ContactMeService } from '../../service/contact-me/contact-me.service';
 
 @Component({
   selector: 'app-contact-me',
@@ -9,15 +9,25 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   templateUrl: './contact-me.component.html'
 })
 export class ContactMeComponent {
+
+  constructor(
+    private contactMe : ContactMeService
+  ) {}
+
   contactMeForm : FormGroup = new FormGroup ({
     fullName : new FormControl("",[Validators.required,Validators.minLength(5)]),
     email : new FormControl("",[Validators.required,Validators.email]),
     message : new FormControl("",[Validators.required,Validators.minLength(10),Validators.maxLength(500)])
   });
 
-  isSubmit : boolean = false;
+  public hasErrors(): boolean {
+    return (this.contactMeForm.controls['fullName'].touched && !!this.contactMeForm.controls['fullName'].errors) ||
+    (this.contactMeForm.controls['email'].touched && !!this.contactMeForm.controls['email'].errors) ||
+    (this.contactMeForm.controls['message'].touched && !!this.contactMeForm.controls['message'].errors);
+  }
+  
 
-  http = inject(HttpClient);
+  isSubmit : boolean = false;
 
   hostedUrl : string = "https://jon-arbell-de-ocampo-portfolio-backend.onrender.com/api/email-inquiry";
   localUrl : string = "http://localhost:8080/api/email-inquiry";
@@ -27,7 +37,8 @@ export class ContactMeComponent {
     if(this.contactMeForm.valid){
       const contactMeValue = this.contactMeForm.value;
 
-      this.http.post(this.hostedUrl,contactMeValue).subscribe({
+      this.contactMe.sendEmail(contactMeValue)
+      .subscribe({
         next : (result : any) =>{
           this.isSubmit = true;
 
@@ -91,7 +102,7 @@ export class ContactMeComponent {
           console.log('Request completed');
         }
       });
-  
+
       this.contactMeForm.reset();
     }
   }
