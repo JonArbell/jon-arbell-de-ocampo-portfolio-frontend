@@ -1,29 +1,35 @@
-<section id="contact-me" class="flex-col xl:justify-around xs:justify-center xs:gap-4 md:gap-0 flex justify-center items-center bg-[url('./assets/img/photograph_3.jpg')] bg-no-repeat bg-cover bg-[center_65%]">
+<section id="contact-me" class="bg-[url('./assets/img/photograph_3.jpg')] bg-no-repeat bg-cover bg-[center_65%]">
 
-    <section class="3xl:p-40 3xl:px-80 xxs:p-10 md:p-20 bg-gray-200/85 3xl:h-[47vh] xs:h-[40vh] xs:flex items-center justify-center flex-col 3xl:block leading-relaxed w-full">
+    <section class="3xl:p-40 3xl:px-96 xxs:p-10 md:p-20 bg-gray-200/85 3xl:h-[47vh] xxs:h-[40vh] xxs:flex items-center justify-center flex-col 3xl:block xxs:text-center lg:text-start leading-relaxed w-full">
 
-        <h2 class="xxs:text-lg md:text-2xl 2xl:text-4xl 3xl:text-5xl mb-7 tracking-widest text-orange-700 scale-y-150">Let's Connect!</h2>
-        <p class="text-[rgba(4,47,46,1)] scale-y-[1.25] xxs:text-base 2xl:text-xl">I'd love to hear from you. Whether you have a project in mind, a question, or just want to say hello, feel free to reach out. I'm always open to exciting opportunities and collaborations.</p>
+        <h2 class="xxs:text-xl md:text-2xl 2xl:text-4xl 3xl:text-5xl mb-7 tracking-widest text-orange-700 scale-y-150 animate-slide-in">Let's Connect!</h2>
+        
+        <p class="text-[rgba(4,47,46,1)] scale-y-[1.25] xxs:text-lg 2xl:text-2xl">Let's make something great together!</p>
+
+    </section>
+
+    <section class="text-gray-300 xxs:px-10 md:px-20 xl:px-45 bg-zinc-800 w-full h-[25vh] flex items-center 3xl:p-40 3xl:px-96 md:p-20 tracking-wider" >
+        <p class="scale-y-[1.25] xxs:text-xs 2xl:text-sm">I'd love to hear from you. Whether you have a project in mind, a question, or just want to say hello, feel free to reach out. I'm always open to exciting opportunities and collaborations.</p>
     </section>
 
 
     <section [ngClass]="{
-        '3xl:h-[93vh]' : hasErrors() || isSubmit,
-        '3xl:h-[77vh]' : !hasErrors()
+        '3xl:h-[75vh]' : !hasErrors(),
+        '3xl:h-[80vh]' : hasErrors()
     }"
-    class="text-gray-300 p-20 3xl:px-80 bg-gray-300 w-full">
+    class="text-gray-300 xxs:h-screen lg:h-[90vh] xl:h-[75vh] xxs:flex 2xl:block justify-center items-center p-20 3xl:px-96 xxs:p-10 xxs:px-5 bg-gray-300 w-full md:px-20 xl:px-45">
 
-            <form [formGroup]="contactMeForm"  class="p-10 px-20 rounded-lg bg-zinc-800 2xl:h-full xs:h-full">
+            <form [formGroup]="contactMeForm" class="h-full flex flex-col xxs:justify-between p-10 xl:px-10 xxs:px-5 w-full px-20 rounded-lg bg-zinc-800">
 
-                <h2 class="font-bold text-orange-800 xs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl mb-5 tracking-wider">Start a Conversation</h2>
+                <h2 class="font-bold text-orange-800 3xl:text-2xl xxs:text-lg tracking-wider">Start a Conversation</h2>
 
                 @if(isSubmit){
                     <h4 id="final-message" class="mb-5 transition-opacity duration-3000 opacity-100"></h4>
                 }
 
-                <section class="xl:flex xxs:block h-[70%] items-center w-full gap-14 mb-5">
+                <section class="xl:flex xxs:block lg:h-[75%] xxs:h-[80%] items-center justify-center w-full 2xl:gap-10 xl:gap-4 3xl:gap-12">
 
-                    <section class="2xl:h-full min-h-full flex flex-col w-[60%] xs:h-[65%]">
+                    <section class="xl:h-full justify-start xxs:text-xs 2xl:text-sm xxs:w-full  flex flex-col w-[55%] xxs:h-[60%] xxs:mb-4 xl:mb-0">
 
                         <section class="flex items-center w-full text-black mb-5">
                             <input formControlName="fullName" name="fullName" class="outline-0 rounded-md py-2 pl-2 w-[50%] mr-2 xs:text-xs 2xl:text-base bg-gray-300" type="text" placeholder="Full name*" required>
@@ -36,58 +42,56 @@
     
                     </section>
 
-                    <section class="2xl:h-full xs:h-[25%] w-[40%] flex flex-col xs:justify-evenly sm:justify-around 2xl:justify-center lg:gap-10">
-                        <section class="xs:text-xs 2xl:text-base">
+                    <section class="xxs:h-[35%] xl:h-[45%] 2xl:w-[60%] xxs:w-full flex flex-col xxs:justify-evenly sm:justify-around 2xl:justify-center 2xl:gap-7">
+                        <section class="xxs:text-xs 2xl:text-sm">
                             <h2 class="text-orange-700 mb-2">What about pricing?</h2>
                             <p>Pricing details vary depending on the project scope, requirements, and timelines. Feel free to share your project specifics, and I'll provide a tailored quote.</p>
                         </section>
             
-                        <section class="xs:text-xs 2xl:text-base">
+                        <section class="xxs:text-xs 2xl:text-sm">
                             <h2 class="text-orange-700 mb-2">What about working status?</h2>
                             <p>I'm currently open to new opportunities and projects. If you have a project in mind, feel free to reach out.</p>
                         </section>
                     </section>
                 </section>
 
-                <div class="text-red-700 xs:text-xs 2xl:text-base">
-    
-                    @if(contactMeForm.controls['fullName'].touched || contactMeForm.controls['email'].touched || contactMeForm.controls['message'].touched){
+                @if(contactMeForm.controls['fullName'].touched || contactMeForm.controls['email'].touched || contactMeForm.controls['message'].touched){
 
-                        @if(contactMeForm.controls['fullName'].errors?.['required'] || contactMeForm.controls['email'].errors?.['required'] || contactMeForm.controls['message'].errors?.['required']){
-                            <div class="mb-5">
-                                <small>All fields are required.</small>
-                            </div>
-                        }
-                        @else if(contactMeForm.controls['fullName'].errors?.['minlength']){
-            
-                            <div class="mb-5">
-                                <small>Your full name must be at least 5 characters long.</small>
-                            </div>
-                        }
-                        @else if (contactMeForm.controls['email'].errors?.['email']) {
-                            <div class="mb-5">
-                                <small>{{'Invalid email format. Please enter a valid email address (e.g., name@example.com).'}}</small>
-                            </div>
-                        }
-                        @else if (contactMeForm.controls['message'].errors?.['minlength']) {
-                      
-                            <div class="mb-5">
-                                <small>Your message must be at least 10 characters long.</small>
-                            </div>
-                        }
-                        @else if (contactMeForm.controls['message'].errors?.['maxlength']) {
-                            
-                            <div class="mb-5">
-                                <small>Your message must be no longer than 500 characters.</small>
-                            </div>
-                        }
+                    @if(contactMeForm.controls['fullName'].errors?.['required'] || contactMeForm.controls['email'].errors?.['required'] || contactMeForm.controls['message'].errors?.['required']){
+                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                            <small>All fields are required.</small>
+                        </div>
                     }
+                    @else if(contactMeForm.controls['fullName'].errors?.['minlength']){
+        
+                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                            <small>Your full name must be at least 5 characters long.</small>
+                        </div>
+                    }
+                    @else if (contactMeForm.controls['email'].errors?.['email']) {
+                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                            <small>{{'Invalid email format. Please enter a valid email address (e.g., name@example.com).'}}</small>
+                        </div>
+                    }
+                    @else if (contactMeForm.controls['message'].errors?.['minlength']) {
+                  
+                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                            <small>Your message must be at least 10 characters long.</small>
+                        </div>
+                    }
+                    @else if (contactMeForm.controls['message'].errors?.['maxlength']) {
+                        
+                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                            <small>Your message must be no longer than 500 characters.</small>
+                        </div>
+                    }
+                }
 
-                </div>
-
-                <section class="flex items-center 2xl:gap-7 xs:gap-2 tracking-wide xs:text-xs 2xl:text-base">
-                    <button [ngClass]="contactMeForm.invalid ? '' : 'hover:bg-blue-950 cursor-pointer'" [disabled]="contactMeForm.invalid" type="submit" class="2xl:p-4 xs:p-2 rounded-md bg-blue-900 ">Send message</button>
-                    <span>I will respond after 1-2 working days.</span>
+                <section class="flex xxs:flex-col xl:flex-row xxs:h-[8.5%] xl:h-[12%] xl:items-center xl:gap-7 xxs:justify-between xl:justify-start tracking-wide xxs:text-xs 2xl:text-sm">
+                    <button [ngClass]="contactMeForm.invalid ? '' : 'hover:bg-blue-950 cursor-pointer'" [disabled]="contactMeForm.invalid" type="submit" class="xl:p-4 xxs:p-2 xxs:w-[50%] xs:w-[40%] md:w-[35%] lg:w-[30%] xl:w-[20%] shadow-md rounded-md bg-blue-900 xxs:mb-3 xl:mb-0">Send message</button>
+                    <div>
+                        <span>I will respond after 1-2 working days.</span>
+                    </div>
                 </section>
     
             </form>
