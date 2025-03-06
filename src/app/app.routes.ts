@@ -28,13 +28,13 @@ export const routes: Routes = [
         data: { title: 'My Projects' }
     },
     {
-        path : 'my-skills' , 
+        path : 'skills' , 
         component : MySkillsComponent,
-        data: { title: 'My Skills' }
+        data: { title: 'Skills' }
     },
     {
         path : 'hobbies' , 
         component : HobbiesComponent,
-        data: { title: 'My Hobbies' }
+        data: { title: 'Hobbies' }
     }
 ];
