@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -7,10 +7,25 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink, CommonModule],
   templateUrl: './header.component.html'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   @Input() isUriInHeroSection: boolean = false;
-  
+
   isClicked : boolean = false;
+
+  private clickListener!: EventListener;
+  
+  ngOnInit(): void {
+    this.clickListener = (event : Event) =>{
+
+      const hamburgerButton = document.querySelector('#hamburger-button');
+      if (!hamburgerButton?.contains(event.target as Node)) {
+        this.setFalse();
+      }
+    };
+
+    document.addEventListener('click', this.clickListener);
+
+  }
 
   setFalse() : void{
     this.isClicked = false;

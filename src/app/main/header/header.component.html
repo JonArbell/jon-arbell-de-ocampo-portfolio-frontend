@@ -12,33 +12,33 @@ class="h-[7vh] xxs:bg-zinc-900 xxs:shadow-xl md:shadow-none md:bg-transparent md
             </a>
         </div>
     
-        <i (click)="hamburgerClick()" class="fa fa-bars ml-auto !text-2xl text-white mr-4 cursor-pointer md:!hidden"></i>
+        <i id="hamburger-button" (click)="hamburgerClick()" class="fa fa-bars ml-auto !text-2xl text-white mr-4 cursor-pointer md:!hidden"></i>
     </div>
 
     <ul 
     [ngClass]="isClicked ? 
-              'xxs:!flex h-[27vh] bg-zinc-900 px-8 flex-col gap-7 justify-center shadow-xl' : 
+              'xxs:!flex min-h-[30vh] bg-zinc-900 px-7 pb-7 pt-2 flex-col justify-between shadow-xl' : 
               'xxs:hidden'" 
     class="text-white xl:pl-[40%] xxs:hidden md:flex md:justify-around w-full md:text-sm xxs:text-xs">
 
         <li>
-          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>
+          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>
         </li>
 
         <li>
-          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="projects">Projects</a>
+          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="projects">Projects</a>
         </li>
 
         <li>
-          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="skills">Skills</a>
+          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="skills">Skills</a>
         </li>
 
         <li>
-          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="hobbies">Hobbies</a>
+          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="hobbies">Hobbies</a>
         </li>
 
         <li>
-          <a (click)="setFalse()" class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="contact-me">Contact Me</a>
+          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="contact-me">Contact Me</a>
         </li>
 
     </ul>
