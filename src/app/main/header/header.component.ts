@@ -13,22 +13,18 @@ export class HeaderComponent implements OnInit{
   isClicked : boolean = false;
 
   private clickListener!: EventListener;
-  
+
   ngOnInit(): void {
     this.clickListener = (event : Event) =>{
 
       const hamburgerButton = document.querySelector('#hamburger-button');
       if (!hamburgerButton?.contains(event.target as Node)) {
-        this.setFalse();
+        this.isClicked = false;
       }
     };
 
     document.addEventListener('click', this.clickListener);
 
-  }
-
-  setFalse() : void{
-    this.isClicked = false;
   }
 
   hamburgerClick() : void{
