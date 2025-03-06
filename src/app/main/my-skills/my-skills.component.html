@@ -21,7 +21,7 @@
 
                 @for(tech of stacks; track tech){
                     <li class="xl:font-semibold xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex flex-col items-center justify-center p-4 rounded-xl bg-[#2E2E2E] shadow-xl">
-                        <img class="mb-2 xs:h-7 xs:w-7 3xl:h-16 3xl:w-16 hover:scale-110 transition-transform duration-200 brightness-125" [src]="tech.getImagePath()" [alt]="tech.getTechName() +' icon'">
+                        <img class="mb-2 xxs:h-7 xxs:w-7 md:h-10 md:w-10 xl:h-12 xl:w-12 3xl:h-16 3xl:w-16 hover:scale-110 transition-transform duration-200 brightness-125" [src]="tech.getImagePath()" [alt]="tech.getTechName() +' icon'">
         
                         <p class="text-center xs:text-xs 3xl:text-sm">{{tech.getTechName()}}</p>
                     </li>
