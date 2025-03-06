@@ -1,22 +1,35 @@
-<section id="my-skills" class="flex items-center justify-center h-[90vh] bg-gradient-to-br from-gray-800 via-orange-950 text-[#bebebe] to-gray-800 px-8 md:px-16 lg:px-40">
+<section id="my-skills" class="bg-[url('./assets/img/photograph_1.jpg')] bg-no-repeat bg-cover bg-center">
     
     <div class="w-full">
 
-        <div class="xs:mb-5 xl:mb-7 3xl:mb-10">
-            <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl text-[#bebebe] 2xl:mb-4 tracking-wider mb-5">Technical Skills</h2>
-            <p class="xl:mb-7 tracking-wide xs:text-xs 2xl:text-base xs:mb-2 text-center">The technologies I work with to bring ideas to life.</p>
+        <section class="3xl:p-40 3xl:px-96 xxs:p-10 3xl:pr-0 md:p-20 bg-gray-200/85 3xl:h-[47vh] xxs:h-[40vh] xxs:flex items-center justify-center flex-col 3xl:block leading-relaxed tracking-wider">
+            <h1 class="xxs:text-lg md:text-2xl 2xl:text-4xl 3xl:text-5xl mb-7 tracking-widest text-orange-700 scale-y-150 xxs:text-center lg:text-start">Building with Technology</h1>
+            <p class="text-[rgba(4,47,46,1)] scale-y-[1.25] xxs:text-base 2xl:text-2xl">The technologies I work with to bring ideas to life.</p>
+        </section>
+
+        <div class="flex items-center justify-center flex-col 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 bg-gray-200 h-[46vh] text-[rgba(4,47,46,1)] tracking-wider">
+            <h2 class="text-center font-bold xs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl 2xl:mb-4 tracking-wider mb-5">What I do</h2>
+            <p class="xl:mb-7 tracking-wide 2xl:text-sm xxs:text-xs xs:text-xs xs:mb-2 text-center">I am continuously learning and expanding my skills in backend development, web applications, and software engineering principles. I explore various technologies and frameworks to build efficient, scalable, and well-integrated applications while refining my problem-solving and development practices. With every project, I strive to deepen my understanding and improve my ability to create impactful software solutions.</p>
         </div>
 
-        <ul class="grid xs:place-items-center 3xl:grid-cols-9 xs:grid-cols-3 w-full mb-10 xs:gap-4">
 
-            @for(tech of stacks; track tech){
-                <li class="xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex flex-col items-center justify-center p-4 rounded-xl bg-gray-300 shadow-2xl">
-                    <img class="mb-2 xs:h-7 xs:w-7 3xl:h-20 3xl:w-20 hover:scale-110 transition-transform duration-200" [src]="tech.getImagePath()" [alt]="tech.getTechName() +' icon'">
-    
-                    <p class="text-center text-zinc-900 xs:text-xs 3xl:text-sm">{{tech.getTechName()}}</p>
-                </li>
-            }
-        </ul>
+        <section class="flex flex-col items-center xxs:justify-center xxs:gap-10 xl:gap-0 xl:justify-evenly bg-teal-950 min-h-[93.5vh] 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 tracking-wider">
+
+            <h2 class="text-gray-200 xxs:text-center xl:text-start font-bold xs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl tracking-widest">My Tech Stacks</h2>
+
+            <ul class="text-gray-200 2xl:text-sm xxs:text-xs grid h-auto xs:place-items-center grid-cols-3 w-full xxs:gap-4 xl:gap-10">
+
+                @for(tech of stacks; track tech){
+                    <li class="xl:font-semibold xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex flex-col items-center justify-center p-4 rounded-xl bg-[#2E2E2E] shadow-xl">
+                        <img class="mb-2 xs:h-7 xs:w-7 3xl:h-16 3xl:w-16 hover:scale-110 transition-transform duration-200 brightness-125" [src]="tech.getImagePath()" [alt]="tech.getTechName() +' icon'">
+        
+                        <p class="text-center xs:text-xs 3xl:text-sm">{{tech.getTechName()}}</p>
+                    </li>
+                }
+            </ul>
+        </section>
+
+        
     </div>
 </section>
 
