@@ -25,7 +25,7 @@ export const routes: Routes = [
     {
         path : 'projects' , 
         component : ProjectsComponent,
-        data: { title: 'My Projects' }
+        data: { title: 'Projects' }
     },
     {
         path : 'skills' , 
