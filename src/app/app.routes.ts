@@ -23,7 +23,7 @@ export const routes: Routes = [
         data: { title: 'Contact Me' }
     },
     {
-        path : 'projects' , 
+        path : 'personal-projects' , 
         component : ProjectsComponent,
         data: { title: 'Projects' }
     },
