@@ -2,13 +2,13 @@
     
     <div class="w-full">
 
-        <section class="3xl:px-96 3xl:py-20 xxs:px-10 xxs:gap-5 3xl:gap-10 bg-gray-200/85 3xl:h-[47vh] xxs:h-[40vh] xxs:min-h-[382.5px] 3xl:min-h-[275px] flex items-center justify-center flex-col leading-relaxed tracking-wider xxs:text-center lg:text-start">
+        <section class="3xl:px-96 3xl:py-20 xxs:px-10 xxs:gap-5 2xl:gap-10 bg-gray-200/85 3xl:h-[47vh] xxs:h-[40vh] xxs:min-h-[200px] 3xl:min-h-[275px] 2xl:min-h-[250px] flex items-center justify-center flex-col leading-relaxed tracking-wider xxs:text-center lg:text-start">
             <h1 class="xxs:text-lg md:text-2xl 3xl:self-start 2xl:text-4xl 3xl:text-5xl tracking-widest text-orange-700 scale-y-150">Building with Technology</h1>
             <p class="text-[rgba(4,47,46,1)] 3xl:self-start scale-y-[1.25] xxs:text-base 2xl:text-2xl">The technologies I work with to bring ideas to life</p>
         </section>
 
         <section 
-        class="flex items-center justify-center 3xl:py-20 xxs:gap-4 3xl:gap-10 flex-col 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 bg-gray-200 xxs:h-[39vh] 3xl:h-[46vh] xxs:min-h-[382.5px] 3xl:min-h-[250px] text-[rgba(4,47,46,1)] tracking-wider"
+        class="flex items-center justify-center 3xl:py-20 xxs:gap-4 3xl:gap-10 flex-col 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 bg-gray-200 xxs:h-[39vh] 3xl:h-[46vh] xxs:min-h-[280px] 3xl:min-h-[275px] text-[rgba(4,47,46,1)] tracking-wider"
         >
             <h2 
             class="text-center font-bold xxs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl tracking-wider"
@@ -19,14 +19,14 @@
             >I am continuously learning and expanding my skills in backend development, web applications, and software engineering principles. I explore various technologies and frameworks to build efficient, scalable, and well-integrated applications while refining my problem-solving and development practices. With every project, I strive to deepen my understanding and improve my ability to create impactful software solutions.</p>
         </section>
 
-        <section class="flex flex-col items-center xxs:justify-center xxs:gap-16 xl:gap-10 bg-teal-950 h-[93.5vh] xxs:min-h-[500px] xl:py-32 3xl:min-h-[850px] 3xl:justify-between 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 tracking-wider">
+        <section class="flex flex-col items-center xxs:justify-center xxs:gap-16 xl:gap-10 bg-teal-950 h-[93.5vh] xxs:min-h-[500px] md:min-h-[600px] xl:min-h-[700px] xl:py-32 3xl:min-h-[850px] 3xl:justify-between 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 tracking-wider">
 
             <h2 class="text-gray-200 font-bold xxs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl tracking-widest">My Tech Stacks</h2>
 
             <ul class="text-gray-200 2xl:text-sm xxs:text-xs grid h-auto grid-cols-3 w-full xxs:gap-4 xl:gap-10 place-items-center">
 
                 @for(tech of stacks; track tech){
-                    <li class="xl:font-semibold xxs:w-20 xxs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex flex-col items-center justify-center p-4 rounded-xl bg-[#2E2E2E] shadow-xl">
+                    <li class="2xl:font-semibold xxs:w-20 xxs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex flex-col items-center justify-center p-4 rounded-xl bg-[#2E2E2E] shadow-xl">
                         <img class="mb-2 xxs:h-7 xxs:w-7 md:h-10 md:w-10 xl:h-12 xl:w-12 3xl:h-16 3xl:w-16 hover:scale-110 transition-transform duration-200 brightness-125" [src]="tech.getImagePath()" [alt]="tech.getTechName() +' icon'">
         
                         <p class="text-center xxs:text-xxs lg:text-xs 2xl:text-sm">{{tech.getTechName()}}</p>
