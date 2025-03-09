@@ -1,23 +1,29 @@
 <section id="contact-me" class="bg-[url('./assets/img/photograph_3.jpg')] bg-no-repeat bg-fixed bg-center bg-cover">
 
-    <section class="3xl:p-40 3xl:px-96 xxs:p-10 md:p-20 bg-gray-200/85 3xl:h-[47vh] xxs:h-[40vh] xxs:flex items-center justify-center flex-col 3xl:block xxs:text-center lg:text-start leading-relaxed w-full">
-
-        <h2 class="xxs:text-lg md:text-2xl 2xl:text-4xl 3xl:text-5xl mb-7 tracking-widest text-orange-700 scale-y-150 animate-slide-in">Let's Connect!</h2>
-        
-        <p class="text-[rgba(4,47,46,1)] scale-y-[1.25] xxs:text-base 2xl:text-2xl">Let's make something great together!</p>
-
+    <section 
+    class="3xl:px-96 3xl:py-20 xxs:px-10 xxs:gap-7 2xl:gap-10 bg-gray-200/85 3xl:h-[47vh] xxs:h-[35vh] xxs:min-h-[200px] 3xl:min-h-[330px] flex items-center justify-center flex-col leading-relaxed tracking-wider xxs:text-center lg:text-start lg:h-[40vh] lg:min-h-[230px] 2xl:min-h-[300px]"
+    >
+        <h1 class="xxs:text-lg md:text-2xl 3xl:self-start 2xl:text-4xl 3xl:text-5xl tracking-widest text-orange-700 scale-y-125">Let's Connect!</h1>
+        <p class="text-[rgba(4,47,46,1)] 3xl:self-start scale-y-[1.25] xxs:text-sm 2xl:text-2xl">Let's make something great together!</p>
     </section>
 
-    <section class="text-[rgba(4,47,46,1)] xxs:px-10 md:px-20 xl:px-45 bg-gray-300 w-full h-[25vh] flex items-center 3xl:p-40 3xl:px-96 md:p-20 tracking-wider" >
-        <p class="scale-y-[1.25] xxs:text-xs 2xl:text-sm">I'd love to hear from you. Whether you have a project in mind, a question, or just want to say hello, feel free to reach out. I'm always open to exciting opportunities and collaborations.</p>
+    <section 
+        class="flex lg:h-[53vh] lg:min-h-[275px] items-center justify-center 3xl:py-20 xxs:gap-5 3xl:gap-10 flex-col 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 bg-gray-200 xxs:h-[58vh] xxs:min-h-[375px] 3xl:h-[46vh] 2xl:min-h-[300px] 3xl:min-h-[310px] text-[rgba(4,47,46,1)] tracking-wider"
+    >
+
+        <p 
+            class="2xl:text-sm xxs:text-xs"
+        >
+            I'd love to hear from you. Whether you have a project in mind, a question, or just want to say hello, feel free to reach out. I'm always open to exciting opportunities and collaborations.
+        </p>
     </section>
 
 
     <section [ngClass]="{
-        '3xl:h-[75vh]' : !hasErrors(),
-        '3xl:h-[80vh]' : hasErrors()
+        'xxs:min-h-[745px] xs:min-h-[685px] lg:min-h-[630px] 3xl:h-[75vh] 3xl:min-h-[618px]' : !hasErrors(),
+        '3xl:h-[80vh] 3xl:min-h-[659.19px]' : hasErrors()
     }"
-    class="text-gray-300 xxs:min-h-screen xxs:h-screen lg:min-h-[90vh] xl:min-h-[75vh] xxs:flex 2xl:block justify-center items-center p-20 3xl:px-96 xxs:p-10 xxs:px-5 bg-gray-300 w-full md:px-20 xl:px-45">
+    class="text-gray-300  xxs:h-screen xl:h-[75vh] xxs:flex 2xl:block justify-center items-center p-20 3xl:px-96 xxs:p-10 xxs:px-5 bg-gray-200 w-full md:px-20 xl:px-45">
 
             <form [formGroup]="contactMeForm" class="h-full flex flex-col xxs:justify-between p-10 xl:px-10 xxs:px-5 w-full px-20 rounded-lg bg-zinc-800">
 
@@ -32,12 +38,12 @@
                     <section class="xl:h-full justify-start xxs:text-xs 2xl:text-sm xxs:w-full  flex flex-col w-[55%] xxs:h-[60%] xxs:mb-4 xl:mb-0">
 
                         <section class="flex items-center w-full text-black mb-5">
-                            <input formControlName="fullName" name="fullName" class="outline-0 rounded-md py-2 pl-2 w-[50%] mr-2 xs:text-xs 2xl:text-base bg-gray-300" type="text" placeholder="Full name*" required>
-                            <input formControlName="email" name="email" class="outline-0 rounded-md py-2 pl-2 w-[50%] xs:text-xs 2xl:text-base bg-gray-300" type="email" placeholder="Your email address*" required>  
+                            <input formControlName="fullName" name="fullName" class="outline-0 rounded-md py-2 pl-2 w-[50%] mr-2 xs:text-xs 2xl:text-sm bg-gray-300" type="text" placeholder="Full name*" required>
+                            <input formControlName="email" name="email" class="outline-0 rounded-md py-2 pl-2 w-[50%] xs:text-xs 2xl:text-sm bg-gray-300" type="email" placeholder="Your email address*" required>  
                         </section>
             
                         <section id="panis" class="flex h-full text-black">
-                            <textarea formControlName="message" name="message" class="outline-0 w-full h-full rounded-md py-2 pl-2 xs:text-xs 2xl:text-base resize-none bg-gray-300" id="message" name="message" placeholder="Feel free to share details about your inquiry, whether it's about a project, job opportunity, or anything else you'd like to discuss.*" required></textarea>
+                            <textarea formControlName="message" name="message" class="outline-0 w-full h-full rounded-md py-2 pl-2 xs:text-xs 2xl:text-sm resize-none bg-gray-300" id="message" name="message" placeholder="Feel free to share details about your inquiry, whether it's about a project, job opportunity, or anything else you'd like to discuss.*" required></textarea>
                         </section>
     
                     </section>
