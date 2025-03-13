@@ -20,12 +20,10 @@ export class ContactMeComponent {
     message : new FormControl("",[Validators.required,Validators.minLength(10),Validators.maxLength(500)])
   });
 
-  public hasError(): boolean {
-    return (this.contactMeForm.controls['fullName'].touched && !!this.contactMeForm.controls['fullName'].errors) ||
-    (this.contactMeForm.controls['email'].touched && !!this.contactMeForm.controls['email'].errors) ||
-    (this.contactMeForm.controls['message'].touched && !!this.contactMeForm.controls['message'].errors);
-  }
-  
+  hasError = signal((this.contactMeForm.controls['fullName'].touched && !!this.contactMeForm.controls['fullName'].errors) ||
+  (this.contactMeForm.controls['email'].touched && !!this.contactMeForm.controls['email'].errors) ||
+  (this.contactMeForm.controls['message'].touched && !!this.contactMeForm.controls['message'].errors));
+
   isSubmit = signal(false);
 
   finalMessage = signal({typeOfMessage : '', message : ''});
@@ -53,12 +51,12 @@ export class ContactMeComponent {
 
           this.isSubmit.set(true);
 
-          const test = 'Oops! Something went wrong while sending your message. Please check your internet connection or try again later.';
+          const message = 'Oops! Something went wrong while sending your message. Please check your internet connection or try again later.';
 
           if(err.key !== 'exception')
             this.finalMessage.set({typeOfMessage : 'error', message : `${err.json().error}`});
           else 
-            this.finalMessage.set({typeOfMessage : 'error', message : `${test}`});
+            this.finalMessage.set({typeOfMessage : 'error', message : `${message}`});
 
           setTimeout(()=>{
 
