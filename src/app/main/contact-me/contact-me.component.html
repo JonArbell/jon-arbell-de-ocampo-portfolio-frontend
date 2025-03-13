@@ -31,9 +31,13 @@
 
                 <h2 class="font-bold text-orange-800 3xl:text-2xl xxs:text-lg tracking-wider">Start a Conversation</h2>
 
-                @if(isSubmit()){
-                    <div class="text-green-500 transition-opacity duration-3000 opacity-100 xxs:text-xs 2xl:text-sm">
-                        <small>Your message is on its way! Thank you for reaching out.</small>
+                @if(!isSubmit()){
+                    <div [ngClass]="{
+                        'text-red-700' : finalMessage().typeOfMessage == 'error',
+                        'text-green-700' : finalMessage().typeOfMessage == 'success'
+                    }"
+                    class="transition-opacity duration-3000 opacity-100 xxs:text-xs 2xl:text-sm">
+                        <small>{{finalMessage().message}}</small>
                     </div>
                     
                 }

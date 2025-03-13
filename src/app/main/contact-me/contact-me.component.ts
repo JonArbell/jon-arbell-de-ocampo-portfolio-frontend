@@ -28,6 +28,8 @@ export class ContactMeComponent {
   
   isSubmit = signal(false);
 
+  finalMessage = signal({typeOfMessage : 'success', message : 'Your message is on its way! Thank you for reaching out.'});
+
   onSubmit() : void {
 
     if(this.contactMeForm.valid){
@@ -37,49 +39,33 @@ export class ContactMeComponent {
       .subscribe({
         next : (result : any) =>{
           this.isSubmit.set(true);
+          this.finalMessage.set({typeOfMessage : 'success', message : 'Your message is on its way! Thank you for reaching out.'});
 
           setTimeout(()=>{
 
             this.isSubmit.set(false);
+            this.finalMessage.set({typeOfMessage : '', message : ''});
             
-          },4000);
-
-          setTimeout(()=>{
-            this.isSubmit.set(false);
-          },4125);
-
+          },5000);
           console.log(result);
-
         },
         error : (err :any)=>{
 
           this.isSubmit.set(true);
 
-          setTimeout(()=>{
+          const test = 'Oops! Something went wrong while sending your message. Please check your internet connection or try again later.';
 
-            const message = document.querySelector("#final-message");
-            const test = 'Oops! Something went wrong while sending your message. Please check your internet connection or try again later.';
-            if(message){
-
-              if(err.key !== 'exception')
-                message.innerHTML = `${err.json().error}`;
-              else 
-                message.innerHTML = test;
-
-              message.classList.add('text-orange-700');
-            }
-            setTimeout(()=>{
-              if(message){
-                message.classList.add('opacity-0');
-              }
-              
-            },4000);
-            
-          },50);
+          if(err.key !== 'exception')
+            this.finalMessage.set({typeOfMessage : 'error', message : `${err.json().error}`});
+          else 
+            this.finalMessage.set({typeOfMessage : 'error', message : `${test}`});
 
           setTimeout(()=>{
+
             this.isSubmit.set(false);
-          },4125);
+            this.finalMessage.set({typeOfMessage : '', message : ''});
+            
+          },5000);
 
           console.error(err);
         },
