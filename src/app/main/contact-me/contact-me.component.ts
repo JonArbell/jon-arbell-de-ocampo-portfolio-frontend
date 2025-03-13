@@ -26,11 +26,7 @@ export class ContactMeComponent {
     (this.contactMeForm.controls['message'].touched && !!this.contactMeForm.controls['message'].errors);
   }
   
-
   isSubmit : boolean = false;
-
-  hostedUrl : string = "https://jon-arbell-de-ocampo-portfolio-backend.onrender.com/api/email-inquiry";
-  localUrl : string = "http://localhost:8080/api/email-inquiry";
 
   onSubmit() : void {
 
@@ -47,7 +43,11 @@ export class ContactMeComponent {
             const message = document.querySelector("#final-message");
 
             if(message){
-              message.innerHTML = 'Your message is on its way! Thank you for reaching out.';
+
+              const success = 'Your message is on its way! Thank you for reaching out.';
+
+              console.log(success);
+              message.innerHTML = success;
               message.classList.add('text-blue-800');
             }
             setTimeout(()=>{
