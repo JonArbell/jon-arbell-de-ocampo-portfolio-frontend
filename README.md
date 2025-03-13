@@ -8,7 +8,7 @@ This repository contains the source code and assets for the client-side applicat
 
 - **About Me:** Learn more about my background and expertise.
 - **Projects Section:** Highlighting my key projects and achievements.
-- **Hobbies:** Explore my passion for photography and photo manipulation.
+- **Hobbies:** Explore my passion for photography, photo manipulation, and short filmmaking.
 - **Contact:** Reach out to me through email or LinkedIn.
 
 ## Visit My Portfolio
