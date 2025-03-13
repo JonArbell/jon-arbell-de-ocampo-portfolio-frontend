@@ -70,7 +70,7 @@
                     </section>
                 </section>
 
-                @if(contactMeForm.controls['fullName'].touched || contactMeForm.controls['email'].touched || contactMeForm.controls['message'].touched){
+                @if(contactMeForm.touched && contactMeForm.invalid){
 
                     @if(contactMeForm.controls['fullName'].errors?.['required'] && contactMeForm.controls['email'].errors?.['required'] && contactMeForm.controls['message'].errors?.['required']){
                         <div class=" text-red-700 xxs:text-xs 2xl:text-sm transition-opacity duration-3000">
