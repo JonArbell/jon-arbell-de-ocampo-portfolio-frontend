@@ -2,7 +2,7 @@
 
 **Welcome to my portfolio frontend repository! 🎉**
 
-This repository contains the source code and assets for the client-side application of my personal portfolio website. While my focus is on backend development, this site showcases how I integrate the frontend with backend technologies to display my skills, projects, and hobbies.
+This repository contains the source code and assets for the client-side application of my personal portfolio website. While my focus is on backend development, I have integrated backend functionality specifically for the "Contact Me" section, while the rest of the site showcases my skills, background, projects, and hobbies.
 
 ## Features
 
