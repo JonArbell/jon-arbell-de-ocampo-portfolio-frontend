@@ -28,7 +28,7 @@ export class ContactMeComponent {
   
   isSubmit = signal(false);
 
-  finalMessage = signal({typeOfMessage : 'success', message : 'Your message is on its way! Thank you for reaching out.'});
+  finalMessage = signal({typeOfMessage : '', message : ''});
 
   onSubmit() : void {
 
