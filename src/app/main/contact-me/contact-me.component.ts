@@ -40,24 +40,9 @@ export class ContactMeComponent {
 
           setTimeout(()=>{
 
-            const message = document.querySelector("#final-message");
-
-            if(message){
-
-              const success = 'Your message is on its way! Thank you for reaching out.';
-
-              console.log(success);
-              message.innerHTML = success;
-              message.classList.add('text-blue-800');
-            }
-            setTimeout(()=>{
-              if(message){
-                message.classList.add('opacity-0');
-              }
-              
-            },4000);
+            this.isSubmit.set(false);
             
-          },50);
+          },4000);
 
           setTimeout(()=>{
             this.isSubmit.set(false);
