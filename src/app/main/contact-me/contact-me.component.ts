@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactMeService } from '../../service/contact-me/contact-me.service';
 
@@ -20,13 +20,13 @@ export class ContactMeComponent {
     message : new FormControl("",[Validators.required,Validators.minLength(10),Validators.maxLength(500)])
   });
 
-  public hasErrors(): boolean {
+  public hasError(): boolean {
     return (this.contactMeForm.controls['fullName'].touched && !!this.contactMeForm.controls['fullName'].errors) ||
     (this.contactMeForm.controls['email'].touched && !!this.contactMeForm.controls['email'].errors) ||
     (this.contactMeForm.controls['message'].touched && !!this.contactMeForm.controls['message'].errors);
   }
   
-  isSubmit : boolean = false;
+  isSubmit = signal(false);
 
   onSubmit() : void {
 
@@ -36,7 +36,7 @@ export class ContactMeComponent {
       this.contactMe.sendEmail(contactMeValue)
       .subscribe({
         next : (result : any) =>{
-          this.isSubmit = true;
+          this.isSubmit.set(true);
 
           setTimeout(()=>{
 
@@ -60,7 +60,7 @@ export class ContactMeComponent {
           },50);
 
           setTimeout(()=>{
-            this.isSubmit = false;
+            this.isSubmit.set(false);
           },4125);
 
           console.log(result);
@@ -68,7 +68,7 @@ export class ContactMeComponent {
         },
         error : (err :any)=>{
 
-          this.isSubmit = true;
+          this.isSubmit.set(true);
 
           setTimeout(()=>{
 
@@ -93,7 +93,7 @@ export class ContactMeComponent {
           },50);
 
           setTimeout(()=>{
-            this.isSubmit = false;
+            this.isSubmit.set(false);
           },4125);
 
           console.error(err);

@@ -20,10 +20,10 @@
 
 
     <section [ngClass]="{
-        'xxs:min-h-[745px] xs:min-h-[685px] lg:min-h-[630px] 3xl:h-[75vh] 3xl:min-h-[618px]' : !hasErrors(),
-        '3xl:h-[80vh] 3xl:min-h-[659.19px]' : hasErrors()
+        'xxs:min-h-[745px] xs:min-h-[685px] lg:min-h-[630px] xl:h-[75vh] 3xl:h-[75vh] 3xl:min-h-[618px]' : !hasError() || !isSubmit(),
+        '3xl:h-[85vh] 3xl:min-h-[700px]' : hasError() || isSubmit()
     }"
-    class="text-gray-300  xxs:h-screen xl:h-[75vh] xxs:flex 2xl:block justify-center items-center p-20 3xl:px-96 xxs:p-10 xxs:px-5 bg-gray-200 w-full md:px-20 xl:px-45">
+    class="text-gray-300  xxs:h-screen xxs:flex 2xl:block justify-center items-center p-20 3xl:px-96 xxs:p-10 xxs:px-5 bg-gray-200 w-full md:px-20 xl:px-45">
 
             <form 
             (ngSubmit)="onSubmit()"
@@ -31,8 +31,11 @@
 
                 <h2 class="font-bold text-orange-800 3xl:text-2xl xxs:text-lg tracking-wider">Start a Conversation</h2>
 
-                @if(isSubmit){
-                    <small id="final-message" class="text-green-500 my-5 transition-opacity duration-3000 opacity-100"></small>
+                @if(isSubmit()){
+                    <div class="text-green-500 transition-opacity duration-3000 opacity-100 xxs:text-xs 2xl:text-sm">
+                        <small id="final-message">Test</small>
+                    </div>
+                    
                 }
 
                 <section class="xl:flex xxs:block lg:h-[75%] xxs:h-[80%] items-center justify-center w-full 2xl:gap-10 xl:gap-4 3xl:gap-12">
@@ -66,30 +69,30 @@
                 @if(contactMeForm.controls['fullName'].touched || contactMeForm.controls['email'].touched || contactMeForm.controls['message'].touched){
 
                     @if(contactMeForm.controls['fullName'].errors?.['required'] && contactMeForm.controls['email'].errors?.['required'] && contactMeForm.controls['message'].errors?.['required']){
-                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm transition-opacity duration-3000">
                             <small>All fields are required.</small>
                         </div>
                     }
                     @else if(contactMeForm.controls['fullName'].errors?.['minlength']){
         
-                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                        <div class="text-red-700 xxs:text-xs 2xl:text-sm transition-opacity duration-3000">
                             <small>Your full name must be at least 5 characters long.</small>
                         </div>
                     }
                     @else if (contactMeForm.controls['email'].errors?.['email']) {
-                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                        <div class="transition-opacity duration-3000text-red-700 xxs:text-xs 2xl:text-sm">
                             <small>{{'Invalid email format. Please enter a valid email address (e.g., name@example.com).'}}</small>
                         </div>
                     }
                     @else if (contactMeForm.controls['message'].errors?.['minlength']) {
                   
-                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                        <div class="transition-opacity duration-3000 text-red-700 xxs:text-xs 2xl:text-sm">
                             <small>Your message must be at least 10 characters long.</small>
                         </div>
                     }
                     @else if (contactMeForm.controls['message'].errors?.['maxlength']) {
                         
-                        <div class=" text-red-700 xxs:text-xs 2xl:text-sm">
+                        <div class="transition-opacity duration-3000 text-red-700 xxs:text-xs 2xl:text-sm">
                             <small>Your message must be no longer than 500 characters.</small>
                         </div>
                     }
