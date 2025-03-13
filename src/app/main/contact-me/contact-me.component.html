@@ -31,7 +31,7 @@
 
                 <h2 class="font-bold text-orange-800 3xl:text-2xl xxs:text-lg tracking-wider">Start a Conversation</h2>
 
-                @if(!isSubmit()){
+                @if(isSubmit()){
                     <div [ngClass]="{
                         'text-red-700' : finalMessage().typeOfMessage == 'error',
                         'text-green-700' : finalMessage().typeOfMessage == 'success'
