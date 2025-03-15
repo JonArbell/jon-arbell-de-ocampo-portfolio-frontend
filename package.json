@@ -1,7 +1,7 @@
 {
   "author": "Jon Arbell De Ocampo",
   "name": "my-portfolio",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
