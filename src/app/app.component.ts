@@ -29,14 +29,17 @@ export class AppComponent implements OnInit{
       .pipe(
         filter(event => event instanceof NavigationEnd),
         map(event => {
+          // Scroll to top after navigation
+          window.scrollTo(0, 0);
+
           // Extract current route
           const navEvent = event as NavigationEnd;
           const currentUri = navEvent.urlAfterRedirects;
           console.log('Current Route:', currentUri);
-  
+
           // Update hero section flag
           this.isUriInHeroSection = currentUri === '/';
-  
+
           // Extract title from route
           let child = this.activatedRoute.firstChild;
           while (child?.firstChild) {
