@@ -13,9 +13,9 @@ export class MySkillsComponent {
     new TechStacks('JavaScript','/img/js.png'),
     new TechStacks('TypeScript','/img/ts.png'),
     new TechStacks('Angular 19','/img/angular.png'),
-    new TechStacks('CSS','/img/css-3.png'),
     new TechStacks('Tailwind CSS','/img/tailwind.png'),
-    new TechStacks('GitHub','/img/github.png')
+    new TechStacks('GitHub','/img/github.png'),
+    new TechStacks('Postman API','https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg')
   ];
 }
 
