@@ -6,13 +6,21 @@ class="h-[7vh] min-h-[57.67px] xxs:bg-zinc-900 xxs:shadow-xl md:shadow-none md:b
 
     <div class="flex items-center h-full justify-between md:w-[15%]">
         <div class="md:pl-4 xxs:w-[35%] sm:w-[25%] md:w-full">
-            <a routerLink="/" class="text-white italic font-extrabold xxs:text-base 2xl:text-2xl flex gap-2 justify-center">
+            <a 
+            routerLink="/" 
+            class="text-white italic font-extrabold xxs:text-base 2xl:text-2xl flex gap-2 justify-center">
+
               <h1>Jon</h1>
-              <h1 class="text-orange-700">Arbell</h1>
+
+              <h1 
+              class="text-orange-700">Arbell</h1>
+
             </a>
         </div>
     
-        <i id="hamburger-button" (click)="hamburgerClick()" class="fa fa-bars ml-auto !text-2xl text-white mr-4 cursor-pointer md:!hidden"></i>
+        <i id="hamburger-button" 
+        (click)="hamburgerClick()" 
+        class="fa fa-bars ml-auto !text-2xl text-white mr-4 cursor-pointer md:!hidden"></i>
     </div>
 
     <ul 
@@ -22,23 +30,33 @@ class="h-[7vh] min-h-[57.67px] xxs:bg-zinc-900 xxs:shadow-xl md:shadow-none md:b
     class="text-white xl:pl-[40%] xxs:hidden md:flex md:justify-around w-full md:text-sm xxs:text-xs">
 
         <li>
-          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>
+          <a 
+          routerLinkActive ="text-orange-700"
+          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>
         </li>
 
         <li>
-          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="personal-projects">Projects</a>
+          <a 
+          routerLinkActive ="text-orange-700"
+          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="personal-projects">Projects</a>
         </li>
 
         <li>
-          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="skills">Skills</a>
+          <a 
+          routerLinkActive ="text-orange-700"
+          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="skills">Skills</a>
         </li>
 
         <li>
-          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="hobbies">Hobbies</a>
+          <a 
+          routerLinkActive ="text-orange-700"
+          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="hobbies">Hobbies</a>
         </li>
 
         <li>
-          <a class="flex items-center hover:underline cursor-pointer hover:text-orange-700" routerLink="contact-me">Contact Me</a>
+          <a 
+          routerLinkActive ="text-orange-700"
+          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="contact-me">Contact Me</a>
         </li>
 
     </ul>
