@@ -16,6 +16,7 @@ This repository contains the source code and assets for the client-side of my pe
 
 ### ✨ UI Features
 - Responsive design (Tailwind CSS)
+- Smooth simple animations
 - Contact form connected to backend with real-time validation
 
 
