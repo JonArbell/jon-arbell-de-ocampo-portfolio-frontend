@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
-
+@plugin "daisyui";
 @theme {
     --default-font-family: 'Montserrat', sans-serif;
     --breakpoint-3xl: 108rem; /* 1728px */
@@ -23,7 +23,7 @@
     --text-xxs--line-height: 1.2;
     --animate-slide-in: slideIn 0.5s ease-out forwards;
 
-    
+
 }
 
 @keyframes slideIn {
@@ -55,7 +55,7 @@
 html {
     scroll-behavior: smooth;
 }
- 
+
 .typing-effect {
     overflow: hidden;
     white-space: nowrap;

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactMeService } from '../../service/contact-me/contact-me.service';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-contact-me',
@@ -28,12 +29,21 @@ export class ContactMeComponent {
 
   finalMessage = signal({typeOfMessage : '', message : ''});
 
+  isLoading = signal<boolean>(false);
+
   onSubmit() : void {
 
     if(this.contactMeForm.valid){
       const contactMeValue = this.contactMeForm.value;
 
+      this.isLoading.set(true);
+
       this.contactMe.sendEmail(contactMeValue)
+      .pipe(
+        finalize(()=>{
+          this.isLoading.set(false);
+        })
+      )
       .subscribe({
         next : (result : any) =>{
           this.isSubmit.set(true);
@@ -43,7 +53,7 @@ export class ContactMeComponent {
 
             this.isSubmit.set(false);
             this.finalMessage.set({typeOfMessage : '', message : ''});
-            
+
           },5000);
           console.log(result);
         },
@@ -55,14 +65,14 @@ export class ContactMeComponent {
 
           if(err.key !== 'exception')
             this.finalMessage.set({typeOfMessage : 'error', message : `${err.json().error}`});
-          else 
+          else
             this.finalMessage.set({typeOfMessage : 'error', message : `${message}`});
 
           setTimeout(()=>{
 
             this.isSubmit.set(false);
             this.finalMessage.set({typeOfMessage : '', message : ''});
-            
+
           },5000);
 
           console.error(err);

@@ -1,130 +1,217 @@
-<section id="projects" class="bg-[url('./assets/img/arbell_3.png')] min-h-screen bg-no-repeat bg-fixed bg-center bg-cover">
-
-    <section 
+<section
+  id="hobbies"
+  class="bg-[url('./assets/img/arbell_3.png')] min-h-screen bg-no-repeat bg-fixed bg-center bg-cover transition-all ease-in-out"
+  role="region"
+  aria-label="Projects and Hobbies"
+>
+  <!-- Intro Header -->
+  <section
     class="3xl:px-96 3xl:py-20 xxs:px-10 xxs:gap-7 2xl:gap-10 bg-gray-200/85 3xl:h-[47vh] xxs:h-[35vh] xxs:min-h-[200px] 3xl:min-h-[330px] flex items-center justify-center flex-col leading-relaxed tracking-wider xxs:text-center lg:text-start lg:h-[40vh] lg:min-h-[230px] 2xl:min-h-[300px]"
+  >
+    <h1
+      class="transition-all ease-in-out animate__animated animate__fadeInUp text-orange-700 font-bold tracking-widest text-base sm:text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl scale-y-110 will-change-transform"
+      style="opacity: 0;"
+      onanimationend="this.style.opacity='1'"
     >
-        <h1 class="xxs:text-lg md:text-2xl 3xl:self-start 2xl:text-4xl 3xl:text-5xl tracking-widest text-orange-700 scale-y-125">My Creative Side</h1>
-        <p class="text-[rgba(4,47,46,1)] 3xl:self-start scale-y-[1.25] xxs:text-sm 2xl:text-2xl">My life beyond development</p>
-    </section>
-
-    <section 
-        class="flex lg:h-[53vh] lg:min-h-[275px] items-center justify-center 3xl:py-20 xxs:gap-5 3xl:gap-10 flex-col 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 bg-gray-200 xxs:h-[58vh] xxs:min-h-[375px] 3xl:h-[46vh] 2xl:min-h-[300px] 3xl:min-h-[310px] text-[rgba(4,47,46,1)] tracking-wider"
+      My Creative Side
+    </h1>
+    <p
+      class="transition-all ease-in-out animate__animated animate__fadeInRight mt-2 text-[rgba(4,47,46,1)] text-xs sm:text-base lg:text-lg will-change-transform animate__delay-1s"
+      style="opacity: 0;"
+      onanimationend="this.style.opacity='1'"
     >
+      My life beyond development
+    </p>
+  </section>
 
-        <p 
-            class="2xl:text-sm xxs:text-xs"
-        >
-            Welcome to my hobbies section! This is where I showcase my creativity and the things I enjoy doing in my free time. Whether it's exploring new ideas, experimenting with different techniques, or simply creating for fun, each piece reflects my passion for self-expression. Feel free to explore and see what inspires me!
-        </p>
+  <!-- Intro Paragraph -->
+  <section
+    class=" flex lg:h-[53vh] lg:min-h-[275px] items-center justify-center 3xl:py-20 xxs:gap-5 3xl:gap-10 flex-col 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 bg-gray-200 xxs:h-[58vh] xxs:min-h-[375px] 3xl:h-[46vh] 2xl:min-h-[300px] 3xl:min-h-[310px] text-[rgba(4,47,46,1)] tracking-wider"
+  >
+    <p
+      class="animate__delay-1s transition-all ease-in-out animate__animated animate__fadeInLeft animate__delay-0.75s text-xs sm:text-base xl:text-lg max-w-4xl text-center lg:text-left will-change-transform"
+      style="opacity: 0;"
+      onanimationend="this.style.opacity='1'"
+    >
+      Welcome to my hobbies section! This is where I showcase my creativity and the things I enjoy doing in my free time. Whether it's exploring new ideas, experimenting with different techniques, or simply creating for fun, each piece reflects my passion for self-expression. Feel free to explore and see what inspires me!
+    </p>
+  </section>
+
+  <!-- Hobbies Section -->
+  <section
+    class="transition-all ease-in-out flex flex-col items-center xxs:justify-center xxs:gap-16 xl:gap-10 xl:justify-between bg-teal-950 min-h-screen 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 xxs:py-10 xl:py-28 overflow-hidden"
+    aria-label="List of hobbies"
+  >
+    <h2
+      class="transition-all ease-in-out animate__animated animate__fadeIn text-orange-800 brightness-125 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl 3xl:text-4xl tracking-widest mb-6 will-change-transform"
+      style="opacity: 0;"
+      onanimationend="this.style.opacity='1'"
+    >
+      My Hobbies
+    </h2>
+
+    <!-- PHOTOGRAPHY -->
+    <section
+      class="w-full flex flex-col text-orange-800 gap-5 items-center justify-evenly overflow-hidden"
+      aria-labelledby="photography-title"
+    >
+      <h3
+        id="photography-title"
+        class="transition-all ease-in-out animate__animated animate__fadeInLeft brightness-125 font-bold text-base sm:text-lg lg:text-xl 3xl:text-2xl tracking-widest self-start will-change-transform"
+        style="opacity: 0;"
+        onanimationend="this.style.opacity='1'"
+      >
+        Photography
+      </h3>
+      <p
+        class="transition-all ease-in-out animate__animated animate__fadeInLeft brightness-125 tracking-wider text-gray-300 text-xs sm:text-base xl:text-lg w-full xl:w-[75%] self-start will-change-transform"
+        style="opacity: 0;"
+        onanimationend="this.style.opacity='1'"
+      >
+        I focus on mobile photography, using my phone to capture images in my daily life. This allows me to explore different subjects and environments, documenting moments as I encounter them. Mobile photography offers convenience and flexibility, helping me experiment with different techniques and perspectives.
+      </p>
+      <ul
+        class="xl:grid xxs:flex flex-col items-center justify-evenly grid-cols-3 xxs:gap-2 xl:w-full place-items-center md:w-[85%] lg:w-[70%] lg:gap-5 xl:gap-2"
+        role="list"
+      >
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-[center_100%] cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/photography/photograph_1.webp"
+            alt="Photography sample 1"
+          />
+        </li>
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-[center_100%] cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/photography/photograph_2.webp"
+            alt="Photography sample 2"
+          />
+        </li>
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-[center_100%] cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/photography/photograph_3.webp"
+            alt="Photography sample 3"
+          />
+        </li>
+      </ul>
     </section>
 
-    <section class="flex flex-col items-center xxs:justify-center xxs:gap-16 xl:gap-10 xl:justify-between bg-teal-950 min-h-screen 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 xxs:py-10 xl:py-28">
-
-        <h2 class="text-orange-800 brightness-125 font-bold xxs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl tracking-widest">My Hobbies</h2>
-
-        <section class="w-full flex flex-col text-orange-800 gap-5 items-center justify-evenly">
-
-            <h3 class="brightness-125 font-bold xxs:text-base lg:text-lg 3xl:text-xl tracking-widest self-start">Photography</h3>
-
-            <p class="brightness-125 tracking-wider text-gray-300 xl:text-sm xxs:text-xs xxs:w-full xl:w-[75%] self-start">I focus on mobile photography, using my phone to capture images in my daily life. This allows me to explore different subjects and environments, documenting moments as I encounter them. Mobile photography offers convenience and flexibility, helping me experiment with different techniques and perspectives.</p>
-
-            <ul class="xl:grid xxs:flex flex-col items-center justify-evenly grid-cols-3 xxs:gap-2 xl:w-full place-items-center md:w-[85%] lg:w-[70%] lg:gap-5 xl:gap-2">
-                <li class="w-full rounded-lg ">
-                    <img 
-                    class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xxs:min-h-[164px] xs:h-[25vh] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover overflow-hidden object-[center_100%] cursor-pointer" 
-                    loading="lazy" 
-                    src="/img/photography/photograph_1.webp" >
-                </li>
-
-                <li class="w-full rounded-lg ">
-                    <img 
-                    class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xxs:min-h-[164px] xs:h-[25vh] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover overflow-hidden object-[center_100%] cursor-pointer" 
-                    loading="lazy" 
-                    src="/img/photography/photograph_2.webp" >
-                </li>
-                
-                <li class="w-full rounded-lg ">
-                    <img 
-                    class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xxs:min-h-[164px] xs:h-[25vh] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover overflow-hidden object-[center_100%] cursor-pointer" 
-                    loading="lazy" 
-                    src="/img/photography/photograph_3.webp">
-                </li>
-
-            </ul>
-
-        </section>
-
-        <section class="w-full flex flex-col text-orange-800 gap-5 min-h-1/3 items-center justify-evenly">
-
-            <h3 class="brightness-125 self-end font-bold xxs:text-base lg:text-lg 3xl:text-xl tracking-widest">Photo Manipulation</h3>
-
-            <p class="brightness-125 tracking-wider text-gray-300 xxs:text-xs xl:text-sm xxs:w-full xl:w-[75%] self-end">I enjoy transforming ordinary images into something unique through editing. By adjusting colors, blending elements, and adding creative effects, I experiment with different techniques to bring new ideas to life. It's a way to push the limits of imagination and create visuals that go beyond what the camera captures.</p>
-
-            <ul class="xl:grid xxs:flex flex-col items-center justify-evenly grid-cols-5 xl:gap-2 xl:w-full place-items-center xxs:gap-2 md:w-[85%] lg:w-[70%] lg:gap-5">
-                <li class="w-full rounded-lg">
-                    <img class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover overflow-hidden xl:object-[center_50%] xxs:object-[center_47%] cursor-pointer" 
-                    loading="lazy" 
-                    src="/img/photomani/photoMani_1.webp">
-                </li>
-
-                <li class="w-full rounded-lg">
-                    <img class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover overflow-hidden object-[center_100%] cursor-pointer" 
-                    loading="lazy" 
-                    src="/img/photomani/photoMani_2.webp">
-                </li>
-                
-                <li class="w-full rounded-lg">
-                    <img 
-                    style="object-position: 57% 20%;"
-                    class="xl:min-h-[144px] xl:h-[25vh] xxs:h-[20vh] lg:h-[30vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover overflow-hidden object-[center_100%] cursor-pointer" 
-                    loading="lazy"
-                    src="/img/photomani/photoMani_3.webp"
-                    >
-                </li>
-
-                <li class="w-full rounded-lg">
-                    <img 
-                    style="object-position: 73% 20%;"
-                    class="xl:min-h-[144px] xl:h-[25vh] xxs:h-[20vh] lg:h-[30vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg overflow-hidden shadow-lg object-cover cursor-pointer" 
-                    loading="lazy" 
-                    src="/img/photomani/photoMani_4.webp">
-                </li>
-
-                <li class="w-full rounded-lg">
-                    <img
-                    style="object-position: 0 20%;" 
-                    class="xl:min-h-[144px] xl:h-[25vh] xxs:h-[20vh] lg:h-[30vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg xl:overflow-hidden shadow-lg object-cover object-center cursor-pointer" 
-                    loading="lazy" 
-                    src="/img/photomani/photoMani_5.webp">
-                </li>
-
-            </ul>
-
-        </section>
-
-        <section class="w-full flex flex-col text-orange-800 gap-5 min-h-1/3 items-center justify-evenly">
-
-            <h3 class="brightness-125 font-bold xxs:text-base lg:text-lg 3xl:text-xl tracking-widest">Short Films</h3>
-
-            <p class="brightness-125 tracking-wider text-gray-300 xl:text-sm xxs:text-xs xxs:w-full xl:w-[75%]">Filmmaking allows me to tell stories through motion and sound. Whether it's capturing real moments or creating scripted scenes, I explore different ways to convey emotions and ideas. From planning shots to editing the final cut, every step is an opportunity to bring creativity to life.</p>
-
-            <ul class="xl:grid xxs:flex flex-col items-center justify-evenly grid-cols-2 xxs:gap-2 xl:gap-12 place-items-center md:w-[85%] lg:w-[70%] lg:gap-5 xl:w-full">
-                <li class="w-full rounded-lg">
-                    <img class="xl:min-h-[144px] 2xl:min-h-[200px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover cursor-pointer overflow-hidden object-[center_50%]" 
-                    loading="lazy" 
-                    src="/img/shortfilm/short_film_1.png">
-                </li>
-
-                <li class="w-full rounded-lg">
-                    <img class="xl:min-h-[144px] 2xl:min-h-[200px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg cursor-pointer shadow-lg object-cover overflow-hidden object-[center_100%]" 
-                    loading="lazy" 
-                    src="/img/shortfilm/short_film_2.png">
-                </li>
-
-            </ul>
-
-        </section>
-
+    <!-- PHOTO MANIPULATION -->
+    <section
+      class="w-full flex flex-col text-orange-800 gap-5 min-h-1/3 items-center justify-evenly overflow-hidden"
+      aria-labelledby="photo-manipulation-title"
+    >
+      <h3
+        id="photo-manipulation-title"
+        class="transition-all ease-in-out animate__animated animate__fadeInRight brightness-125 self-end font-bold text-base sm:text-lg lg:text-xl 3xl:text-2xl tracking-widest will-change-transform"
+        style="opacity: 0;"
+        onanimationend="this.style.opacity='1'"
+      >
+        Photo Manipulation
+      </h3>
+      <p
+        class="transition-all ease-in-out animate__animated animate__fadeInLeft brightness-125 tracking-wider text-gray-300 text-xs sm:text-base xl:text-lg w-full xl:w-[75%] self-end will-change-transform"
+        style="opacity: 0;"
+        onanimationend="this.style.opacity='1'"
+      >
+        I enjoy transforming ordinary images into something unique through editing. By adjusting colors, blending elements, and adding creative effects, I experiment with different techniques to bring new ideas to life. It's a way to push the limits of imagination and create visuals that go beyond what the camera captures.
+      </p>
+      <ul
+        class="xl:grid xxs:flex flex-col items-center justify-evenly grid-cols-5 xl:gap-2 xl:w-full place-items-center xxs:gap-2 md:w-[85%] lg:w-[70%] lg:gap-5"
+        role="list"
+      >
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-[center_50%] cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/photomani/photoMani_1.webp"
+            alt="Photo manipulation sample 1"
+          />
+        </li>
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-[center_100%] cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/photomani/photoMani_2.webp"
+            alt="Photo manipulation sample 2"
+          />
+        </li>
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            style="object-position: 57% 20%;"
+            class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-[center_100%] cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/photomani/photoMani_3.webp"
+            alt="Photo manipulation sample 3"
+          />
+        </li>
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            style="object-position: 73% 20%;"
+            class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/photomani/photoMani_4.webp"
+            alt="Photo manipulation sample 4"
+          />
+        </li>
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            style="object-position: 0 20%;"
+            class="xl:min-h-[144px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-center cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/photomani/photoMani_5.webp"
+            alt="Photo manipulation sample 5"
+          />
+        </li>
+      </ul>
     </section>
 
+    <!-- SHORT FILMS -->
+    <section
+      class="w-full flex flex-col text-orange-800 gap-5 min-h-1/3 items-center justify-evenly overflow-hidden"
+      aria-labelledby="short-films-title"
+    >
+      <h3
+        id="short-films-title"
+        class="transition-all ease-in-out animate__animated animate__fadeInLeft brightness-125 font-bold text-base sm:text-lg lg:text-xl 3xl:text-2xl tracking-widest will-change-transform"
+        style="opacity: 0;"
+        onanimationend="this.style.opacity='1'"
+      >
+        Short Films
+      </h3>
+      <p
+        class="transition-all ease-in-out animate__animated animate__fadeInRight brightness-125 tracking-wider text-gray-300 text-xs sm:text-base xl:text-lg w-full xl:w-[75%] will-change-transform"
+        style="opacity: 0;"
+        onanimationend="this.style.opacity='1'"
+      >
+        Filmmaking allows me to tell stories through motion and sound. Whether it's capturing real moments or creating scripted scenes, I explore different ways to convey emotions and ideas. From planning shots to editing the final cut, every step is an opportunity to bring creativity to life.
+      </p>
+      <ul
+        class="xl:grid xxs:flex flex-col items-center justify-evenly grid-cols-2 xxs:gap-2 xl:gap-12 place-items-center md:w-[85%] lg:w-[70%] xl:w-full lg:gap-5"
+        role="list"
+      >
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            class="xl:min-h-[144px] 2xl:min-h-[200px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-[center_50%] cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/shortfilm/short_film_1.png"
+            alt="Short film sample 1"
+          />
+        </li>
+        <li class="w-full rounded-lg overflow-hidden">
+          <img
+            class="xl:min-h-[144px] 2xl:min-h-[200px] xl:h-[25vh] lg:h-[30vh] xxs:h-[20vh] xs:h-[25vh] xxs:min-h-[164px] xs:min-h-[190px] w-full rounded-lg shadow-lg object-cover object-[center_100%] cursor-pointer will-change-transform"
+            loading="lazy"
+            src="/img/shortfilm/short_film_2.png"
+            alt="Short film sample 2"
+          />
+        </li>
+      </ul>
+    </section>
+  </section>
 </section>

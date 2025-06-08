@@ -1,64 +1,78 @@
+<nav
+  [ngClass]="{
+    '!bg-zinc-900 !shadow-xl': !isUriInHeroSection
+  }"
+  class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out"
+>
+  <div class="max-w-[1280px] mx-auto flex items-center justify-between h-[7vh] min-h-[58px] px-4 md:px-8 bg-zinc-900 md:bg-transparent">
+    <!-- Logo -->
+    <a
+      routerLink="/"
+      class="flex items-center gap-1 font-extrabold italic text-white text-base sm:text-lg md:text-xl 2xl:text-2xl"
+    >
+      <h1>Jon</h1>
+      <h1 class="text-orange-700">Arbell</h1>
+    </a>
 
-<nav [ngClass]="{
-  '!bg-zinc-900 !shadow-xl' : !isUriInHeroSection
-}"
-class="h-[7vh] min-h-[57.67px] xxs:bg-zinc-900 xxs:shadow-xl md:shadow-none md:bg-transparent md:flex items-center z-50 fixed w-full">
+    <!-- Hamburger button - shows on mobile -->
+    <button
+      id="hamburger-button"
+      (click)="hamburgerClick()"
+      aria-label="Toggle menu"
+      class="text-white text-2xl md:hidden focus:outline-none"
+    >
+      <i class="fa fa-bars"></i>
+    </button>
 
-    <div class="flex items-center h-full justify-between md:w-[15%]">
-        <div class="md:pl-4 xxs:w-[35%] sm:w-[25%] md:w-full">
-            <a 
-            routerLink="/" 
-            class="text-white italic font-extrabold xxs:text-base 2xl:text-2xl flex gap-2 justify-center">
-
-              <h1>Jon</h1>
-
-              <h1 
-              class="text-orange-700">Arbell</h1>
-
-            </a>
-        </div>
-    
-        <i id="hamburger-button" 
-        (click)="hamburgerClick()" 
-        class="fa fa-bars ml-auto !text-2xl text-white mr-4 cursor-pointer md:!hidden"></i>
-    </div>
-
-    <ul 
-    [ngClass]="isClicked ? 
-              'xxs:!flex min-h-[30vh] bg-zinc-900 px-7 pb-7 pt-2 flex-col justify-between shadow-xl' : 
-              'xxs:hidden'" 
-    class="text-white xl:pl-[40%] xxs:hidden md:flex md:justify-around w-full md:text-sm xxs:text-xs">
-
-        <li>
-          <a 
-          routerLinkActive ="text-orange-700"
-          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="about-me">About Me</a>
-        </li>
-
-        <li>
-          <a 
-          routerLinkActive ="text-orange-700"
-          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="personal-projects">Projects</a>
-        </li>
-
-        <li>
-          <a 
-          routerLinkActive ="text-orange-700"
-          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="skills">Skills</a>
-        </li>
-
-        <li>
-          <a 
-          routerLinkActive ="text-orange-700"
-          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="hobbies">Hobbies</a>
-        </li>
-
-        <li>
-          <a 
-          routerLinkActive ="text-orange-700"
-          class="flex items-center cursor-pointer hover:text-orange-700" routerLink="contact-me">Contact Me</a>
-        </li>
-
+    <!-- Nav Links -->
+    <ul
+      [ngClass]="
+        isClicked
+          ? 'flex flex-col bg-zinc-900 absolute top-[7vh] left-0 w-full px-6 py-6 gap-6 shadow-xl md:static md:flex-row md:bg-transparent md:shadow-none md:px-0 md:py-0 md:gap-8 md:items-center'
+          : 'hidden md:flex md:flex-row md:items-center md:gap-8'
+      "
+      class="text-white text-sm sm:text-base"
+    >
+      <li>
+        <a
+          routerLink="about-me"
+          routerLinkActive="text-orange-700"
+          class="block px-2 py-1 rounded hover:text-orange-700 transition-colors"
+          >About Me</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="personal-projects"
+          routerLinkActive="text-orange-700"
+          class="block px-2 py-1 rounded hover:text-orange-700 transition-colors"
+          >Projects</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="skills"
+          routerLinkActive="text-orange-700"
+          class="block px-2 py-1 rounded hover:text-orange-700 transition-colors"
+          >Skills</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="hobbies"
+          routerLinkActive="text-orange-700"
+          class="block px-2 py-1 rounded hover:text-orange-700 transition-colors"
+          >Hobbies</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="contact-me"
+          routerLinkActive="text-orange-700"
+          class="block px-2 py-1 rounded hover:text-orange-700 transition-colors"
+          >Contact Me</a
+        >
+      </li>
     </ul>
-
+  </div>
 </nav>

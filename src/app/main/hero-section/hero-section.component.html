@@ -1,34 +1,67 @@
-<div 
-id="home" 
-class="relative h-[93vh] xxs:pt-20 md:pt-0">
-    <section 
-    class=" md:w-[65%] xxs::pt-12 md:pt-28 xl:pt-40 p-4 md:pl-[5%] xl:pl-[15%]">
-        <h2 
-        class="font-bold tracking-wider xxs:text-4xl md:text-6xl text-[#D3D3D3] mb-2 xl:text-7xl">Hello,</h2>
-        
-        <div 
-        class="font-bold tracking-wider w-full xxs:text-3xl md:text-6xl flex gap-2  mb-2 xl:text-7xl">
-            <h1 
-            class="text-[#D3D3D3]">I'm</h1>
+<div
+  id="home"
+  class="relative h-[93vh] xxs:pt-20 md:pt-0 transition-all ease-in-out overflow-hidden"
+>
+  <section
+    class="md:w-[65%] xxs:pt-12 md:pt-28 xl:pt-40 p-4 md:pl-[5%] xl:pl-[15%]"
+  >
+    <!-- Animated Header -->
+    <div class="overflow-hidden">
+      <div class="animate__animated animate__fadeInDown transition-all ease-in-out">
+        <h2
+          class="font-bold tracking-wider xxs:text-4xl md:text-6xl text-[#D3D3D3] mb-2 xl:text-7xl"
+        >
+          Hello,
+        </h2>
+      </div>
+    </div>
 
-            <h1 
-            class="text-orange-700 typing-effect duration-75 ease-in-out">Jon Arbell</h1>
-        </div>
+    <!-- Animated Name -->
+    <div class="overflow-hidden">
+      <div
+        class="animate__animated animate__fadeInLeft transition-all ease-in-out font-bold tracking-wider w-full xxs:text-3xl md:text-6xl flex gap-2 mb-2 xl:text-7xl"
+      >
+        <h1 class="text-[#D3D3D3]">I'm</h1>
+        <h1 class="text-orange-700 typing-effect duration-75 ease-in-out">
+          Jon Arbell
+        </h1>
+      </div>
+    </div>
 
-        <h2 
-        class="font-bold xxs:text-xl md:text-3xl text-teal-950 mb-2 brightness-200">Aspiring Software Engineer</h2>
-        
-        <p 
-        class="xxs:w-full xl:w-[90%] md:w-[95%] xxs:text-xs md:text-base font-sans font-extralight text-[#D3D3D3] mb-2 tracking-wider">A third-year Computer Science undergraduate passionate about building scalable and efficient systems. With a strong foundation in backend development, I explore various technologies and frameworks to create well-integrated applications, striving to bridge the gap between backend logic and user-facing interfaces while continuously learning and growing into a Software Engineer.</p>
+    <!-- Animated Subtitle -->
+    <div class="overflow-hidden">
+      <h2
+        class="animate__delay-1s animate__animated animate__fadeInRight transition-all ease-in-out font-bold xxs:text-xl md:text-3xl text-teal-950 mb-2 brightness-200"
+      >
+        Aspiring Software Engineer
+      </h2>
+    </div>
 
-        <section 
-        class="text-center">
-            <a 
-            class="text-orange-700 p-4 rounded-lg xxs:text-lg xl:text-2xl underline text-center w-full hover:brightness-150" 
-            href="resume.pdf" 
-            download="De Ocampo, Jon Arbell D.pdf"
-            >Download my Resume</a>
-        </section>
+    <!-- Animated Paragraph -->
+    <div class="overflow-hidden">
+      <p
+        class="animate__animated animate__fadeInUp transition-all ease-in-out xxs:w-full xl:w-[90%] md:w-[95%] xxs:text-xs md:text-base font-sans font-extralight text-[#D3D3D3] mb-2 tracking-wider"
+      >
+        A third-year Computer Science undergraduate passionate about building
+        scalable and efficient systems. With a strong foundation in backend
+        development, I explore various technologies and frameworks to create
+        well-integrated applications, striving to bridge the gap between backend
+        logic and user-facing interfaces while continuously learning and growing
+        into a Software Engineer.
+      </p>
+    </div>
 
+    <!-- Animated CTA -->
+    <section class="text-center overflow-hidden">
+      <div class="animate__animated animate__fadeInUp transition-all ease-in-out">
+        <a
+          class="text-orange-700 p-4 rounded-lg xxs:text-lg xl:text-2xl underline text-center w-full hover:brightness-150"
+          href="resume.pdf"
+          download="De Ocampo, Jon Arbell D.pdf"
+        >
+          Download my Resume
+        </a>
+      </div>
     </section>
+  </section>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './main/header/header.component';
 import { FooterComponent } from './main/footer/footer.component';
@@ -12,10 +12,10 @@ import { filter, map } from 'rxjs';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-  
+
   title = 'Jon Arbell De Ocampo';
 
-  isUriInHeroSection : boolean = false;
+  isUriInHeroSection = signal<boolean>(false);
 
   constructor(
     private titleService: Title,
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit{
           console.log('Current Route:', currentUri);
 
           // Update hero section flag
-          this.isUriInHeroSection = currentUri === '/';
+          this.isUriInHeroSection.set(currentUri === '/')
 
           // Extract title from route
           let child = this.activatedRoute.firstChild;

@@ -1,43 +1,87 @@
-<section id="my-skills" class="bg-[url('./assets/img/photograph_1.jpg')] bg-no-repeat bg-fixed bg-center bg-cover">
-    
-    <div class="w-full">
+<section
+  id="my-skills"
+  class="transition-all ease-in-out bg-[url('./assets/img/photograph_1.jpg')] bg-no-repeat bg-fixed bg-center bg-cover"
+>
+  <div class="w-full transition-all ease-in-out">
 
-        <section class="3xl:px-96 3xl:py-20 xxs:px-10 xxs:gap-7 2xl:gap-10 bg-gray-200/85 3xl:h-[47vh] xxs:h-[35vh] xxs:min-h-[200px] 3xl:min-h-[330px] flex items-center justify-center flex-col leading-relaxed tracking-wider xxs:text-center lg:text-start lg:h-[40vh] lg:min-h-[230px] 2xl:min-h-[300px]">
-            <h1 class="xxs:text-lg md:text-2xl 3xl:self-start 2xl:text-4xl 3xl:text-5xl tracking-widest text-orange-700 scale-y-125">Building with Technology</h1>
-            <p class="text-[rgba(4,47,46,1)] 3xl:self-start scale-y-[1.25] xxs:text-sm 2xl:text-2xl">The technologies I work with to bring ideas to life</p>
-        </section>
+    <!-- Intro Section -->
+    <section
+      class="transition-all ease-in-out 3xl:px-96 3xl:py-20 xxs:px-10 xxs:gap-7 2xl:gap-10 bg-gray-200/85 3xl:h-[47vh] xxs:h-[35vh] xxs:min-h-[200px] 3xl:min-h-[330px] flex items-center justify-center flex-col leading-relaxed tracking-wider xxs:text-center lg:text-start lg:h-[40vh] lg:min-h-[230px] 2xl:min-h-[300px]"
+    >
+      <h1 class="text-orange-700 font-bold tracking-widest text-2xl sm:text-3xl lg:text-4xl 3xl:text-5xl scale-y-110 animate__animated animate__fadeInUp">
+        Showcasing My Work
+      </h1>
+      <p class="mt-2 text-[rgba(4,47,46,1)] text-base sm:text-lg lg:text-xl animate__animated animate__fadeInUp animate__delay-1s">
+        Building with Technology.
+      </p>
+    </section>
 
-        <section 
-        class="flex lg:h-[53vh] lg:min-h-[275px] items-center justify-center 3xl:py-20 xxs:gap-5 3xl:gap-10 flex-col 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 bg-gray-200 xxs:h-[58vh] xxs:min-h-[375px] 3xl:h-[46vh] 2xl:min-h-[300px] 3xl:min-h-[310px] text-[rgba(4,47,46,1)] tracking-wider"
-        >
-            <h2 
-            class="xl:self-start xxs:self-center font-bold xxs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl"
-            >What I do</h2>
+    <!-- What I Do Section -->
+    <section
+      class="transition-all ease-in-out flex flex-col items-center justify-center
+             xxs:gap-5 3xl:gap-10 3xl:py-20
+             3xl:px-96 xxs:px-6 md:px-20 xl:px-40
+             bg-gray-200 text-[rgba(4,47,46,1)] tracking-wider
+             xxs:h-[58vh] xxs:min-h-[375px] lg:h-[53vh] lg:min-h-[275px]
+             3xl:h-[46vh] 2xl:min-h-[300px] 3xl:min-h-[310px]"
+    >
+      <h2
+        class="font-bold
+               xxs:text-xl md:text-2xl lg:text-3xl 3xl:text-4xl
+               self-center max-w-full lg:max-w-none animate__animated animate__fadeInUp"
+      >
+        What I do
+      </h2>
 
-            <p 
-                class="2xl:text-sm xxs:text-xs"
-            >
-                I am passionate about backend development, continuously refining my skills to build secure, scalable, and efficient applications. I specialize in designing REST APIs, optimizing system performance, and integrating technologies for seamless solutions. While backend is my primary focus, I explore frontend frameworks like Angular to create well-rounded applications. I strive to write clean code, follow best practices, and develop impactful software that drives efficiency and innovation.
+      <p class="xxs:text-xs 2xl:text-sm max-w-4xl text-center lg:text-left mt-2 lg:mt-4 animate__animated animate__fadeInUp animate__delay-1s">
+        I am passionate about backend development, continuously refining my skills
+        to build secure, scalable, and efficient applications. My core expertise lies in
+        building REST APIs with Spring Boot, optimizing system performance, and integrating
+        technologies for seamless backend solutions. On the frontend, I primarily work with
+        Angular to create dynamic user interfaces, but I also build modern and responsive
+        apps using Vue 3 JS. I strive to write clean, maintainable code, follow best
+        practices, and develop impactful software that drives efficiency and innovation.
+      </p>
+    </section>
+
+    <!-- Tech Stacks Section -->
+    <section
+      class="transition-all ease-in-out flex flex-col items-center justify-center gap-12 xl:justify-between
+             bg-teal-950 text-gray-200 tracking-wider
+             xxs:px-6 md:px-20 xl:px-40 3xl:px-96 xl:py-32
+             h-[93vh] xxs:min-h-[550px] md:min-h-[600px] xl:min-h-[700px] 3xl:min-h-[850px]"
+    >
+      <h2
+        class="font-bold tracking-widest
+               xxs:text-xl md:text-2xl lg:text-3xl 3xl:text-4xl self-center max-w-full lg:max-w-none animate__animated animate__fadeInDown"
+      >
+        My Tech Stacks
+      </h2>
+
+      <ul
+        class="grid grid-cols-3 gap-4 xl:gap-10 w-full max-w-6xl place-items-center
+               xxs:text-xs 2xl:text-sm mt-6"
+      >
+        @for(tech of stacks; track tech){
+          <li
+            class="flex flex-col items-center justify-center
+                   w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32
+                   p-4 rounded-xl bg-[#2E2E2E] shadow-xl
+                   transition-transform duration-200 hover:scale-110
+                   animate__animated animate__zoomIn"
+          >
+            <img
+              class="mb-2 brightness-125
+                     xxs:h-7 xxs:w-7 md:h-10 md:w-10 xl:h-12 xl:w-12 3xl:h-16 3xl:w-16"
+              [src]="tech.getImagePath()"
+              [alt]="tech.getTechName() + ' icon'"
+            />
+            <p class="text-center xxs:text-xxs lg:text-xs 2xl:text-sm">
+              {{ tech.getTechName() }}
             </p>
-        </section>
-
-        <section class="flex flex-col items-center xxs:justify-center xxs:gap-16 xl:gap-10 bg-teal-950 h-[93vh] xxs:min-h-[550px] md:min-h-[600px] xl:min-h-[700px] xl:py-32 3xl:min-h-[850px] 3xl:justify-between 3xl:px-96 xxs:px-10 md:px-20 xl:px-45 tracking-wider">
-
-            <h2 class="text-gray-200 font-bold xxs:text-xl lg:text-3xl md:text-2xl 3xl:text-4xl tracking-widest">My Tech Stacks</h2>
-
-            <ul class="text-gray-200 2xl:text-sm xxs:text-xs grid h-auto grid-cols-3 w-full xxs:gap-4 xl:gap-10 place-items-center ">
-
-                @for(tech of stacks; track tech){
-                    <li class="2xl:font-semibold xxs:w-20 xxs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex flex-col items-center justify-center p-4 rounded-xl bg-[#2E2E2E] shadow-xl">
-                        <img class="mb-2 xxs:h-7 xxs:w-7 md:h-10 md:w-10 xl:h-12 xl:w-12 3xl:h-16 3xl:w-16 hover:scale-110 transition-transform duration-200 brightness-125" [src]="tech.getImagePath()" [alt]="tech.getTechName() +' icon'">
-        
-                        <p class="text-center xxs:text-xxs lg:text-xs 2xl:text-sm">{{tech.getTechName()}}</p>
-                    </li>
-                }
-            </ul>
-        </section>
-
-        
-    </div>
+          </li>
+        }
+      </ul>
+    </section>
+  </div>
 </section>
-
