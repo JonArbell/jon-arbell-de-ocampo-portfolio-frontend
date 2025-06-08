@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit{
 
       const hamburgerButton = document.querySelector('#hamburger-button');
       if (!hamburgerButton?.contains(event.target as Node)) {
-        this.isClicked.set(!this.isClicked())
+        this.isClicked.set(false)
       }
     };
 
