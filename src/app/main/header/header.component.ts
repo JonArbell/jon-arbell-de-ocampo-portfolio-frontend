@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class HeaderComponent implements OnInit{
   @Input() isUriInHeroSection: boolean = false;
 
-  isClicked : boolean = false;
+  isClicked = signal<boolean>(false);
 
   private clickListener!: EventListener;
 
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit{
 
       const hamburgerButton = document.querySelector('#hamburger-button');
       if (!hamburgerButton?.contains(event.target as Node)) {
-        this.isClicked = false;
+        this.isClicked.set(!this.isClicked())
       }
     };
 
@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit{
 
   hamburgerClick() : void{
 
-    this.isClicked = !this.isClicked;
+    this.isClicked.set(!this.isClicked())
 
   }
 }
