@@ -33,7 +33,7 @@
         What I do
       </h2>
 
-      <p class="xxs:text-xs 2xl:text-sm max-w-4xl text-center lg:text-left mt-2 lg:mt-4 animate__animated animate__fadeInUp animate__delay-1s">
+      <p class="text-xs md:text-base max-w-4xl text-center lg:text-left mt-2 lg:mt-4 animate__animated animate__fadeInUp animate__delay-1s">
         I am passionate about backend development, continuously refining my skills
         to build secure, scalable, and efficient applications. My core expertise lies in
         building REST APIs with Spring Boot, optimizing system performance, and integrating
@@ -60,7 +60,7 @@
 
       <ul
         class="grid grid-cols-3 gap-4 xl:gap-10 w-full max-w-6xl place-items-center
-               xxs:text-xs 2xl:text-sm mt-6"
+               text-xs 2xl:text-sm mt-6"
       >
         @for(tech of stacks; track tech){
           <li
@@ -76,7 +76,7 @@
               [src]="tech.getImagePath()"
               [alt]="tech.getTechName() + ' icon'"
             />
-            <p class="text-center xxs:text-xxs lg:text-xs 2xl:text-sm">
+            <p class="text-center text-xxs lg:text-xs 2xl:text-sm">
               {{ tech.getTechName() }}
             </p>
           </li>
