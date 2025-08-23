@@ -5,7 +5,7 @@
   />
   <div>
     <section
-      class="text-white w-full pt-48 xl:pt-40 px-4 md:px-32 sm:px-20 xl:px-52 overflow-hidden"
+      class="text-white w-full pt-36 xl:pt-40 px-4 md:px-32 sm:px-20 xl:px-52 overflow-hidden"
     >
       <div
         class="max-w-7xl mx-auto flex flex-col items-start justify-center space-y-4 lg:space-y-5"
