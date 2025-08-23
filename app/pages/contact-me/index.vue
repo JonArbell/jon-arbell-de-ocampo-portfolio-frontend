@@ -120,7 +120,7 @@
 <script lang="ts" setup>
 import Head from "~/components/Head.vue";
 import Custom from "~/layouts/Custom.vue";
-import { contactMeService } from "./contact-me.service";
+import { contactMeService } from "./service/contact-me.service";
 import Toast from "~/components/Toast.vue";
 
 const toastRef = ref<InstanceType<typeof Toast>>();
