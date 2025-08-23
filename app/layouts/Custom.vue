@@ -6,7 +6,7 @@
     ]"
     :style="`background-image: url('${image}');`"
   >
-    <div class="h-auto w-auto overflow-x-hidden bg-gray-200/80">
+    <div class="h-auto w-auto bg-gray-200/80">
       <slot />
     </div>
     <Footer />
