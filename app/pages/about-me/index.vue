@@ -20,7 +20,7 @@
       <!-- Intro Section -->
       <section>
         <div
-          class="flex items-center justify-center gap-10 xl:gap-4 flex-col-reverse xl:flex-row xl:h-96 bg-gray-50 w-full px-4 py-10 xl:px-52"
+          class="flex items-center justify-center gap-10 xl:gap-4 flex-col-reverse xl:flex-row xl:h-96 bg-gray-50 max-w-full px-4 py-10 xl:px-52"
         >
           <!-- Text Motion -->
           <Motion
@@ -66,7 +66,7 @@
       <!-- Overview -->
       <section>
         <div
-          class="flex flex-col items-center text-xs 2xl:text-sm text-white gap-4 xl:h-96 bg-orange-900 w-full px-4 xl:px-52 py-16"
+          class="flex flex-col items-center text-xs 2xl:text-sm text-white gap-4 xl:h-96 bg-orange-900 max-w-full px-4 xl:px-52 py-16"
         >
           <Motion
             :initial="{ opacity: 0, y: 50 }"
@@ -97,10 +97,10 @@
       </section>
 
       <!-- Journey + Problem-Solver -->
-      <section class="bg-zinc-900 w-full">
+      <section class="bg-zinc-900 max-w-full">
         <!-- Journey -->
         <div
-          class="flex items-center gap-7 xl:flex-row flex-col justify-center w-full p-15 pb-0 px-4 xl:px-52"
+          class="flex items-center gap-7 xl:flex-row flex-col justify-center max-w-full p-15 pb-0 px-4 xl:px-52"
         >
           <Motion
             class="flex flex-col flex-1 gap-4 tracking-widest text-xs 2xl:text-sm"
@@ -145,7 +145,7 @@
 
         <!-- Problem Solver -->
         <div
-          class="flex items-center gap-7 xl:flex-row flex-col-reverse justify-center w-full p-15 px-4 xl:px-52"
+          class="flex items-center gap-7 xl:flex-row flex-col-reverse justify-center max-w-full p-15 px-4 xl:px-52"
         >
           <Motion
             class="flex-1 items-center justify-center flex"
@@ -191,10 +191,10 @@
       <!-- Boxes -->
       <section>
         <div
-          class="flex items-center gap-7 xl:flex-row flex-col-reverse justify-center w-full p-15 px-4 xl:px-52"
+          class="flex items-center gap-7 xl:flex-row flex-col-reverse justify-center max-w-full p-15 px-4 xl:px-52"
         >
           <ul
-            class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 items-stretch w-full"
+            class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 items-stretch max-w-full"
           >
             <li v-for="(item, index) in boxes" :key="index" class="flex">
               <Motion
