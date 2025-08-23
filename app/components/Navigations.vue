@@ -3,7 +3,7 @@
     <nav>
       <ul>
         <div
-          class="animate__animated lg:animate__fadeInLeft animate_slow animate__fadeInDown xl:text-sm md:text-xs w-full text-[10px] space-y-7 lg:space-y-0 py-4 lg:py-0 px-10 lg:px-0 lg:flex items-center justify-around"
+          class="xl:text-sm md:text-xs w-full text-[10px] space-y-7 lg:space-y-0 py-4 lg:py-0 px-10 lg:px-0 lg:flex items-center justify-around"
         >
           <li v-for="(nav, index) in navStore.navs" :key="index">
             <NuxtLink
