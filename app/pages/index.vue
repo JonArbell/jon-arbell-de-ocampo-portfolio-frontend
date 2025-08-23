@@ -5,57 +5,81 @@
   />
   <div>
     <section
-      class="text-white w-full animate__faster pt-48 px-4 md:px-32 sm:px-20 xl:px-52 overflow-hidden"
+      class="text-white w-full pt-48 xl:pt-40 px-4 md:px-32 sm:px-20 xl:px-52 overflow-hidden"
     >
       <div
-        class="max-w-7xl mx-auto flex flex-col items-start justify-center space-y-1 lg:space-y-3"
+        class="max-w-7xl mx-auto flex flex-col items-start justify-center space-y-4 lg:space-y-5"
       >
-        <!-- Heading -->
-        <div class="lg:space-y-3 space-y-1 text-left w-full overflow-hidden">
-          <div
-            class="animate__animated animate__fadeInDown transition-all ease-in-out"
+        <!-- Hello -->
+        <Motion
+          :initial="{ opacity: 0, y: -30 }"
+          :whileInView="{ opacity: 1, y: 0 }"
+          :viewport="{ once: true }"
+          :transition="{ duration: 0.4, ease: 'easeInOut' }"
+        >
+          <h3
+            class="text-base sm:text-lg md:text-xl lg:text-2xl font-medium tracking-wider"
           >
-            <h3
-              class="text-base sm:text-lg md:text-xl lg:text-2xl font-medium tracking-wider"
-            >
-              Hello,
-            </h3>
-          </div>
-          <div class="overflow-hidden animate__animated animate__fadeInLeft">
-            <h2
-              class="text-3xl typing-effect duration-50 transition-all ease-in-out md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-widest"
-            >
-              I'm
-              <span class="text-orange-800 brightness-150">Jon Arbell</span>
-            </h2>
-          </div>
-        </div>
+            Hello,
+          </h3>
+        </Motion>
 
-        <!-- Subheading -->
-        <div class="overflow-hidden">
+        <!-- I'm Jon Arbell -->
+        <Motion
+          :initial="{ opacity: 0, x: -50 }"
+          :whileInView="{ opacity: 1, x: 0 }"
+          :viewport="{ once: true }"
+          :transition="{ duration: 0.5, ease: 'easeInOut', delay: 0.5 }"
+        >
+          <h2
+            class="text-3xl typing-effect duration-50 transition-all ease-in-out md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-widest"
+          >
+            I'm
+            <span class="text-orange-800 brightness-150">Jon Arbell</span>
+          </h2>
+        </Motion>
+
+        <!-- Junior Backend Developer -->
+        <Motion
+          :initial="{ opacity: 0, x: 50 }"
+          :whileInView="{ opacity: 1, x: 0 }"
+          :viewport="{ once: true }"
+          :transition="{ duration: 0.5, ease: 'easeInOut', delay: 1.0 }"
+        >
           <h4
-            class="text-teal-950 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-wide brightness-150 animate__animated animate__fadeInRight animate__delay-1s transition-all ease-in-out"
+            class="text-teal-950 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-wide brightness-150"
           >
             Junior Backend Developer
           </h4>
-        </div>
+        </Motion>
 
-        <!-- Description -->
-        <div class="lg:w-[65%] overflow-hidden">
-          <small
-            class="text-[10px] brightness-75 md:text-xs xl:text-sm lg:text-lg text-white/75 max-w-4xl tracking-widef leading-relaxed animate__animated animate__fadeInUp animate__delay-2s transition-all ease-in-out"
+        <div class="lg:w-[65%]">
+          <!-- Description -->
+          <Motion
+            :initial="{ opacity: 0, y: 30 }"
+            :whileInView="{ opacity: 1, y: 0 }"
+            :viewport="{ once: true }"
+            :transition="{ duration: 0.6, ease: 'easeInOut', delay: 1.5 }"
           >
-            and a fourth-year Computer Science student at the same time. I
-            started my professional journey as a Junior Frontend Developer in
-            April 2025, where I worked on real-world projects using Vue and
-            Nuxt. As of August 1, I’ve transitioned into a Backend Developer
-            role within the same company, allowing me to dive deeper into
-            building scalable systems and robust APIs.
-          </small>
+            <small
+              class="text-[10px] brightness-75 md:text-xs xl:text-sm lg:text-lg text-white/75 max-w-4xl tracking-wide leading-relaxed"
+            >
+              and a fourth-year Computer Science student at the same time. I
+              started my professional journey as a Junior Frontend Developer in
+              April 2025, where I worked on real-world projects using Vue and
+              Nuxt. As of August 1, I’ve transitioned into a Backend Developer
+              role within the same company, allowing me to dive deeper into
+              building scalable systems and robust APIs.
+            </small>
+          </Motion>
 
-          <!-- Resume Button -->
-          <div
-            class="w-full text-center animate__animated animate__fadeInUp animate__delay-3s transition-all ease-in-out"
+          <!-- Resume Button: Boom Effect -->
+          <Motion
+            :initial="{ opacity: 0, scale: 0.95 }"
+            :whileInView="{ opacity: 1, scale: 1 }"
+            :viewport="{ once: true, amount: 0.5 }"
+            :transition="{ duration: 0.7, ease: 'easeInOut', delay: 3.0 }"
+            class="w-full text-center mt-6"
           >
             <a
               href="/public/resume.pdf"
@@ -64,7 +88,7 @@
             >
               Download CV
             </a>
-          </div>
+          </Motion>
         </div>
       </div>
     </section>

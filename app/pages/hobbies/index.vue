@@ -6,6 +6,7 @@
         :description="`Explore Jon's projects, tech stack, and resume. Specializing in Nuxt, Angular, Spring Boot and Laravel.`"
       />
 
+      <!-- Hero Section -->
       <section>
         <div>
           <Hero
@@ -16,105 +17,174 @@
         </div>
       </section>
 
+      <!-- Intro -->
       <section>
         <div
           class="flex items-center justify-center gap-10 xl:gap-4 flex-col xl:flex-row h-80 xl:h-96 bg-gray-50 w-full px-4 py-10 xl:px-52"
         >
-          <p class="text-xs 2xl:text-sm tracking-widest text-teal-950">
-            Welcome to my hobbies section! This is where I showcase my
-            creativity and the things I enjoy doing in my free time. Whether
-            it's exploring new ideas, experimenting with different techniques,
-            or simply creating for fun, each piece reflects my passion for
-            self-expression. Feel free to explore and see what inspires me!
-          </p>
+          <Motion
+            :initial="{ opacity: 0, y: 40 }"
+            :while-in-view="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.7, ease: 'easeInOut' }"
+            viewport="{ once: true, amount: 0.5 }"
+            class="text-xs 2xl:text-sm tracking-widest text-teal-950 text-center xl:text-left"
+          >
+            <p>
+              Welcome to my hobbies section! This is where I showcase my
+              creativity and the things I enjoy doing in my free time. Whether
+              it's exploring new ideas, experimenting with different techniques,
+              or simply creating for fun, each piece reflects my passion for
+              self-expression. Feel free to explore and see what inspires me!
+            </p>
+          </Motion>
         </div>
       </section>
 
+      <!-- Main Hobbies Section -->
       <section>
         <div
-          class="flex items-center tracking-widest text-xs 2xl:text-sm min-h-96 gap-10 flex-col justify-center w-full p-15 px-4 xl:px-52 bg-teal-950"
+          class="flex items-center tracking-widest text-xs 2xl:text-sm min-h-96 gap-14 flex-col justify-center w-full p-15 px-4 xl:px-52 bg-teal-950 text-white py-20"
         >
-          <h2 class="text-orange-700 text-xl font-semibold">My Hobbies</h2>
+          <!-- Photography -->
+          <div class="space-y-4 w-full">
+            <Motion
+              :initial="{ opacity: 0, x: -40 }"
+              :while-in-view="{ opacity: 1, x: 0 }"
+              :transition="{ duration: 0.6, ease: 'easeInOut' }"
+              viewport="{ once: true }"
+            >
+              <h3 class="text-orange-700 text-lg">Photography</h3>
+              <p>
+                I focus on mobile photography, using my phone to capture images
+                in my daily life. This allows me to explore different subjects
+                and environments, documenting moments as I encounter them.
+                Mobile photography offers convenience and flexibility, helping
+                me experiment with different techniques and perspectives.
+              </p>
+            </Motion>
 
-          <div class="space-y-4">
-            <h3 class="text-orange-700 text-lg">Photography</h3>
-            <p>
-              I focus on mobile photography, using my phone to capture images in
-              my daily life. This allows me to explore different subjects and
-              environments, documenting moments as I encounter them. Mobile
-              photography offers convenience and flexibility, helping me
-              experiment with different techniques and perspectives.
-            </p>
-            <div>
-              <ul
-                class="flex items-center justify-center flex-col xl:flex-row gap-5 w-full"
+            <ul
+              class="flex items-center justify-center flex-col xl:flex-row gap-5 w-full"
+            >
+              <li
+                class="flex-1"
+                v-for="(item, index) in photography"
+                :key="index"
               >
-                <li
-                  class="flex-1"
-                  v-for="(item, index) in photography"
-                  :key="index"
+                <Motion
+                  :initial="{ opacity: 0, scale: 0.9 }"
+                  :while-in-view="{ opacity: 1, scale: 1 }"
+                  :transition="{
+                    duration: 0.5,
+                    ease: 'easeInOut',
+                    delay: index * 0.15,
+                  }"
+                  viewport="{ once: true }"
                 >
                   <NuxtImg
+                    placeholder="blur"
                     :class="[
                       'rounded-xl shadow-xl hover:scale-105 transition-all duration-300',
                     ]"
                     :src="`/img/photography/${item}`"
                   />
-                </li>
-              </ul>
-            </div>
+                </Motion>
+              </li>
+            </ul>
           </div>
 
-          <div class="space-y-4">
-            <h3 class="text-orange-700 text-lg text-end">Photo Manipulation</h3>
-            <p>
-              I enjoy transforming ordinary images into something unique through
-              editing. By adjusting colors, blending elements, and adding
-              creative effects, I experiment with different techniques to bring
-              new ideas to life. It's a way to push the limits of imagination
-              and create visuals that go beyond what the camera captures.
-            </p>
-            <div>
-              <ul class="flex flex-col xl:flex-row gap-5 w-full">
-                <li
-                  v-for="(item, index) in photomanipulation"
-                  :key="index"
-                  class="flex-1 flex"
-                >
-                  <NuxtImg
-                    class="rounded-xl shadow-xl hover:scale-105 transition-all duration-300 w-full h-40 object-cover"
-                    :src="`/img/photomani/${item}`"
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
+          <!-- Photo Manipulation -->
+          <div class="space-y-4 w-full">
+            <Motion
+              :initial="{ opacity: 0, x: 40 }"
+              :while-in-view="{ opacity: 1, x: 0 }"
+              :transition="{ duration: 0.6, ease: 'easeInOut' }"
+              viewport="{ once: true }"
+            >
+              <h3 class="text-orange-700 text-lg text-end">
+                Photo Manipulation
+              </h3>
+              <p>
+                I enjoy transforming ordinary images into something unique
+                through editing. By adjusting colors, blending elements, and
+                adding creative effects, I experiment with different techniques
+                to bring new ideas to life. It's a way to push the limits of
+                imagination and create visuals that go beyond what the camera
+                captures.
+              </p>
+            </Motion>
 
-          <div class="space-y-4">
-            <h3 class="text-orange-700 text-lg text-center">Short Films</h3>
-            <p>
-              Filmmaking allows me to tell stories through motion and sound.
-              Whether it's capturing real moments or creating scripted scenes, I
-              explore different ways to convey emotions and ideas. From planning
-              shots to editing the final cut, every step is an opportunity to
-              bring creativity to life.
-            </p>
-            <div>
-              <ul
-                class="flex items-center justify-center flex-col xl:flex-row gap-5 w-full"
+            <ul class="flex flex-col xl:flex-row gap-5 w-full">
+              <li
+                v-for="(item, index) in photomanipulation"
+                :key="index"
+                class="flex-1 flex"
               >
-                <li
-                  v-for="(item, index) in shortFilms"
-                  :key="index"
+                <Motion
+                  :initial="{ opacity: 0, y: 40 }"
+                  :while-in-view="{ opacity: 1, y: 0 }"
+                  :transition="{
+                    duration: 0.5,
+                    ease: 'easeInOut',
+                    delay: index * 0.15,
+                  }"
+                  viewport="{ once: true }"
                   class="flex-1"
                 >
                   <NuxtImg
+                    placeholder="blur"
+                    class="rounded-xl shadow-xl hover:scale-105 transition-all duration-300 w-full h-40 object-cover"
+                    :src="`/img/photomani/${item}`"
+                  />
+                </Motion>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Short Films -->
+          <div class="space-y-4 w-full">
+            <Motion
+              :initial="{ opacity: 0, y: 40 }"
+              :while-in-view="{ opacity: 1, y: 0 }"
+              :transition="{ duration: 0.6, ease: 'easeInOut' }"
+              viewport="{ once: true }"
+            >
+              <h3 class="text-orange-700 text-lg text-center">Short Films</h3>
+              <p class="text-center">
+                Filmmaking allows me to tell stories through motion and sound.
+                Whether it's capturing real moments or creating scripted scenes,
+                I explore different ways to convey emotions and ideas. From
+                planning shots to editing the final cut, every step is an
+                opportunity to bring creativity to life.
+              </p>
+            </Motion>
+
+            <ul
+              class="flex items-center justify-center flex-col xl:flex-row gap-5 w-full"
+            >
+              <li
+                v-for="(item, index) in shortFilms"
+                :key="index"
+                class="flex-1"
+              >
+                <Motion
+                  :initial="{ opacity: 0, scale: 0.85 }"
+                  :while-in-view="{ opacity: 1, scale: 1 }"
+                  :transition="{
+                    duration: 0.5,
+                    ease: 'easeInOut',
+                    delay: index * 0.2,
+                  }"
+                  viewport="{ once: true }"
+                >
+                  <NuxtImg
+                    placeholder="blur"
                     class="rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
                     :src="`/img/shortfilm/${item}`"
                   />
-                </li>
-              </ul>
-            </div>
+                </Motion>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

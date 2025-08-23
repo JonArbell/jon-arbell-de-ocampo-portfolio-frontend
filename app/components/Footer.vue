@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-zinc-900 text-zinc-200 px-6 py-12">
     <div
-      class="w-full mx-auto flex flex-col xl:flex-row justify-between items-center gap-10"
+      class="w-full mx-auto flex flex-col xl:flex-row justify-evenly xl:justify-between items-center gap-10"
     >
       <!-- Left Brand / Tagline -->
       <div class="text-center space-y-2">

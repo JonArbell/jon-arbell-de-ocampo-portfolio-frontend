@@ -6,6 +6,7 @@
         :description="`Explore Jon's projects, tech stack, and resume. Specializing in Nuxt, Angular, Spring Boot and Laravel.`"
       />
 
+      <!-- Hero Section -->
       <section>
         <div>
           <Hero
@@ -16,12 +17,18 @@
         </div>
       </section>
 
+      <!-- Intro Section -->
       <section>
         <div
           class="flex items-center justify-center gap-10 xl:gap-4 flex-col-reverse xl:flex-row xl:h-96 bg-gray-50 w-full px-4 py-10 xl:px-52"
         >
-          <div
-            class="flex-1 text-xs 2xl:text-sm tracking-widest text-teal-950 justify-center items-center flex"
+          <!-- Text Motion -->
+          <Motion
+            class="flex-1 text-xs 2xl:text-sm tracking-widest text-teal-950 flex justify-center items-center"
+            :initial="{ opacity: 0, x: -60 }"
+            :while-in-view="{ opacity: 1, x: 0 }"
+            :transition="{ duration: 0.6, ease: 'easeInOut' }"
+            :viewport="{ once: true, amount: 0.4 }"
           >
             <p>
               I’m deeply passionate about backend development, having started my
@@ -36,40 +43,71 @@
               film making, which allow me to balance my technical work with
               artistic expression.
             </p>
-          </div>
-          <div class="flex-1 justify-center items-center flex">
+          </Motion>
+
+          <!-- Image Motion -->
+          <Motion
+            class="flex-1 flex justify-center items-center"
+            :initial="{ opacity: 0, scale: 0.8 }"
+            :while-in-view="{ opacity: 1, scale: 1 }"
+            :transition="{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }"
+            :viewport="{ once: true }"
+          >
             <NuxtImg
+              alt="Jon Arbell De Ocampo_Itomori"
               class="h-56 rounded-lg hover:scale-105 transition-all duration-300"
               src="/img/arbell_3.webp"
+              placeholder="blur"
             />
-          </div>
+          </Motion>
         </div>
       </section>
 
+      <!-- Overview -->
       <section>
         <div
-          class="flex items-center text-xs 2xl:text-sm justify-center gap-4 text-white flex-col xl:h-96 bg-orange-900 w-full p-15 px-4 xl:px-52"
+          class="flex flex-col items-center text-xs 2xl:text-sm text-white gap-4 xl:h-96 bg-orange-900 w-full px-4 xl:px-52 py-16"
         >
-          <h2 class="font-semibold text-xl">Overview</h2>
+          <Motion
+            :initial="{ opacity: 0, y: 50 }"
+            :while-in-view="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.8, ease: 'easeInOut' }"
+            viewport="{ once: true }"
+          >
+            <h2 class="font-semibold text-xl">Overview</h2>
+          </Motion>
 
           <hr class="w-[25%] border-2 rounded-full" />
 
-          <p class="text-center">
-            Adaptability and innovation drive my journey as a developer. I
-            specialize in backend architecture while exploring frontend
-            technologies to build seamless, high-performing applications. Every
-            challenge is an opportunity to refine my skills, optimize systems,
-            and create impactful solutions.
-          </p>
+          <Motion
+            :initial="{ opacity: 0, y: 40 }"
+            :while-in-view="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.7, ease: 'easeInOut', delay: 0.2 }"
+            :viewport="{ once: true }"
+          >
+            <p class="text-center max-w-2xl">
+              Adaptability and innovation drive my journey as a developer. I
+              specialize in backend architecture while exploring frontend
+              technologies to build seamless, high-performing applications.
+              Every challenge is an opportunity to refine my skills, optimize
+              systems, and create impactful solutions.
+            </p>
+          </Motion>
         </div>
       </section>
 
+      <!-- Journey + Problem-Solver -->
       <section class="bg-zinc-900 w-full">
+        <!-- Journey -->
         <div
           class="flex items-center gap-7 xl:flex-row flex-col justify-center w-full p-15 pb-0 px-4 xl:px-52"
         >
-          <div
+          <Motion
             class="flex flex-col flex-1 gap-4 tracking-widest text-xs 2xl:text-sm"
+            :initial="{ opacity: 0, x: -60 }"
+            :while-in-view="{ opacity: 1, x: 0 }"
+            :transition="{ duration: 0.7, ease: 'easeInOut' }"
+            viewport="{ once: true, amount: 0.5 }"
           >
             <h2 class="text-orange-700 font-semibold text-xl">
               A Developer's Journey
@@ -87,27 +125,49 @@
               just a skill to me — it's a mindset.
             </p>
             <small class="text-orange-700"> Jon Arbell De Ocampo </small>
-          </div>
+          </Motion>
 
-          <div class="flex-1 items-center justify-center flex">
+          <Motion
+            class="flex-1 items-center justify-center flex"
+            :initial="{ opacity: 0, scale: 0.8 }"
+            :while-in-view="{ opacity: 1, scale: 1 }"
+            :transition="{ duration: 0.7, ease: 'easeInOut', delay: 0.2 }"
+            :viewport="{ once: true }"
+          >
             <NuxtImg
               class="h-72 rounded-xl hover:scale-110 shadow-xl transition-all duration-300"
               src="/img/arbell_1.png"
+              placeholder="blur"
+              alt="Jon Arbell De Ocampo_1"
             />
-          </div>
+          </Motion>
         </div>
 
+        <!-- Problem Solver -->
         <div
           class="flex items-center gap-7 xl:flex-row flex-col-reverse justify-center w-full p-15 px-4 xl:px-52"
         >
-          <div class="flex-1 items-center justify-center flex">
+          <Motion
+            class="flex-1 items-center justify-center flex"
+            :initial="{ opacity: 0, scale: 0.8 }"
+            :while-in-view="{ opacity: 1, scale: 1 }"
+            :transition="{ duration: 0.7, ease: 'easeInOut' }"
+            :viewport="{ once: true }"
+          >
             <NuxtImg
               class="h-72 rounded-xl hover:scale-110 shadow-xl transition-all duration-300"
               src="/img/arbell_2.jpg"
+              placeholder="blur"
+              alt="Jon Arbell De Ocampo_2"
             />
-          </div>
-          <div
+          </Motion>
+
+          <Motion
             class="flex flex-col flex-1 gap-4 tracking-widest text-xs 2xl:text-sm"
+            :initial="{ opacity: 0, x: 60 }"
+            :while-in-view="{ opacity: 1, x: 0 }"
+            :transition="{ duration: 0.7, ease: 'easeInOut' }"
+            :viewport="{ once: true, amount: 0.5 }"
           >
             <h2 class="text-orange-700 font-semibold text-xl">
               The Problem-Solver's Mindset
@@ -124,23 +184,32 @@
               solutions that make an impact.
             </p>
             <small class="text-orange-700"> Jon Arbell De Ocampo </small>
-          </div>
+          </Motion>
         </div>
       </section>
 
+      <!-- Boxes -->
       <section>
         <div
           class="flex items-center gap-7 xl:flex-row flex-col-reverse justify-center w-full p-15 px-4 xl:px-52"
         >
           <ul
-            class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 items-stretch"
+            class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 items-stretch w-full"
           >
             <li v-for="(item, index) in boxes" :key="index" class="flex">
-              <Box
-                :title="item.title"
-                :descriptions="item.descriptions"
+              <Motion
+                :initial="{ opacity: 0, y: 40 }"
+                :while-in-view="{ opacity: 1, y: 0 }"
+                :transition="{
+                  duration: 0.5,
+                  ease: 'easeInOut',
+                  delay: index * 0.15,
+                }"
+                :viewport="{ once: true }"
                 class="flex-1"
-              />
+              >
+                <Box :title="item.title" :descriptions="item.descriptions" />
+              </Motion>
             </li>
           </ul>
         </div>
@@ -153,6 +222,7 @@
 import Head from "~/components/Head.vue";
 import Custom from "~/layouts/Custom.vue";
 import Box from "./components/Box.vue";
+
 const boxes = [
   {
     title: "MISSION",

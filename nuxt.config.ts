@@ -31,5 +31,6 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@vueuse/motion/nuxt",
     "@pinia/nuxt",
+    "motion-v/nuxt",
   ],
 });

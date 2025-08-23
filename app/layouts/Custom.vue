@@ -9,7 +9,6 @@
     <div class="h-auto w-auto bg-gray-200/80">
       <slot />
     </div>
-
     <Footer />
   </div>
 </template>

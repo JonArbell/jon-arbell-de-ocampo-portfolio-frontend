@@ -6,58 +6,73 @@
         :description="`Explore Jon's projects, tech stack, and resume. Specializing in Nuxt, Angular, Spring Boot and Laravel.`"
       />
 
+      <!-- Hero -->
       <section>
-        <div>
-          <Hero
-            :subtitle="'From C++ beginnings to Backend Developer — the journey continues.'"
-            :title="`A Developer on a Learning Journey`"
-            :style="'bg-gray-200/90'"
-          />
-        </div>
+        <Hero
+          :subtitle="'From C++ beginnings to Backend Developer — the journey continues.'"
+          :title="`A Developer on a Learning Journey`"
+          :style="'bg-gray-200/90'"
+        />
       </section>
 
-      <section class="container mx-auto px-6 py-20 bg-zinc-900">
+      <!-- Timeline -->
+      <section class="container mx-auto xl:px-52 px-4 py-20 bg-zinc-900">
         <div class="relative border-l-4 border-orange-500 pl-6">
-          <div
-            v-for="(item, index) in timeline"
-            :key="index"
-            class="mb-16 relative group tracking-widest"
-          >
-            <span
-              class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-orange-500 rounded-full ring-4 ring-teal-900 group-hover:scale-125 transition-transform duration-300"
-            ></span>
-
-            <!-- Card -->
-            <div
-              class="bg-gray-50 p-6 rounded-2xl shadow-lg transition-transform duration-300 group-hover:translate-x-2 group-hover:shadow-xl"
-            >
-              <h2 class="text-xl font-semibold text-orange-700 mb-2">
-                {{ item.title }}
-              </h2>
-              <small class="text-xs text-teal-800 font-medium mb-3">
-                {{ item.date }}
-              </small>
-              <p class="text-teal-950 2xl:text-sm text-xs leading-relaxed">
-                {{ item.description }}
-              </p>
-            </div>
-          </div>
+          <Timeline :timeline="timeline" />
         </div>
       </section>
 
-      <section
-        class="text-center tracking-widest py-16 bg-gradient-to-b from-gray-50 to-gray-100"
-      >
-        <h2 class="text-xl font-bold text-orange-700 mb-6">
-          Always Learning, Always Building
-        </h2>
-        <p
-          class="max-w-2xl mx-auto text-teal-800 text-xs 2xl:text-sm leading-relaxed"
+      <!-- Reflection -->
+      <section>
+        <Motion
+          :initial="{ opacity: 0, y: 40 }"
+          :whileInView="{ opacity: 1, y: 0 }"
+          :viewport="{ once: true }"
+          :transition="{ duration: 0.9, ease: 'easeInOut' }"
         >
-          This journey isn’t a finish line — it’s a launchpad. Every challenge
-          I’ve faced sharpened my skills, and every project is a step toward
-          creating something bigger. The best part? I’m just getting started.
-        </p>
+          <div class="text-center tracking-widest xl:px-52 px-4 py-20">
+            <h2 class="text-xl font-bold text-orange-700 mb-6">
+              Always Learning, Always Building
+            </h2>
+            <p
+              class="max-w-2xl mx-auto text-teal-800 text-xs 2xl:text-sm leading-relaxed"
+            >
+              This journey isn’t a finish line — it’s a launchpad. Every
+              challenge I’ve faced sharpened my skills, and every project is a
+              step toward creating something bigger. The best part? I’m just
+              getting started.
+            </p>
+          </div>
+        </Motion>
+      </section>
+
+      <!-- Future Goals -->
+      <section>
+        <div
+          class="text-center tracking-widest xl:px-52 px-4 py-20 bg-orange-700 text-white"
+        >
+          <Motion
+            :initial="{ opacity: 0, scale: 0.9 }"
+            :whileInView="{ opacity: 1, scale: 1 }"
+            :viewport="{ once: true }"
+            :transition="{ duration: 1, ease: 'easeInOut' }"
+          >
+            <h2 class="text-xl font-bold text-white mb-6">
+              What’s Next in My Journey?
+            </h2>
+            <p
+              class="max-w-2xl mx-auto text-orange-100 text-xs 2xl:text-sm leading-relaxed mb-10"
+            >
+              My journey has only just started. As I continue building
+              real-world projects, I’m setting my eyes on more ambitious goals.
+              The plan? Stay curious, keep pushing limits, and contribute to
+              meaningful systems that impact communities.
+            </p>
+          </Motion>
+
+          <!-- Reusable Component -->
+          <Box :goals="goals" />
+        </div>
       </section>
     </Custom>
   </div>
@@ -66,6 +81,26 @@
 <script lang="ts" setup>
 import Head from "~/components/Head.vue";
 import Custom from "~/layouts/Custom.vue";
+import Box from "./components/Box.vue";
+import Timeline from "./components/Timeline.vue";
+const goals = [
+  {
+    title: "Master Laravel & Spring Boot",
+    description:
+      "Sharpen Laravel for company projects while continuing to deepen Spring Boot expertise for scalable, enterprise-grade systems.",
+  },
+
+  {
+    title: "Fullstack Confidence",
+    description:
+      "Strengthen skills in both frontend (Vue/Nuxt, Angular) and backend (Spring Boot, Laravel) to be an all-around dev.",
+  },
+  {
+    title: "Open Source & Community",
+    description:
+      "Share projects, contribute to open-source, and give back to the dev community that fueled my growth.",
+  },
+];
 
 const timeline = [
   {
