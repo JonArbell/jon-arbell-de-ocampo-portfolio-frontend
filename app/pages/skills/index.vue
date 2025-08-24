@@ -18,28 +18,21 @@
       <!-- About Section -->
       <section>
         <div
-          class="flex items-center text-teal-950 h-80 xl:h-96 bg-gray-50 w-full px-4 py-10 xl:px-52"
+          class="flex items-center text-xs xl:text-sm tracking-widest justify-center flex-col gap-5 text-teal-950 h-80 xl:h-96 bg-gray-50 w-full px-4 py-10 xl:px-52"
         >
-          <Motion
-            class="flex items-center text-xs 2xl:text-sm h-full tracking-widest justify-center gap-10 xl:gap-4 flex-col xl:flex-row"
-            :initial="{ opacity: 0, x: -50 }"
-            :while-in-view="{ opacity: 1, x: 0 }"
-            :transition="{ duration: 0.8, ease: 'easeInOut', delay: 0.2 }"
-            :viewport="{ once: true, amount: 0.4 }"
-          >
-            <h2 class="text-xl font-semibold">What I do</h2>
-            <p>
-              I am passionate about backend development, continuously refining
-              my skills to build secure, scalable, and efficient applications.
-              My core expertise lies in building REST APIs with Spring Boot,
-              optimizing system performance, and integrating technologies for
-              seamless backend solutions. On the frontend, I primarily work with
-              Angular to create dynamic user interfaces, but I also build modern
-              and responsive apps using Vue 3 JS. I strive to write clean,
-              maintainable code, follow best practices, and develop impactful
-              software that drives efficiency and innovation.
-            </p>
-          </Motion>
+          <h2 class="text-xl font-semibold">What I Do</h2>
+          <p>
+            I focus on building full-stack applications with a strong foundation
+            in backend and frontend development. On the backend, I work with
+            <span class="font-medium">Spring Boot</span> and
+            <span class="font-medium">Laravel</span> to create secure, scalable,
+            and efficient systems. On the frontend, I specialize in
+            <span class="font-medium">Nuxt</span> and
+            <span class="font-medium">Angular</span>
+            to deliver modern, responsive, and user-friendly applications. My
+            goal is to write clean, maintainable code, follow best practices,
+            and create impactful software that drives efficiency and innovation.
+          </p>
         </div>
       </section>
 
@@ -48,14 +41,7 @@
         <div
           class="bg-teal-950 text-white p-20 min-h-96 flex-col flex items-center justify-center gap-10"
         >
-          <Motion
-            :initial="{ opacity: 0, y: 30 }"
-            :while-in-view="{ opacity: 1, y: 0 }"
-            :transition="{ duration: 0.8, ease: 'easeInOut' }"
-            :viewport="{ once: true }"
-          >
-            <h2 class="text-xl text-center font-semibold">My Tech Stacks</h2>
-          </Motion>
+          <h2 class="text-xl text-center font-semibold">My Tech Stacks</h2>
 
           <ul
             class="grid grid-cols-2 gap-10 justify-items-center md:grid-cols-3 xl:grid-cols-4 text-xs 2xl:text-sm"
@@ -80,7 +66,6 @@
                   class="h-10"
                   :src="`/img/${tech.icon}`"
                   :alt="tech.name"
-                  placeholder="blur"
                 />
                 <span>{{ tech.name }}</span>
               </Motion>

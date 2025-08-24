@@ -24,51 +24,36 @@
 
       <!-- Reflection -->
       <section>
-        <Motion
-          :initial="{ opacity: 0, y: 40 }"
-          :whileInView="{ opacity: 1, y: 0 }"
-          :viewport="{ once: true }"
-          :transition="{ duration: 0.9, ease: 'easeInOut' }"
+        <div
+          class="text-center tracking-widest xl:px-52 px-4 py-20 h-72 flex flex-col items-center justify-center gap-5"
         >
-          <div class="text-center tracking-widest xl:px-52 px-4 py-20">
-            <h2 class="text-xl font-bold text-orange-700 mb-6">
-              Always Learning, Always Building
-            </h2>
-            <p
-              class="max-w-2xl mx-auto text-teal-800 text-xs 2xl:text-sm leading-relaxed"
-            >
-              This journey isn’t a finish line — it’s a launchpad. Every
-              challenge I’ve faced sharpened my skills, and every project is a
-              step toward creating something bigger. The best part? I’m just
-              getting started.
-            </p>
-          </div>
-        </Motion>
+          <h2 class="text-xl font-bold text-orange-700 mb-6">
+            Always Learning, Always Building
+          </h2>
+          <p class="text-teal-800 text-xs 2xl:text-sm leading-relaxed">
+            This journey isn’t a finish line — it’s a launchpad. Every challenge
+            I’ve faced sharpened my skills, and every project is a step toward
+            creating something bigger. The best part? I’m just getting started.
+          </p>
+        </div>
       </section>
 
       <!-- Future Goals -->
       <section>
         <div
-          class="text-center tracking-widest xl:px-52 px-4 py-20 bg-orange-700 text-white"
+          class="text-center tracking-widest xl:px-52 px-4 py-20 bg-orange-900 text-white"
         >
-          <Motion
-            :initial="{ opacity: 0, scale: 0.9 }"
-            :whileInView="{ opacity: 1, scale: 1 }"
-            :viewport="{ once: true }"
-            :transition="{ duration: 1, ease: 'easeInOut' }"
+          <h2 class="text-xl font-bold text-white mb-6">
+            What’s Next in My Journey?
+          </h2>
+          <p
+            class="max-w-2xl mx-auto text-orange-100 text-xs 2xl:text-sm leading-relaxed mb-10"
           >
-            <h2 class="text-xl font-bold text-white mb-6">
-              What’s Next in My Journey?
-            </h2>
-            <p
-              class="max-w-2xl mx-auto text-orange-100 text-xs 2xl:text-sm leading-relaxed mb-10"
-            >
-              My journey has only just started. As I continue building
-              real-world projects, I’m setting my eyes on more ambitious goals.
-              The plan? Stay curious, keep pushing limits, and contribute to
-              meaningful systems that impact communities.
-            </p>
-          </Motion>
+            My journey has only just started. As I continue building real-world
+            projects, I’m setting my eyes on more ambitious goals. The plan?
+            Stay curious, keep pushing limits, and contribute to meaningful
+            systems that impact communities.
+          </p>
 
           <!-- Reusable Component -->
           <Box :goals="goals" />

@@ -5,7 +5,7 @@
   />
   <div>
     <section
-      class="text-white w-full pt-36 xl:pt-40 px-4 md:px-32 sm:px-20 xl:px-52 overflow-hidden"
+      class="text-white w-full pt-32 xl:pt-36 px-4 md:px-32 sm:px-20 xl:px-52 overflow-hidden"
     >
       <div
         class="max-w-7xl mx-auto flex flex-col items-start justify-center space-y-4 lg:space-y-5"
@@ -15,7 +15,7 @@
           :initial="{ opacity: 0, y: -30 }"
           :whileInView="{ opacity: 1, y: 0 }"
           :viewport="{ once: true }"
-          :transition="{ duration: 0.4, ease: 'easeInOut' }"
+          :transition="{ duration: 0.7, ease: 'easeInOut' }"
         >
           <h3
             class="text-base sm:text-lg md:text-xl lg:text-2xl font-medium tracking-wider"
@@ -29,10 +29,10 @@
           :initial="{ opacity: 0, x: -50 }"
           :whileInView="{ opacity: 1, x: 0 }"
           :viewport="{ once: true }"
-          :transition="{ duration: 0.5, ease: 'easeInOut', delay: 0.5 }"
+          :transition="{ duration: 0.7, ease: 'easeInOut', delay: 0.5 }"
         >
           <h2
-            class="text-3xl typing-effect duration-50 transition-all ease-in-out md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-widest"
+            class="text-4xl typing-effect duration-50 transition-all ease-in-out md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-widest"
           >
             I'm
             <span class="text-orange-800 brightness-150">Jon Arbell</span>
@@ -44,10 +44,10 @@
           :initial="{ opacity: 0, x: 50 }"
           :whileInView="{ opacity: 1, x: 0 }"
           :viewport="{ once: true }"
-          :transition="{ duration: 0.5, ease: 'easeInOut', delay: 1.0 }"
+          :transition="{ duration: 0.7, ease: 'easeInOut', delay: 1.0 }"
         >
           <h4
-            class="text-teal-950 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-wide brightness-150"
+            class="text-teal-950 text-base md:text-lg xl:text-xl font-semibold tracking-wide brightness-150"
           >
             Junior Backend Developer
           </h4>
@@ -59,7 +59,7 @@
             :initial="{ opacity: 0, y: 30 }"
             :whileInView="{ opacity: 1, y: 0 }"
             :viewport="{ once: true }"
-            :transition="{ duration: 0.6, ease: 'easeInOut', delay: 1.5 }"
+            :transition="{ duration: 0.7, ease: 'easeInOut', delay: 1.5 }"
           >
             <small
               class="text-[10px] brightness-75 md:text-xs xl:text-sm lg:text-lg text-white/75 max-w-4xl tracking-wide leading-relaxed"

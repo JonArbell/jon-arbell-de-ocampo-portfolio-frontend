@@ -57,7 +57,6 @@
               alt="Jon Arbell De Ocampo_Itomori"
               class="h-56 rounded-lg hover:scale-105 transition-all duration-300"
               src="/img/arbell_3.webp"
-              placeholder="blur"
             />
           </Motion>
         </div>
@@ -68,31 +67,17 @@
         <div
           class="flex flex-col items-center text-xs 2xl:text-sm text-white gap-4 xl:h-96 bg-orange-900 max-w-full px-4 xl:px-52 py-16"
         >
-          <Motion
-            :initial="{ opacity: 0, y: 50 }"
-            :while-in-view="{ opacity: 1, y: 0 }"
-            :transition="{ duration: 0.8, ease: 'easeInOut' }"
-            viewport="{ once: true }"
-          >
-            <h2 class="font-semibold text-xl">Overview</h2>
-          </Motion>
+          <h2 class="font-semibold text-xl">Overview</h2>
 
           <hr class="w-[25%] border-2 rounded-full" />
 
-          <Motion
-            :initial="{ opacity: 0, y: 40 }"
-            :while-in-view="{ opacity: 1, y: 0 }"
-            :transition="{ duration: 0.7, ease: 'easeInOut', delay: 0.2 }"
-            :viewport="{ once: true }"
-          >
-            <p class="text-center max-w-2xl">
-              Adaptability and innovation drive my journey as a developer. I
-              specialize in backend architecture while exploring frontend
-              technologies to build seamless, high-performing applications.
-              Every challenge is an opportunity to refine my skills, optimize
-              systems, and create impactful solutions.
-            </p>
-          </Motion>
+          <p class="text-center max-w-2xl">
+            Adaptability and innovation drive my journey as a developer. I
+            specialize in backend architecture while exploring frontend
+            technologies to build seamless, high-performing applications. Every
+            challenge is an opportunity to refine my skills, optimize systems,
+            and create impactful solutions.
+          </p>
         </div>
       </section>
 
@@ -137,7 +122,6 @@
             <NuxtImg
               class="h-72 rounded-xl hover:scale-110 shadow-xl transition-all duration-300"
               src="/img/arbell_1.png"
-              placeholder="blur"
               alt="Jon Arbell De Ocampo_1"
             />
           </Motion>
@@ -157,7 +141,6 @@
             <NuxtImg
               class="h-72 rounded-xl hover:scale-110 shadow-xl transition-all duration-300"
               src="/img/arbell_2.jpg"
-              placeholder="blur"
               alt="Jon Arbell De Ocampo_2"
             />
           </Motion>

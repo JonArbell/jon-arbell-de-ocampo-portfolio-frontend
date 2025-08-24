@@ -20,23 +20,15 @@
       <!-- Intro -->
       <section>
         <div
-          class="flex items-center justify-center gap-10 xl:gap-4 flex-col xl:flex-row h-80 xl:h-96 bg-gray-50 w-full px-4 py-10 xl:px-52"
+          class="flex items-center text-xs 2xl:text-sm tracking-widest text-teal-950 text-center xl:text-left justify-center gap-10 xl:gap-4 flex-col xl:flex-row h-80 xl:h-96 bg-gray-50 w-full px-4 py-10 xl:px-52"
         >
-          <Motion
-            :initial="{ opacity: 0, y: 40 }"
-            :while-in-view="{ opacity: 1, y: 0 }"
-            :transition="{ duration: 0.7, ease: 'easeInOut' }"
-            viewport="{ once: true, amount: 0.5 }"
-            class="text-xs 2xl:text-sm tracking-widest text-teal-950 text-center xl:text-left"
-          >
-            <p>
-              Welcome to my hobbies section! This is where I showcase my
-              creativity and the things I enjoy doing in my free time. Whether
-              it's exploring new ideas, experimenting with different techniques,
-              or simply creating for fun, each piece reflects my passion for
-              self-expression. Feel free to explore and see what inspires me!
-            </p>
-          </Motion>
+          <p>
+            Welcome to my hobbies section! This is where I showcase my
+            creativity and the things I enjoy doing in my free time. Whether
+            it's exploring new ideas, experimenting with different techniques,
+            or simply creating for fun, each piece reflects my passion for
+            self-expression. Feel free to explore and see what inspires me!
+          </p>
         </div>
       </section>
 
@@ -47,21 +39,16 @@
         >
           <!-- Photography -->
           <div class="space-y-4 w-full">
-            <Motion
-              :initial="{ opacity: 0, x: -40 }"
-              :while-in-view="{ opacity: 1, x: 0 }"
-              :transition="{ duration: 0.6, ease: 'easeInOut' }"
-              viewport="{ once: true }"
-            >
+            <div class="w-full flex flex-col gap-4 items-start justify-center">
               <h3 class="text-orange-700 text-lg">Photography</h3>
-              <p>
+              <p class="xl:w-[75%] w-full">
                 I focus on mobile photography, using my phone to capture images
                 in my daily life. This allows me to explore different subjects
                 and environments, documenting moments as I encounter them.
                 Mobile photography offers convenience and flexibility, helping
                 me experiment with different techniques and perspectives.
               </p>
-            </Motion>
+            </div>
 
             <ul
               class="flex items-center justify-center flex-col xl:flex-row gap-5 w-full"
@@ -82,7 +69,6 @@
                   viewport="{ once: true }"
                 >
                   <NuxtImg
-                    placeholder="blur"
                     :class="[
                       'rounded-xl shadow-xl hover:scale-105 transition-all duration-300',
                     ]"
@@ -95,16 +81,13 @@
 
           <!-- Photo Manipulation -->
           <div class="space-y-4 w-full">
-            <Motion
-              :initial="{ opacity: 0, x: 40 }"
-              :while-in-view="{ opacity: 1, x: 0 }"
-              :transition="{ duration: 0.6, ease: 'easeInOut' }"
-              viewport="{ once: true }"
+            <div
+              class="w-full flex flex-col gap-4 items-center xl:items-end justify-center"
             >
               <h3 class="text-orange-700 text-lg text-end">
                 Photo Manipulation
               </h3>
-              <p>
+              <p class="xl:w-[75%] w-full text-start xl:text-end">
                 I enjoy transforming ordinary images into something unique
                 through editing. By adjusting colors, blending elements, and
                 adding creative effects, I experiment with different techniques
@@ -112,7 +95,7 @@
                 imagination and create visuals that go beyond what the camera
                 captures.
               </p>
-            </Motion>
+            </div>
 
             <ul class="flex flex-col xl:flex-row gap-5 w-full">
               <li
@@ -132,7 +115,6 @@
                   class="flex-1"
                 >
                   <NuxtImg
-                    placeholder="blur"
                     class="rounded-xl shadow-xl hover:scale-105 transition-all duration-300 w-full h-40 object-cover"
                     :src="`/img/photomani/${item}`"
                   />
@@ -143,21 +125,16 @@
 
           <!-- Short Films -->
           <div class="space-y-4 w-full">
-            <Motion
-              :initial="{ opacity: 0, y: 40 }"
-              :while-in-view="{ opacity: 1, y: 0 }"
-              :transition="{ duration: 0.6, ease: 'easeInOut' }"
-              viewport="{ once: true }"
-            >
+            <div class="w-full flex flex-col gap-4 items-center justify-center">
               <h3 class="text-orange-700 text-lg text-center">Short Films</h3>
-              <p class="text-center">
+              <p class="xl:w-[75%] w-full text-start xl:text-center">
                 Filmmaking allows me to tell stories through motion and sound.
                 Whether it's capturing real moments or creating scripted scenes,
                 I explore different ways to convey emotions and ideas. From
                 planning shots to editing the final cut, every step is an
                 opportunity to bring creativity to life.
               </p>
-            </Motion>
+            </div>
 
             <ul
               class="flex items-center justify-center flex-col xl:flex-row gap-5 w-full"
@@ -178,7 +155,6 @@
                   viewport="{ once: true }"
                 >
                   <NuxtImg
-                    placeholder="blur"
                     class="rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
                     :src="`/img/shortfilm/${item}`"
                   />

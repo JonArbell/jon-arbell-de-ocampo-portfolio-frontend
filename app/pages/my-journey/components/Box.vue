@@ -9,9 +9,9 @@
         class="flex-1"
       >
         <div
-          class="bg-teal-950 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col h-full"
+          class="bg-zinc-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col h-full"
         >
-          <h3 class="text-lg font-semibold text-orange-400 mb-2">
+          <h3 class="text-lg font-semibold text-orange-700 mb-2">
             {{ goal.title }}
           </h3>
           <p class="text-xs text-zinc-300 leading-relaxed flex-1">
