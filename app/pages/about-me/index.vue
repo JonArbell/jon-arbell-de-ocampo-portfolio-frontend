@@ -3,7 +3,7 @@
     <Custom :image="'/img/cover-hero-section.png'">
       <Head
         :title="'About Me'"
-        :description="`Explore Jon's projects, tech stack, and resume. Specializing in Nuxt, Angular, Spring Boot and Laravel.`"
+        :description="`Discover Jon's journey from C++ beginnings to full-stack development with Spring Boot, Laravel, Nuxt, and Angular. Learn about his mission, values, problem-solving mindset, and passion for building impactful systems.`"
       />
 
       <!-- Hero Section -->
@@ -228,6 +228,10 @@ const boxes = [
     ],
   },
 ];
+
+definePageMeta({
+  scrollToTop: true,
+});
 </script>
 
 <style></style>

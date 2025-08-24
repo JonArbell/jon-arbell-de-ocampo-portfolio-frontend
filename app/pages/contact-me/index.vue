@@ -3,7 +3,7 @@
     <Custom :image="'/img/photography/photograph_3.webp'">
       <Head
         :title="'Contact Me'"
-        :description="`Explore Jon's projects, tech stack, and resume. Specializing in Nuxt, Angular, Spring Boot and Laravel.`"
+        :description="`Get in touch with Jon for collaborations, freelance projects, or inquiries. Open to new opportunities, custom quotes, and building something awesome together.`"
       />
 
       <Toast ref="toastRef" />

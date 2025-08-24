@@ -81,13 +81,14 @@
             :transition="{ duration: 0.7, ease: 'easeInOut', delay: 3.0 }"
             class="w-full text-center mt-6"
           >
-            <a
-              href="/public/resume.pdf"
+            <NuxtLink
+              external
+              to="/resume.pdf"
               download="De Ocampo, Jon Arbell D_Resume.pdf"
               class="inline-block text-sm sm:text-base text-orange-700 font-semibold underline hover:text-orange-900"
             >
               Download CV
-            </a>
+            </NuxtLink>
           </Motion>
         </div>
       </div>

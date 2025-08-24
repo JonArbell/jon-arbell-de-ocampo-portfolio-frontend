@@ -3,7 +3,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
-
+  router: {
+    options: {
+      scrollBehaviorType: "smooth",
+    },
+  },
   devtools: { enabled: true },
   vite: {
     plugins: [tailwindcss()],

@@ -3,7 +3,7 @@
     <Custom :image="'/img/photography/photograph_2.webp'">
       <Head
         :title="'My Tech Stack'"
-        :description="`Explore Jon's projects, tech stack, and resume. Specializing in Nuxt, Angular, Spring Boot and Laravel.`"
+        :description="`Discover the technologies Jon uses to build full-stack applications — from Spring Boot and Laravel on the backend to Nuxt, Angular, and Tailwind on the frontend, supported by PostgreSQL, MySQL, and modern dev tools.`"
       />
 
       <!-- Hero Section -->

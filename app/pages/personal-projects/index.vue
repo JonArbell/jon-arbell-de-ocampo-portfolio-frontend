@@ -3,7 +3,7 @@
     <Custom :image="'/img/photography/photograph_2.webp'">
       <Head
         :title="'My Personal Projects'"
-        :description="`Explore Jon's projects, tech stack, and resume. Specializing in Nuxt, Angular, Spring Boot and Laravel.`"
+        :description="`Dive into Jon's personal projects — creative experiments, web apps, and problem-solving builds that showcase a passion for innovation and learning.`"
       />
 
       <!-- Hero Section -->

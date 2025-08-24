@@ -5,16 +5,18 @@
 <script lang="ts" setup>
 import { useHead, useRequestURL } from "nuxt/app";
 
+const route = useRoute();
+
+const path = computed(() => route.path);
+
 const props = defineProps<{
   title: string;
   description: string;
   image?: string;
-  url?: string;
 }>();
 
-const siteName = "Jon's Portfolio";
-const defaultImage = props.image || "/default-og-image.jpg";
-const currentUrl = props.url || useRequestURL().href;
+const siteName = "Jon Arbell De Ocampo";
+const defaultImage = props.image || "/icon.png";
 
 useHead({
   title: props.title,
@@ -27,7 +29,7 @@ useHead({
     { property: "og:description", content: props.description },
     { property: "og:type", content: "website" },
     // { property: "og:image", content: defaultImage },
-    { property: "og:url", content: currentUrl },
+    { property: "og:url", content: path },
     { property: "og:site_name", content: siteName },
 
     // ✅ Twitter Card

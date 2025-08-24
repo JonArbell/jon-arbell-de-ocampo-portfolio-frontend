@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "animate.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }

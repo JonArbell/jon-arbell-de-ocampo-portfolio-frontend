@@ -3,7 +3,7 @@
     <Custom :image="'/img/photography/photograph_2.webp'">
       <Head
         :title="'My Journey'"
-        :description="`Explore Jon's projects, tech stack, and resume. Specializing in Nuxt, Angular, Spring Boot and Laravel.`"
+        :description="`Follow Jon's journey from early coding days to becoming a backend and frontend developer. Explore his timeline, reflections, and future goals in tech.`"
       />
 
       <!-- Hero -->
