@@ -12,14 +12,16 @@ const path = computed(() => route.path);
 const props = defineProps<{
   title: string;
   description: string;
-  image?: string;
 }>();
 
 const siteName = "Jon Arbell De Ocampo";
-const defaultImage = props.image || "/icon.png";
+const defaultImage = "/icon.png";
 
 useHead({
   title: props.title,
+  link: [
+    { rel: "icon", type: "image/png", href: defaultImage },
+  ],
   meta: [
     // ✅ Basic SEO
     { name: "description", content: props.description },
@@ -28,7 +30,7 @@ useHead({
     { property: "og:title", content: props.title },
     { property: "og:description", content: props.description },
     { property: "og:type", content: "website" },
-    // { property: "og:image", content: defaultImage },
+    { property: "og:image", content: defaultImage },
     { property: "og:url", content: path },
     { property: "og:site_name", content: siteName },
 
