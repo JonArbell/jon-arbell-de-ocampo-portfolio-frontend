@@ -1,22 +1,18 @@
 <template>
   <div>
     <Custom :image="'/img/photography/photograph_2.webp'">
-      <Head
-        :title="'My Journey'"
-        :description="`Follow Jon's journey from early coding days to becoming a backend and frontend developer. Explore his timeline, reflections, and future goals in tech.`"
-      />
+
+      <Head :title="'My Journey'"
+        :description="`Follow Jon's journey from early coding days to becoming a backend and frontend developer. Explore his timeline, reflections, and future goals in tech.`" />
 
       <!-- Hero -->
       <section>
-        <Hero
-          :subtitle="'From C++ beginnings to Backend Developer — the journey continues.'"
-          :title="`A Developer on a Learning Journey`"
-          :style="'bg-gray-200/90'"
-        />
+        <Hero :subtitle="'From C++ beginnings to Backend Developer — the journey continues.'"
+          :title="`A Developer on a Learning Journey`" :style="'bg-gray-200/90'" />
       </section>
 
       <!-- Timeline -->
-      <section class="container mx-auto xl:px-52 px-4 py-20 bg-zinc-900">
+      <section class="container rounded-lg mx-auto xl:px-52 px-4 py-20 bg-zinc-900">
         <div class="relative border-l-4 border-orange-500 pl-6">
           <Timeline :timeline="timeline" />
         </div>
@@ -25,8 +21,7 @@
       <!-- Reflection -->
       <section>
         <div
-          class="text-center tracking-widest xl:px-52 px-4 py-20 h-72 flex flex-col items-center justify-center gap-5"
-        >
+          class="text-center tracking-widest xl:px-52 px-4 py-20 h-72 flex flex-col items-center justify-center gap-5">
           <h2 class="text-xl font-bold text-orange-700 mb-6">
             Always Learning, Always Building
           </h2>
@@ -40,15 +35,11 @@
 
       <!-- Future Goals -->
       <section>
-        <div
-          class="text-center tracking-widest xl:px-52 px-4 py-20 bg-orange-900 text-white"
-        >
+        <div class="text-center tracking-widest xl:px-52 px-4 py-20 bg-orange-900 text-white">
           <h2 class="text-xl font-bold text-white mb-6">
             What’s Next in My Journey?
           </h2>
-          <p
-            class="max-w-2xl mx-auto text-orange-100 text-xs 2xl:text-sm leading-relaxed mb-10"
-          >
+          <p class="max-w-2xl mx-auto text-orange-100 text-xs 2xl:text-sm leading-relaxed mb-10">
             My journey has only just started. As I continue building real-world
             projects, I’m setting my eyes on more ambitious goals. The plan?
             Stay curious, keep pushing limits, and contribute to meaningful
@@ -132,7 +123,7 @@ const timeline = [
   },
   {
     title: "Junior Backend Developer (Laravel)",
-    date: "Aug 2025 – Present",
+    date: "Aug 2025 – Nov 2025",
     description:
       "Transitioned to Junior Backend Developer as per my passion. Now focusing on Laravel and backend system development while continuously learning scalable system design.",
   },
