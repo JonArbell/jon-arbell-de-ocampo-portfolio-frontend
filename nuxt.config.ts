@@ -17,8 +17,10 @@ export default defineNuxtConfig({
       backendDomain: process.env.NUXT_BACKEND_DOMAIN,
     },
   },
-  css: ["~/assets/css/main.css"],
-
+  css: ["~/assets/css/main.css", "@mdi/font/css/materialdesignicons.css"],
+  build: {
+    transpile: ["mdi-vue"],
+  },
   modules: [
     "@nuxt/ui",
     "@nuxt/image",
@@ -26,5 +28,6 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt",
     "@pinia/nuxt",
     "motion-v/nuxt",
+    "nuxt-toast",
   ],
 });

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <Landing>
     <Custom :image="'/img/photography/photograph_2.webp'">
 
       <Head :title="'My Journey'"
@@ -12,8 +12,8 @@
       </section>
 
       <!-- Timeline -->
-      <section class="container rounded-lg mx-auto xl:px-52 px-4 py-20 bg-zinc-900">
-        <div class="relative border-l-4 border-orange-500 pl-6">
+      <section class="py-20 w-full bg-zinc-950">
+        <div class="relative lg:mx-52 mx-4 border-l-4 border-orange-500 pl-6">
           <Timeline :timeline="timeline" />
         </div>
       </section>
@@ -51,7 +51,7 @@
         </div>
       </section>
     </Custom>
-  </div>
+  </Landing>
 </template>
 
 <script lang="ts" setup>
@@ -59,6 +59,7 @@ import Head from "~/components/Head.vue";
 import Custom from "~/layouts/Custom.vue";
 import Box from "./components/Box.vue";
 import Timeline from "./components/Timeline.vue";
+import Landing from "~/layouts/Landing.vue";
 const goals = [
   {
     title: "Master Laravel & Spring Boot",

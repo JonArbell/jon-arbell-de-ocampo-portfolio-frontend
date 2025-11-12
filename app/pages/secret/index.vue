@@ -1,13 +1,19 @@
 <template>
-  <Secret>
-    <div>
-      <p>Test</p>
-    </div>
-  </Secret>
+  <div></div>
 </template>
 
 <script lang="ts" setup>
-import Secret from "~/layouts/Secret.vue";
+
+const tokenStore = useMyTokenStore();
+
+onMounted(() => {
+  if (tokenStore.isAuthenticated) {
+    navigateTo('/secret/dashboard');
+  } else {
+    navigateTo('/secret/login');
+  }
+});
+
 </script>
 
 <style></style>
