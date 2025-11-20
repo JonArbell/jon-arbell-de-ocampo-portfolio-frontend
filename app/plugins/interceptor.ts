@@ -17,11 +17,11 @@ export default defineNuxtPlugin((nuxtApp) => {
         options.headers = headers;
       }
 
-      console.log(`Base : ${base}`);
+      // console.log(`Base : ${base}`);
     },
 
     async onResponseError({ request, response }) {
-      if (response?.status === 401) {
+      if (response?.status === 401 && !response.url.includes("/auth/login")) {
         if (!refreshToken.value) {
           throw createError({
             statusCode: 401,
@@ -56,6 +56,13 @@ export default defineNuxtPlugin((nuxtApp) => {
           });
         }
       }
+
+      throw createError({
+        statusCode: response.status,
+        statusMessage: response.statusText,
+        message: response._data?.message || "Request failed",
+        data: response._data,
+      });
     },
 
     onRequestError({ error }) {

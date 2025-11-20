@@ -52,8 +52,8 @@ const toast = useToast()
 const tokenStore = useMyTokenStore();
 
 const form = reactive({
-  username: "",
-  password: "",
+  username: "jon_arbell",
+  password: "arbellpogi23",
 });
 
 const handleLogin = async () => {
@@ -74,9 +74,7 @@ const handleLogin = async () => {
 
   } catch (e: any) {
 
-    const msg = e?.data?.message || e?.response?.data?.message || 'Something went wrong';
-
-    console.log(e);
+    const msg = e?.message;
 
     toast.error({
       title: 'Login Failed!',

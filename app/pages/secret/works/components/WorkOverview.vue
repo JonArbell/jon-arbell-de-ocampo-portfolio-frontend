@@ -3,7 +3,7 @@
     <!-- Header -->
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
       <h2 class="text-2xl font-bold text-orange-500">{{ latestWorkInfo?.data.jobTitle }}</h2>
-      <span class="text-sm text-zinc-400">{{ parseLocalDate(latestWorkInfo?.data.createdAt ?? '01-01-1901') }}</span>
+      <span class="text-sm text-zinc-400">{{ formatLocalDate(latestWorkInfo?.data.createdAt ?? '01-01-1901') }}</span>
     </div>
 
     <!-- Salary & Work Time Info -->
@@ -52,15 +52,29 @@
       <h3 class="text-teal-400 font-semibold mb-2">Description / Notes</h3>
       <p>{{ latestWorkInfo?.data.description ?? 'No description' }}</p>
     </div>
+
+    <!-- View Attendances Button -->
+    <div class="mt-4">
+      <NuxtLink :to="`${route.path}/monthly-salaries`"
+        class="inline-block w-full sm:w-auto px-6 py-3 text-center rounded-xl bg-teal-500 text-zinc-900 font-semibold shadow-lg hover:bg-teal-400 transition-colors duration-200">
+        View All Salaries
+      </NuxtLink>
+    </div>
+
   </div>
 </template>
 
 <script lang="ts" setup>
 import { workService } from '~/services/work.service';
+import { useMyWorkStoreStore } from '../stores/workStore';
 
 const props = defineProps<{
   workId: string
 }>();
+
+const toast = useToast();
+
+const workStore = useMyWorkStoreStore();
 
 // Format helpers
 const formatCurrency = (value: number) =>
@@ -87,7 +101,50 @@ onMounted(() => {
   });
 });
 
-const { data: latestWorkInfo } = await useAsyncData(`latest-work-info-${props.workId}`, async () => workService().fetchWorkById(props.workId));
+const { data: latestWorkInfo, error } = await useAsyncData(`work-overview-${props.workId}`, async () => {
+
+  const res = await workService()
+    .fetchWorkById(props.workId);
+
+  workStore.selectedWork = res.data;
+
+  return res;
+});
 
 
+watch(error, (newError) => {
+
+  if (!newError) return;
+
+  const data = newError.data as any;
+
+  if (newError.statusCode === 500) {
+
+    if (!newError.statusMessage && !data && !newError.error) {
+      toast.error({
+        title: "Connection Error",
+        message: "Cannot reach server. Please try again later.",
+      });
+    }
+
+  } else if (newError.statusCode === 401) {
+
+    const data = newError.data as any;
+
+    const title = data?.errorName;
+
+    toast.error({
+      title: title,
+      message: newError?.message,
+    });
+
+    if (title.includes('Session') || title.includes('Authentication Failed')) {
+      setTimeout(() => {
+        navigateTo('/secret/login');
+      }, 500)
+    }
+
+  }
+
+}, { immediate: true });
 </script>

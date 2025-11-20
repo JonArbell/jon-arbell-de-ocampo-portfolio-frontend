@@ -1,4 +1,4 @@
-export const parseLocalDate = (date: string) => {
+export const formatLocalDate = (date: string) => {
   if (!date) return "";
   const d = new Date(date);
   return d.toLocaleDateString("en-US", {

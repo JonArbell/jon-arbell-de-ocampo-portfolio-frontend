@@ -2,8 +2,12 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+
+  <ConfirmDialog />
 </template>
 <script lang="ts" setup>
+import ConfirmDialog from './components/ConfirmDialog.vue';
+
 const sidebarStore = useMySideBarStore();
 
 onMounted(() => {

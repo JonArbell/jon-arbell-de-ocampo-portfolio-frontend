@@ -1,11 +1,8 @@
 <template>
 
   <Head title="View Work" description="Viewing work information" />
-  <AuthenticatedLayout>
+  <WorkLayout>
     <div class="p-4 md:p-6 lg:p-8 space-y-6">
-
-      <Breadcrumb :items="breadcrumbItems" />
-
       <div
         class="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 border-b border-zinc-700 overflow-x-auto">
         <button v-for="tab in tabs" :key="tab.id" @click="activeTab = tab.id" :class="[
@@ -20,12 +17,12 @@
 
       <div class="mt-4 space-y-4">
         <WorkOverview v-if="activeTab === 'overview'" :workId="workId" />
-        <SalaryList v-if="activeTab === 'salaries'" :workId="workId" />
+
         <WorkInformations v-if="activeTab === 'logs'" :workId="workId" />
       </div>
 
     </div>
-  </AuthenticatedLayout>
+  </WorkLayout>
 </template>
 
 <script lang="ts" setup>
@@ -33,32 +30,36 @@ import Head from '~/components/Head.vue';
 import AuthenticatedLayout from '~/layouts/AuthenticatedLayout.vue';
 import Breadcrumb from '../components/Breadcrumb.vue';
 import WorkOverview from '../components/WorkOverview.vue';
-import SalaryList from '../components/SalaryList.vue';
 import WorkInformations from '../components/WorkInformations.vue';
 import { useRoute } from 'vue-router';
+import { useMyWorkStoreStore } from '../stores/workStore';
+import WorkLayout from '../layout/WorkLayout.vue';
 
 const route = useRoute();
 
 const workId = computed(() => route.params.workId as string);
 
-const work = {
-  id: workId,
-  title: 'Project A',
-  description: 'Important project A',
-  createdAt: '2025-01-01'
-};
+const workStore = useMyWorkStoreStore();
+
+const breadCrumbStore = useMyBreadcrumbStore();
 
 const tabs = [
   { id: 'overview', label: 'Overview' },
-  { id: 'salaries', label: 'Monthly Salaries' },
   { id: 'logs', label: 'Work Informations / Logs' }
 ];
+
 const activeTab = ref('overview');
 
-const breadcrumbItems = [
-  { name: 'Works', link: '/secret/works' },
-  { name: work.title, link: `/secret/works/${workId}` }
-];
+const workName = computed(() => workStore.selectedWork?.jobTitle || '');
+
+onMounted(() => {
+
+  const isExist = breadCrumbStore.breadCrumb.find(b => b.link === `/secret/works/${workId.value}`);
+
+  if (!isExist)
+    breadCrumbStore.breadCrumb.push({ name: workName, link: `/secret/works/${workId.value}` })
+});
+
 
 </script>
 

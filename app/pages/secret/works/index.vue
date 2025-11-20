@@ -1,26 +1,39 @@
 <template>
 
   <Head description="Work management" title="Works Management" />
-  <AuthenticatedLayout>
-    <div class="p-6 space-y-6">
+  <WorkLayout>
 
-      <Breadcrumb :items="breadCrumbStore.breadCrumb" />
+    <NuxtLink :to="`${route.path}/add`"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-teal-400 text-zinc-900 font-semibold rounded shadow hover:bg-teal-500 transition">
+      <i class="mdi mdi-plus text-lg"></i>
+      Add Work
+    </NuxtLink>
 
-      <section class="space-y-4">
-        <h2 class="text-xl font-bold text-orange-400">Work List</h2>
-        <WorkList :works="works?.data.content ?? []" :isloading="pending" />
-      </section>
-    </div>
-  </AuthenticatedLayout>
+    <h2 class="text-xl font-bold text-orange-400">Work List</h2>
+
+    <ListTable :isloading="pending" :data="works?.data.content ?? []" :actions="[
+      { name: 'view', label: 'View', color: 'orange' },
+      { name: 'update', label: 'Update', color: 'teal' },
+      { name: 'delete', label: 'Delete', color: 'red' }
+    ]" @action="handleAction" />
+
+  </WorkLayout>
 </template>
 
 <script setup lang="ts">
+import ListTable from '~/components/authenticated/ListTable.vue';
 import Head from '~/components/Head.vue';
-import Breadcrumb from './components/Breadcrumb.vue';
-import WorkList from './components/WorkList.vue';
-import AuthenticatedLayout from '~/layouts/AuthenticatedLayout.vue';
 import { workService } from '~/services/work.service';
 import { useMyBreadcrumbStore } from '~/stores/breadcrumb';
+import WorkLayout from './layout/WorkLayout.vue';
+import { useConfirm } from '~/composables/confirm'
+
+const { ask } = useConfirm()
+
+interface TableActionEvent {
+  action: string;
+  row: any;
+}
 
 interface Work {
   id: string;
@@ -101,10 +114,38 @@ onMounted(() => {
 
   breadCrumbStore.breadCrumb = [];
 
-  breadCrumbStore.breadCrumb.push({
-    name: 'Work',
-    link: '/secret/works'
-  })
+  const isExist = breadCrumbStore.breadCrumb.find(b => b.link === '/secret/works');
+
+  if (!isExist)
+    breadCrumbStore.breadCrumb.push({
+      name: 'Work',
+      link: '/secret/works'
+    })
 });
+
+const handleAction = async ({ action, row }: TableActionEvent) => {
+  console.log(action, row);
+
+  if (action === "delete") {
+    const ok = await ask('Do you want to delete this work?');
+
+    if (ok)
+      handleDelete(row.id);
+
+  }
+
+  else if (action === 'update')
+    navigateTo(`${route.path}/${row?.id}/update`);
+  else if (action === 'view')
+    navigateTo(`${route.path}/${row?.id}`);
+}
+
+const handleDelete = async (workId: string) => {
+  try {
+    console.log(workId);
+  } catch (e) {
+
+  }
+}
 
 </script>
