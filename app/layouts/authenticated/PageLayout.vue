@@ -1,7 +1,7 @@
 <template>
 
   <AuthenticatedLayout>
-    <div class="p-6 space-y-6">
+    <div class="2xl:p-6 space-y-6">
 
       <Breadcrumb :items="breadCrumbStore.breadCrumb" />
 
@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import AuthenticatedLayout from '~/layouts/AuthenticatedLayout.vue'
-import Breadcrumb from '../components/Breadcrumb.vue';
+import Breadcrumb from '~/components/authenticated/Breadcrumb.vue';
 
 const breadCrumbStore = useMyBreadcrumbStore();
 

@@ -11,9 +11,11 @@
       </button>
     </div>
 
-    <AttendanceList :attendances="attendances?.data?.content ?? []"
-      :salaryMonth="monthlySalary?.data.salaryMonth ?? ''" />
+    <h2 class="text-xl font-semibold text-orange-400">
+      Attendances in {{ formatYearMonth(monthlySalary?.data.salaryMonth ?? '') }}
+    </h2>
 
+    <ListTable :metaDatas="[]" :isloading="pending" :data="attendances?.data?.content ?? []" />
 
     <teleport to="body">
       <div v-if="showFormModal" class="fixed inset-0 z-50 bg-black/60 flex justify-center items-center px-4">
@@ -90,12 +92,12 @@
 
 <script lang="ts" setup>
 import WorkLayout from '~/pages/secret/works/layout/WorkLayout.vue';
-import AttendanceList from '~/pages/secret/works/components/AttendanceList.vue';
 import { useMyWorkStoreStore } from '~/pages/secret/works/stores/workStore';
 import { monthlySalaryService } from '~/services/monthly-salary.service';
 import { workService } from '~/services/work.service';
 import Head from '~/components/Head.vue';
 import { attendanceService } from '~/services/attendance.service';
+import ListTable from '~/components/authenticated/ListTable.vue';
 
 const route = useRoute();
 
@@ -105,7 +107,7 @@ const salaryId = computed(() => route.params.salaryId as string);
 
 const workId = computed(() => route.params.workId as string);
 
-const { data: attendances, refresh: attendancesRefresh } = await useAsyncData(`all-attendances-${route.path}`, async () => await monthlySalaryService()
+const { data: attendances, refresh: attendancesRefresh, pending } = await useAsyncData(`all-attendances-${route.path}`, async () => await monthlySalaryService()
   .fetchAllAttendancesByMonthlySalaryId(salaryId.value), {
   watch: [salaryId]
 });

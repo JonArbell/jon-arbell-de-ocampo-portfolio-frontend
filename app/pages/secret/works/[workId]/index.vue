@@ -18,7 +18,8 @@
       <div class="mt-4 space-y-4">
         <WorkOverview v-if="activeTab === 'overview'" :workId="workId" />
 
-        <WorkInformations v-if="activeTab === 'logs'" :workId="workId" />
+        <ListTable :metaDatas="[]" :data="logs?.data.content ?? []" :isloading="pending" v-if="activeTab === 'logs'"
+          :workId="workId" />
       </div>
 
     </div>
@@ -27,17 +28,18 @@
 
 <script lang="ts" setup>
 import Head from '~/components/Head.vue';
-import AuthenticatedLayout from '~/layouts/AuthenticatedLayout.vue';
-import Breadcrumb from '../components/Breadcrumb.vue';
 import WorkOverview from '../components/WorkOverview.vue';
-import WorkInformations from '../components/WorkInformations.vue';
 import { useRoute } from 'vue-router';
 import { useMyWorkStoreStore } from '../stores/workStore';
 import WorkLayout from '../layout/WorkLayout.vue';
+import ListTable from '~/components/authenticated/ListTable.vue';
+import { workService } from '~/services/work.service';
 
 const route = useRoute();
 
 const workId = computed(() => route.params.workId as string);
+
+const toast = useToast();
 
 const workStore = useMyWorkStoreStore();
 
@@ -60,6 +62,44 @@ onMounted(() => {
     breadCrumbStore.breadCrumb.push({ name: workName, link: `/secret/works/${workId.value}` })
 });
 
+
+const { data: logs, error, pending } = await useAsyncData(`work-infos-${workId}`, async () => await workService().fetchAllWorkInfosByWorkId(workId.value));
+
+watch(error, (newError) => {
+
+  if (!newError) return;
+
+  const data = newError.data as any;
+
+  if (newError.statusCode === 500) {
+
+    if (!newError.statusMessage && !data && !newError.error) {
+      toast.error({
+        title: "Connection Error",
+        message: "Cannot reach server. Please try again later.",
+      });
+    }
+
+  } else if (newError.statusCode === 401) {
+
+    const data = newError.data as any;
+
+    const title = data?.errorName;
+
+    toast.error({
+      title: title,
+      message: newError?.message,
+    });
+
+    if (title.includes('Session') || title.includes('Authentication Failed')) {
+      setTimeout(() => {
+        navigateTo('/secret/login');
+      }, 500)
+    }
+
+  }
+
+}, { immediate: true });
 
 </script>
 

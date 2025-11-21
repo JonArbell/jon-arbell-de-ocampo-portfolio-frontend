@@ -18,6 +18,16 @@ export const workService = () => {
     });
   };
 
+  const fetchMetaDatas = async () => {
+    return await $api<GenericResponse<any[]>>(`/works/metadata`);
+  };
+
+  const deleteWorkById = async (id: string) => {
+    return await $api<GenericResponse<Work>>(`/works/${id}`, {
+      method: "DELETE",
+    });
+  };
+
   const fetchWorkById = async (workId: string) => {
     return await $api<GenericResponse<Work>>(`/works/${workId}`);
   };
@@ -32,8 +42,10 @@ export const workService = () => {
     >(`/works/${workId}/work-infos`);
   };
 
-  const fetchAllWorks = async () => {
-    return await $api<PaginatedResponse<Work>>(`/works`);
+  const fetchAllWorks = async (query: any) => {
+    return await $api<PaginatedResponse<Work>>(`/works`, {
+      query: query,
+    });
   };
 
   const fetchContractYearsByWorkId = async (workId: string) => {
@@ -57,6 +69,8 @@ export const workService = () => {
   };
 
   return {
+    fetchMetaDatas,
+    deleteWorkById,
     addWork,
     fetchContractYearsByWorkId,
     fetchAvailableMonthsByWorkId,

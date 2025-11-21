@@ -1,7 +1,7 @@
 <template>
 
   <Head description="Work management" title="Works Management" />
-  <WorkLayout>
+  <PageLayout>
 
     <NuxtLink :to="`${route.path}/add`"
       class="inline-flex items-center gap-2 px-4 py-2 bg-teal-400 text-zinc-900 font-semibold rounded shadow hover:bg-teal-500 transition">
@@ -9,15 +9,19 @@
       Add Work
     </NuxtLink>
 
-    <h2 class="text-xl font-bold text-orange-400">Work List</h2>
-
-    <ListTable :isloading="pending" :data="works?.data.content ?? []" :actions="[
+    <ListTable :metaDatas="metadatas?.data ?? []" :isloading="pending" :data="works?.data.content.map(w => ({
+      ...w,
+      startContractDate: formatLocalDate(w.startContractDate),
+      endContractDate: formatLocalDate(w.endContractDate),
+      createdAt: formatLocalDate(w.createdAt),
+      updatedAt: formatLocalDate(w.updatedAt),
+    })) ?? []" :actions="[
       { name: 'view', label: 'View', color: 'orange' },
       { name: 'update', label: 'Update', color: 'teal' },
       { name: 'delete', label: 'Delete', color: 'red' }
     ]" @action="handleAction" />
 
-  </WorkLayout>
+  </PageLayout>
 </template>
 
 <script setup lang="ts">
@@ -25,8 +29,8 @@ import ListTable from '~/components/authenticated/ListTable.vue';
 import Head from '~/components/Head.vue';
 import { workService } from '~/services/work.service';
 import { useMyBreadcrumbStore } from '~/stores/breadcrumb';
-import WorkLayout from './layout/WorkLayout.vue';
 import { useConfirm } from '~/composables/confirm'
+import PageLayout from '~/layouts/authenticated/PageLayout.vue';
 
 const { ask } = useConfirm()
 
@@ -61,17 +65,25 @@ const toast = useToast();
 
 const route = useRoute();
 
-const query = computed(() => ({ ...route.query }));
+const query = computed(() => {
+  const { tab, ...rest } = route.query;
+  return rest;
+});
 
 const {
   data: works,
   pending,
-  error
+  error,
+  refresh
 } = await useAsyncData(
   `work-lists-${route.path}`,
-  async () => await workService().fetchAllWorks(), {
+  async () => await workService().fetchAllWorks(query.value), {
   watch: [query]
 }
+);
+
+const { data: metadatas } = await useAsyncData(`works-metadatas-${route.path}`, async () =>
+  await workService().fetchMetaDatas()
 );
 
 watch(error, (newError) => {
@@ -118,7 +130,7 @@ onMounted(() => {
 
   if (!isExist)
     breadCrumbStore.breadCrumb.push({
-      name: 'Work',
+      name: 'Works',
       link: '/secret/works'
     })
 });
@@ -141,10 +153,24 @@ const handleAction = async ({ action, row }: TableActionEvent) => {
 }
 
 const handleDelete = async (workId: string) => {
+
   try {
     console.log(workId);
-  } catch (e) {
 
+    await workService().deleteWorkById(workId);
+
+    toast.success({
+      title: 'Sucess!',
+      message: 'Successfully work deleted.'
+    });
+
+    await refresh();
+
+  } catch (e) {
+    toast.error({
+      title: 'Oops!',
+      message: 'Failed delete work! Try again.'
+    });
   }
 }
 

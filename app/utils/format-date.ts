@@ -1,5 +1,5 @@
-export const formatLocalDate = (date: string) => {
-  if (!date) return "";
+export const formatLocalDate = (date: string | null) => {
+  if (!date) return "-";
   const d = new Date(date);
   return d.toLocaleDateString("en-US", {
     year: "numeric",
