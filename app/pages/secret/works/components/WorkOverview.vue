@@ -66,7 +66,7 @@
 
 <script lang="ts" setup>
 import { workService } from '~/services/work.service';
-import { useMyWorkStoreStore } from '../stores/workStore';
+import { useMyWorkStoreStore } from '../stores/work-store';
 
 const props = defineProps<{
   workId: string

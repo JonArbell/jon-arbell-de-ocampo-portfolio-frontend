@@ -22,6 +22,10 @@ export const workService = () => {
     return await $api<GenericResponse<any[]>>(`/works/metadata`);
   };
 
+  const fetchDailyRateTypes = async () => {
+    return await $api<GenericResponse<NameValue[]>>(`/works/daily-rate-types`);
+  };
+
   const deleteWorkById = async (id: string) => {
     return await $api<GenericResponse<Work>>(`/works/${id}`, {
       method: "DELETE",
@@ -69,6 +73,7 @@ export const workService = () => {
   };
 
   return {
+    fetchDailyRateTypes,
     fetchMetaDatas,
     deleteWorkById,
     addWork,

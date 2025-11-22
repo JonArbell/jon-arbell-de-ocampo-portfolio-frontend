@@ -1,11 +1,13 @@
 <template>
 
-  <Head description="Work management" title="Works Management" />
+  <Head title="Work Management" description="Manage and track my work efficiently." />
+
   <PageLayout>
 
-    <NuxtLink :to="`${route.path}/add`"
-      class="inline-flex items-center gap-2 px-4 py-2 bg-teal-400 text-zinc-900 font-semibold rounded shadow hover:bg-teal-500 transition">
-      <i class="mdi mdi-plus text-lg"></i>
+    <NuxtLink :to="`${route.path}/add`" class="inline-flex items-center gap-2 px-3 sm:px-4 md:px-5 lg:px-6 py-1.5 sm:py-2 md:py-2.5 lg:py-3 
+         bg-teal-400 text-zinc-900 text-sm sm:text-base md:text-base lg:text-base 
+         font-semibold rounded shadow hover:bg-teal-500 transition">
+      <i class="mdi mdi-plus text-base sm:text-lg md:text-lg lg:text-lg"></i>
       Add Work
     </NuxtLink>
 

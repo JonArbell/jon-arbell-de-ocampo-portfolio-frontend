@@ -2,7 +2,7 @@
 
   <Head title="Attendances" description="Angas" />
 
-  <WorkLayout>
+  <PageLayout>
 
     <!-- ADD BUTTON -->
     <div class="flex justify-end">
@@ -87,17 +87,17 @@
       </div>
     </teleport>
 
-  </WorkLayout>
+  </PageLayout>
 </template>
 
 <script lang="ts" setup>
-import WorkLayout from '~/pages/secret/works/layout/WorkLayout.vue';
-import { useMyWorkStoreStore } from '~/pages/secret/works/stores/workStore';
+import { useMyWorkStoreStore } from '~/pages/secret/works/stores/work-store';
 import { monthlySalaryService } from '~/services/monthly-salary.service';
 import { workService } from '~/services/work.service';
 import Head from '~/components/Head.vue';
 import { attendanceService } from '~/services/attendance.service';
 import ListTable from '~/components/authenticated/ListTable.vue';
+import PageLayout from '~/layouts/authenticated/PageLayout.vue';
 
 const route = useRoute();
 

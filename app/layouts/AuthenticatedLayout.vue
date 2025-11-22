@@ -11,7 +11,7 @@
       <!-- Logo / Title -->
       <h2
         class="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-green-500 drop-shadow-lg flex-shrink-0">
-        JonSpace
+        {{ myAccountStore.myAccount ? myAccountStore.myAccount.username : 'Guest' }}
       </h2>
 
       <!-- Navigation -->
@@ -55,10 +55,6 @@
             <i class="mdi mdi-menu"></i>
           </button>
 
-          <h1
-            class="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-green-400 tracking-wide">
-            <slot name="pageTitle">Hello Jon, Welcome Again!</slot>
-          </h1>
         </div>
 
         <!-- Profile dropdown -->
@@ -99,6 +95,7 @@ import { ref, onMounted, Transition } from 'vue'
 import { useRoute } from '#app'
 import { useMyTokenStore } from '~/stores/token'
 import { sidebars } from '~/utils/sidebars'
+import { myAccountService } from '~/services/my-account.service'
 
 const route = useRoute()
 const tokenStore = useMyTokenStore()
@@ -106,6 +103,8 @@ const toggleProfile = ref(false)
 const sidebarOpen = ref(false)
 
 const isLoading = ref(true);
+
+const myAccountStore = useMyMyAccountStore();
 
 const logout = () => {
   tokenStore.clearAllTokens()
@@ -116,6 +115,16 @@ const closeSidebarOnMobile = () => {
   if (window.innerWidth < 768) sidebarOpen.value = false
 }
 
+const { } = await useAsyncData(`my-account-${route.path}`, async () => {
+
+  if (myAccountStore.myAccount) return null;
+
+  const res = await myAccountService().fetchMyAccount();
+
+  myAccountStore.myAccount = res.data;
+
+  return res;
+});
 
 onMounted(() => {
   if (!tokenStore.isAuthenticated) navigateTo('/secret/login');

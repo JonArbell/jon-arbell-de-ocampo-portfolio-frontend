@@ -1,6 +1,6 @@
 <template>
 
-  <Head title="Tasks" description="Manage Tasks" />
+  <Head title="Task Management" description="Organize, track, and manage all my tasks efficiently." />
 
   <PageLayout>
     <div class="w-full h-full p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
@@ -41,7 +41,11 @@
             <VueDraggableNext v-model="unassignedTasks" :group="{ name: 'tasks', pull: true, put: true }" item-key="id"
               @change="async (evt: any) => await onTaskMoved(evt, null)"
               class="flex flex-col gap-4 flex-1 overflow-auto max-h-[70vh] p-2">
-              <TaskCard v-for="task in unassignedTasks" :key="task.id" :task="task" />
+
+              <small class="text-xs sm:text-sm text-zinc-400 italic text-center mt-2 select-none"
+                v-if="!unassignedTasks.length">No unassigned tasks yet</small>
+
+              <TaskCard v-else v-for="task in unassignedTasks" :key="task.id" :task="task" />
             </VueDraggableNext>
           </div>
 
@@ -61,7 +65,9 @@
             <VueDraggableNext v-model="list.tasks" :group="{ name: 'tasks', pull: true, put: true }" item-key="id"
               class="flex flex-col gap-4 flex-1 overflow-auto min-h-[120px] p-2"
               @change="async (evt: any) => await onTaskMoved(evt, list.id)">
-              <TaskCard v-for="task in list.tasks" :key="task.id" :task="task" />
+              <small class="text-xs sm:text-sm text-zinc-400 italic text-center mt-2 select-none"
+                v-if="!list.tasks.length">No tasks yet</small>
+              <TaskCard v-else v-for="task in list.tasks" :key="task.id" :task="task" />
             </VueDraggableNext>
 
             <!-- Add Task Button -->
@@ -200,7 +206,6 @@ const onTaskMoved = async (evt: any, listId: string | null) => {
       await tasksRefresh();
     }
 
-
   } catch (e) {
     console.log(e);
     toast.error({
@@ -227,8 +232,16 @@ const saveTask = async () => {
 
   try {
 
-    await taskService().addTask(taskForm.value);
-    await tasksRefresh();
+    if (taskForm.value.listId) {
+      await taskListService().addTaskByTaskListId(taskForm.value.listId, taskForm.value);
+      await taskListsRefresh();
+
+    } else {
+      await taskService().addTask(taskForm.value);
+      await tasksRefresh();
+    }
+
+
     closeTaskModal();
   } catch (e) {
 

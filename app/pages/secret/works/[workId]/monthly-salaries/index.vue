@@ -1,12 +1,12 @@
 <template>
-  <WorkLayout>
+  <PageLayout>
     <SalaryList :workId="workId" />
-  </WorkLayout>
+  </PageLayout>
 </template>
 
 <script lang="ts" setup>
+import PageLayout from '~/layouts/authenticated/PageLayout.vue';
 import SalaryList from '../../components/SalaryList.vue';
-import WorkLayout from '../../layout/WorkLayout.vue';
 
 const breadCrumbStore = useMyBreadcrumbStore();
 

@@ -1,7 +1,9 @@
 <template>
 
-  <Head title="View Work" description="Viewing work information" />
-  <WorkLayout>
+  <Head title="View Work | Management"
+    description="View complete details of this work entry including job information, schedule, salary breakdown, description, and logs." />
+
+  <PageLayout>
     <div class="p-4 md:p-6 lg:p-8 space-y-6">
       <div
         class="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 border-b border-zinc-700 overflow-x-auto">
@@ -23,17 +25,17 @@
       </div>
 
     </div>
-  </WorkLayout>
+  </PageLayout>
 </template>
 
 <script lang="ts" setup>
 import Head from '~/components/Head.vue';
 import WorkOverview from '../components/WorkOverview.vue';
 import { useRoute } from 'vue-router';
-import { useMyWorkStoreStore } from '../stores/workStore';
-import WorkLayout from '../layout/WorkLayout.vue';
+import { useMyWorkStoreStore } from '../stores/work-store';
 import ListTable from '~/components/authenticated/ListTable.vue';
 import { workService } from '~/services/work.service';
+import PageLayout from '~/layouts/authenticated/PageLayout.vue';
 
 const route = useRoute();
 
